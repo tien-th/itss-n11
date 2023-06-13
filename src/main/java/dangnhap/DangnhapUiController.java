@@ -28,7 +28,7 @@ public class DangnhapUiController {
     private TextField passwordTextField;
 
     // catch event for login button
-    public void loginButtonClicked(ActionEvent e ) throws SQLException, ClassNotFoundException, IOException {
+    public void loginButtonClicked(ActionEvent e) throws SQLException, ClassNotFoundException, IOException {
 
         // get data from user input
 
@@ -41,14 +41,14 @@ public class DangnhapUiController {
         String password = passwordTextField.getText();
         DangnhapController login = new DangnhapController();
         int role = login.checkLogin(username, password);
-        // TODO : if role == -1 then show error message "Invalid username or password"
+        // TODO --Trung : if role == -1 then show error message "Invalid username or password"
         if (role == -1) {
-            System.out.println("Invalid username or password");
+//            System.out.println("Invalid username or password");
             return ;
         }
         // TODO : end
 
-        // TODO : move to another scene if login success base on role (admin or user)
+        // TODO -- Tien : move to another scene if login success base on role (admin or user)
 
         // copilot write this
         if (role == 1) {
