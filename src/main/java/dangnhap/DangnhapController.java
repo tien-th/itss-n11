@@ -8,22 +8,27 @@ import java.sql.*;
 public class DangnhapController {
 
     // DB connection
-    public int getRole(String username, String password) throws SQLException, ClassNotFoundException{
+    public User getUser(String username, String password) throws SQLException, ClassNotFoundException{
 
-        String sql = "SELECT u.pass, u.role FROM public.user u WHERE u.username = ?";
+        String sql = "SELECT * FROM public.user u WHERE u.username = ?";
         PreparedStatement ps = DbConnection.openConnection().prepareStatement(sql);
         ps.setString(1, username);
         ResultSet rs = ps.executeQuery();
-        int role = -1 ;
+        User u = null ;
         if(rs.next()){
             if (password.equals(rs.getString("pass"))){
                 System.out.println("Login successfully");
-                role = rs.getInt("role");
-                return  role ;
+                int role = rs.getInt("role");
+                String email = rs.getString("email");
+                String name = rs.getString("hoten");
+                String birthday = String.valueOf(rs.getDate("birthday"));
+                String gender = rs.getString("gender");
+                u = new User(username, password, email, name, birthday, gender, role);
+                return u  ;
             }
         }
         System.out.println("Login failed");
-        return role;
+        return null ;
     }
 
     public boolean checkUserName(String username) throws SQLException, ClassNotFoundException {
@@ -42,14 +47,14 @@ public class DangnhapController {
         }
     }
 
-    public int checkLogin(String username, String password) throws SQLException, ClassNotFoundException {
+    public User checkLogin(String username, String password) throws SQLException, ClassNotFoundException {
         if (checkUserName(username)) {
-            int role = getRole(username, password);
-            if (role != -1) {
-                return role;
+             User u = getUser(username, password);
+            if (u != null ) {
+                return u;
             }
         }
-        return -1 ;
+        return null;
     }
 
     public void saveUserToDb(User u) throws SQLException, ClassNotFoundException {

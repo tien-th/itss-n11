@@ -9,4 +9,7 @@ module com.example.itssn11 {
 
     opens dangnhap to javafx.praphics, javafx.fxml;
     exports dangnhap;
+
+    opens menu to javafx.praphics, javafx.fxml;
+    exports menu;
 }

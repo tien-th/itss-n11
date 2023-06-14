@@ -4,12 +4,14 @@ package dangnhap;
 // DangnhapController.java is a controller for Dangnhap.fxml (see src\main\resources\dangnhap\Dangnhap.fxml)
 // It is used by DangnhapApplication.java (see src\main\java\dangnhap\DangnhapApplication.java)
 
+import entity.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -40,10 +42,17 @@ public class DangnhapUiController {
         String username = usernameTextField.getText();
         String password = passwordTextField.getText();
         DangnhapController login = new DangnhapController();
-        int role = login.checkLogin(username, password);
+        User u = login.checkLogin(username, password);
+
         // TODO --Trung : if role == -1 then show error message "Invalid username or password"
-        if (role == -1) {
-//            System.out.println("Invalid username or password");
+        if (u == null) {
+            System.out.println("Invalid username or password");
+            // show error message "Invalid username or password" in a alert box on interface
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Invalid username or password");
+            alert.setContentText("Please try again");
+            alert.showAndWait();
             return ;
         }
         // TODO : end
@@ -51,8 +60,8 @@ public class DangnhapUiController {
         // TODO -- Tien : move to another scene if login success base on role (admin or user)
 
         // copilot write this
-        if (role == 1) {
-            System.out.println("Login success");
+        if (u.getRole() == 1 ) {
+            System.out.println("Move to admin screen");
             // TODO : move to another scene if login success base on role (admin or user)
             // open a new screen in admin.fxml
             Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -61,12 +70,12 @@ public class DangnhapUiController {
             Scene scene = new Scene(adminViewParent);
             stage.setScene(scene);
         }
-        else if (role == 2) {
-            System.out.println("Login success");
-            // TODO : move to another scene if login success base on role (admin or user)
+        else if (u.getRole() == 0) {
+            System.out.println("Move to user screen");
+            // TODO : move to another scene if login success base on role: user
             // open a new screen in user.fxml
             Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-            URL url = Paths.get("./src/main/java/dangnhap/user.fxml").toUri().toURL();
+            URL url = Paths.get("./src/main/java/menu/user.fxml").toUri().toURL();
             Parent userViewParent = FXMLLoader.load(url);
             Scene scene = new Scene(userViewParent);
             stage.setScene(scene);

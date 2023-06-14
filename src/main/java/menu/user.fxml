@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="740.0" prefWidth="1006.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="menu.UserUIController">
+    <children>
+        <Label fx:id="label" layoutX="532.0" layoutY="31.0" text="User" />
+<!--       create  6 buttons -->
+        <Button fx:id="btn1" layoutX="71.0" layoutY="323.0" mnemonicParsing="false" onAction="#viewPet" text="Xem thú cưng" />
+        <Button fx:id="btn2" layoutX="71.0" layoutY="266.0" mnemonicParsing="false" onAction="#dangKyKham" text="Đăng ký khám" />
+        <Button fx:id="btn3" layoutX="71.0" layoutY="214.0" mnemonicParsing="false" onAction="#dangKyVs" text="Đăng ký vệ sinh" />
+        <Button fx:id="btn4" layoutX="71.0" layoutY="160.0" mnemonicParsing="false" onAction="#dangkyTrongGiu" text="Đăng ký trông giữ" />
+    </children>
+</AnchorPane>
