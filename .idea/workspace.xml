@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="add screen">
+    <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="add TODO + chia task">
+      <change afterPath="$PROJECT_DIR$/src/main/java/menu/DangKyTrongGiuScreenController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangnhap/DangKyUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dangnhap/DangKyUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangnhap/DangnhapUiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dangnhap/DangnhapUiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menu/UserUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/UserUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menu/dangKyTrongGiuScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/dangKyTrongGiuScreen.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -102,7 +101,8 @@
       <workItem from="1686710255905" duration="7368000" />
       <workItem from="1686718197772" duration="335000" />
       <workItem from="1686816047151" duration="649000" />
-      <workItem from="1686837082990" duration="457000" />
+      <workItem from="1686837082990" duration="1643000" />
+      <workItem from="1686845450316" duration="335000" />
     </task>
     <task id="LOCAL-00001" summary="add readme">
       <created>1686663107815</created>
@@ -146,7 +146,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686718437147</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add TODO + chia task">
+      <created>1686837584862</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1686837584862</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add TODO + chia task">
+      <created>1686838117718</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686838117718</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,7 +181,8 @@
     <MESSAGE value="add readme" />
     <MESSAGE value="chia task" />
     <MESSAGE value="add screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="add screen" />
+    <MESSAGE value="add TODO + chia task" />
+    <option name="LAST_COMMIT_MESSAGE" value="add TODO + chia task" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
