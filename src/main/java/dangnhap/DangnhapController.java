@@ -2,6 +2,7 @@ package dangnhap;
 
 import connection.DbConnection;
 import entity.User;
+import javafx.scene.control.Alert;
 
 import java.sql.*;
 
@@ -61,8 +62,12 @@ public class DangnhapController {
         String username = u.getUsername();
         boolean usernameExist = this.checkUserName(username);
         if (usernameExist) {
-        // TODO: Prompt user to enter another username
             System.out.println("Username đã tồn tại");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Username already exist");
+            alert.setContentText("Please try again");
+            alert.showAndWait();
             return;
         }
         // Insert user to db
