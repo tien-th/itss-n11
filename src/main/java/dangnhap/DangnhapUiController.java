@@ -44,7 +44,6 @@ public class DangnhapUiController {
         DangnhapController login = new DangnhapController();
         User u = login.checkLogin(username, password);
 
-        // TODO --Trung : if role == -1 then show error message "Invalid username or password"
         if (u == null) {
             System.out.println("Invalid username or password");
             // show error message "Invalid username or password" in a alert box on interface
@@ -55,24 +54,23 @@ public class DangnhapUiController {
             alert.showAndWait();
             return ;
         }
-        // TODO : end
 
         // TODO -- Tien : move to another scene if login success base on role (admin or user)
 
         // copilot write this
         if (u.getRole() == 1 ) {
             System.out.println("Move to admin screen");
-            // TODO : move to another scene if login success base on role (admin or user)
+            // TODO -- Tien   : move to another scene if login success base on role (admin or user)
             // open a new screen in admin.fxml
             Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-            URL url = Paths.get("./src/main/java/dangnhap/admin.fxml").toUri().toURL();
+            URL url = Paths.get("./src/main/java/menu/admin.fxml").toUri().toURL();
             Parent adminViewParent = FXMLLoader.load(url);
             Scene scene = new Scene(adminViewParent);
             stage.setScene(scene);
         }
         else if (u.getRole() == 0) {
             System.out.println("Move to user screen");
-            // TODO : move to another scene if login success base on role: user
+            // TODO -- done : move to another scene if login success base on role: user
             // open a new screen in user.fxml
             Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             URL url = Paths.get("./src/main/java/menu/user.fxml").toUri().toURL();

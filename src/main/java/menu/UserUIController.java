@@ -31,7 +31,7 @@ public class UserUIController {
         Parent adminViewParent = FXMLLoader.load(url);
         Scene scene = new Scene(adminViewParent);
         stage.setScene(scene);
-        // TODO: thiet ke man hinh dang ky trong giu trong file dangKyTrongGiuScreen.fxml
+        // TODO -- Long : thiet ke man hinh dang ky trong giu trong file dangKyTrongGiuScreen.fxml
     }
     public void dangKyKham(ActionEvent e) throws IOException {
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -39,7 +39,7 @@ public class UserUIController {
         Parent adminViewParent = FXMLLoader.load(url);
         Scene scene = new Scene(adminViewParent);
         stage.setScene(scene);
-        // TODO: thiet ke man hinh dang ky kham trong file dangKyKhamScreen.fxml
+        // TODO -- Trung : thiet ke man hinh dang ky kham trong file dangKyKhamScreen.fxml
     }
 
     public void dangKyVs(ActionEvent e) throws IOException {
@@ -48,7 +48,7 @@ public class UserUIController {
         Parent adminViewParent = FXMLLoader.load(url);
         Scene scene = new Scene(adminViewParent);
         stage.setScene(scene);
-        // TODO: thiet ke man hinh dang ky vs trong file dangKyVsScreen.fxml
+        // TODO -- Tuan : thiet ke man hinh dang ky vs trong file dangKyVsScreen.fxml
     }
 
 }

@@ -20,21 +20,19 @@ public class DangKyUIController {
     private TextField rePasswordTextField;
 
     // TODO --Long : check if email is valid (action event)
-
-    public void checkEmail(ActionEvent e) {
-        String email = emailTextField.getText();
-        if (email.contains("@")) {
-            System.out.println("Email hợp lệ");
-        }
-        else {
-            System.out.println("Email không hợp lệ");
-        }
-    }
-
-    // end TODO --Long
-
+    // để sau
     @FXML
     private TextField emailTextField;
+
+//    public void checkEmail(ActionEvent e) {
+//        String email = emailTextField.getText();
+//        if (email.contains("@")) {
+//            System.out.println("Email hợp lệ");
+//        }
+//        else {
+//            System.out.println("Email không hợp lệ");
+//        }
+//    }
 
     @FXML
     private TextField nameTextField;
