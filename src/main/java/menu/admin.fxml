@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="menu.AdminUIController"
+            prefHeight="400.0" prefWidth="600.0">
+<!--add 7 buttons from top to bottom -->
+    <Button fx:id="btn1" layoutX="71.0" layoutY="323.0" mnemonicParsing="false" onAction="#viewUserUI" text="Quản lý người dùng" />
+    <Button fx:id="btn2" layoutX="71.0" layoutY="266.0" mnemonicParsing="false" onAction="#viewPetUI" text="Quản lý thú cưng" />
+    <Button fx:id="btn3" layoutX="71.0" layoutY="214.0" mnemonicParsing="false" onAction="#viewManageAppointmentsUI" text="Quản lý lịch khám" />
+    <Button fx:id="btn4" layoutX="71.0" layoutY="160.0" mnemonicParsing="false" onAction="#viewManageCleaningUI" text="Quản lý dịch vụ vệ sinh làm đẹp" />
+    <Button fx:id="btn5" layoutX="71.0" layoutY="110.0" mnemonicParsing="false" onAction="#viewManageMedicineUI" text="Quản lý thuốc" />
+    <Button fx:id="btn6" layoutX="71.0" layoutY="60.0" mnemonicParsing="false" onAction="#viewManageCustodialUI" text="Quản lý dịch vụ trông giữ" />
+    <Button fx:id="btn7" layoutX="71.0" layoutY="10.0" mnemonicParsing="false" onAction="#viewStatisticalUI" text="Thống kê" />
+</AnchorPane>
