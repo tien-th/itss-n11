@@ -9,11 +9,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import view_pet.ViewPetUIController;
 
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Paths;
-
 public class UserUIController {
 
     // Xử lý sự kiện
@@ -29,8 +29,13 @@ public class UserUIController {
     public void viewPet(ActionEvent e) throws IOException {
         //  : move to view pet scene
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-        URL url = Paths.get("./src/main/java/menu/viewPetScreen.fxml").toUri().toURL();
-        Parent adminViewParent = FXMLLoader.load(url);
+        URL url = Paths.get("./src/main/java/view_pet/viewPetScreen.fxml").toUri().toURL();
+        FXMLLoader loader = new FXMLLoader();
+
+        Parent adminViewParent = loader.load(url.openStream());
+        ViewPetUIController viewPetUIController = loader.getController();
+        System.out.println(user.getName() +" " +  user.getRole());
+        viewPetUIController.setUser(user);
         Scene scene = new Scene(adminViewParent);
         stage.setScene(scene);
         // TODO: thiet ke man hinh xem thong tin pet trong file viewPetScreen.fxml

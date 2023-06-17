@@ -12,4 +12,8 @@ module com.example.itssn11 {
 
     opens menu to javafx.praphics, javafx.fxml;
     exports menu;
+
+    opens view_pet to javafx.praphics, javafx.fxml;
+    exports view_pet;
+
 }
