@@ -34,9 +34,10 @@ public class UserUIController {
 
         Parent adminViewParent = loader.load(url.openStream());
         ViewPetUIController viewPetUIController = loader.getController();
-        System.out.println(user.getName() +" " +  user.getRole());
-        viewPetUIController.setUser(user);
+        System.out.println(user.getName() + " " +  user.getRole());
         Scene scene = new Scene(adminViewParent);
+        viewPetUIController.setUser(user);
+        viewPetUIController.initialize(url, null);
         stage.setScene(scene);
         // TODO: thiet ke man hinh xem thong tin pet trong file viewPetScreen.fxml
     }

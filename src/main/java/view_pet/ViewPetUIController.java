@@ -16,6 +16,7 @@ import java.util.ResourceBundle;
 public class ViewPetUIController implements Initializable {
     User user = null ;
     public void setUser(User user) {
+        System.out.println("set user " + user.getName() + " " + user.getRole());// fix bug
         this.user = user;
     }
 
@@ -41,6 +42,11 @@ public class ViewPetUIController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        if (user == null) {
+            System.out.println("user is null");
+            return ; // fix bug
+        }
+        System.out.println("init user " + user.getName() + " " + user.getRole());// fix bug
         ViewPetController viewPetController = new ViewPetController();
         try {
             viewPetController.getPetList(user);

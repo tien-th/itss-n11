@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="send data between scenes">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/Pet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view_pet/ViewPetController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view_pet/ViewPetUIController.java" afterDir="false" />
+    <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="add view pet function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/menu/UserUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/UserUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menu/viewPetScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view_pet/viewPetScreen.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view_pet/ViewPetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view_pet/ViewPetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view_pet/ViewPetUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view_pet/ViewPetUIController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,32 +55,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Downloads/Gradianto-5.1.zip",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.1150748",
-    "settings.editor.selected.configurable": "preferences.editor",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Downloads/Gradianto-5.1.zip&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.1150748&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\baota\IdeaProjects\itss-n11\src\main\java\view_pet" />
@@ -138,7 +133,8 @@
       <workItem from="1686938140580" duration="5983000" />
       <workItem from="1686983927193" duration="37000" />
       <workItem from="1686983999716" duration="3638000" />
-      <workItem from="1686987701499" duration="9271000" />
+      <workItem from="1686987701499" duration="9645000" />
+      <workItem from="1687006487740" duration="4713000" />
     </task>
     <task id="LOCAL-00001" summary="add readme">
       <created>1686663107815</created>
@@ -217,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686985968930</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add view pet function">
+      <created>1686997645481</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1686997645481</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,6 +245,7 @@
     <MESSAGE value="add controller class for TrongGiuScreen" />
     <MESSAGE value="add admin's menu interface" />
     <MESSAGE value="send data between scenes" />
-    <option name="LAST_COMMIT_MESSAGE" value="send data between scenes" />
+    <MESSAGE value="add view pet function" />
+    <option name="LAST_COMMIT_MESSAGE" value="add view pet function" />
   </component>
 </project>

@@ -16,4 +16,7 @@ module com.example.itssn11 {
     opens view_pet to javafx.praphics, javafx.fxml;
     exports view_pet;
 
+    opens entity to javafx.praphics, javafx.fxml, javafx.base;
+    exports entity;
+
 }
