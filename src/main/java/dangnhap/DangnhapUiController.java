@@ -14,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import menu.UserUIController;
 
 import java.io.IOException;
 import java.net.URL;
@@ -66,6 +67,8 @@ public class DangnhapUiController {
             URL url = Paths.get("./src/main/java/menu/admin.fxml").toUri().toURL();
             Parent adminViewParent = FXMLLoader.load(url);
             Scene scene = new Scene(adminViewParent);
+            UserUIController userUIController = (UserUIController) adminViewParent.getOnScroll();
+            userUIController.setUser(u);
             stage.setScene(scene);
         }
         else if (u.getRole() == 0) {
@@ -74,8 +77,12 @@ public class DangnhapUiController {
             // open a new screen in user.fxml
             Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             URL url = Paths.get("./src/main/java/menu/user.fxml").toUri().toURL();
-            Parent userViewParent = FXMLLoader.load(url);
+            FXMLLoader loader = new FXMLLoader();
+            Parent userViewParent = loader.load(url.openStream());
+
             Scene scene = new Scene(userViewParent);
+            UserUIController userUIController =  loader.getController();
+            userUIController.setUser(u);
             stage.setScene(scene);
         }
         else {
