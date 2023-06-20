@@ -2,21 +2,17 @@ package menu;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.collections.*;
 import javafx.scene.layout.AnchorPane;
 
-import java.lang.reflect.Array;
 import java.sql.SQLException;
-import java.util.*;
 
 import entity.*;
 import view_pet.*;
 
 import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicReferenceArray;
 
 
-public class DangKyKhamUIController {
+public class DangKyKhamScreenController {
     @FXML
     private AnchorPane anchorPane;
 
@@ -62,17 +58,20 @@ public class DangKyKhamUIController {
     @FXML
     private Button buttonThoat;
 
+    User user = null;
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @FXML
     private void initialize() {
-        initializeChoiceBox();
+        initializeChoiceBox(user);
         initializeComboBox();
         initializeButtons();
     }
 
-    User user = null;
-    public void setUser(User user){
-        this.user = user;
-    }
+
 
     private ArrayList<String> extractPetNames(ArrayList<Pet> petList){
         ArrayList<String> petNames = new ArrayList<>();
@@ -80,12 +79,13 @@ public class DangKyKhamUIController {
             petNames.add(pet.getName());
         }
         return petNames;
+
     }
 
 
 
 
-    private void initializeChoiceBox() {
+    private void initializeChoiceBox(User user) {
         ViewPetController viewPetController = new ViewPetController();
         try {
             viewPetController.getPetList(user);

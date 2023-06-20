@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="add view pet function">
+    <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="add screen dangKyKham">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dangnhap/DangKyUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dangnhap/DangKyUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dangnhap/DangnhapUiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dangnhap/DangnhapUiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menu/DangKyKhamUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/DangKyKhamScreenController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/menu/UserUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/UserUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view_pet/ViewPetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view_pet/ViewPetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menu/dangKyKhamScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/dangKyKhamScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menu/user.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/user.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view_pet/ViewPetUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view_pet/ViewPetUIController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +31,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -47,6 +57,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2R6OEQOOMj1CDSpL4E1DdvBGkPh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -62,16 +75,16 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Downloads/Gradianto-5.1.zip&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/template/softwareEngineering/Code&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.1150748&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -135,6 +148,16 @@
       <workItem from="1686983999716" duration="3638000" />
       <workItem from="1686987701499" duration="9645000" />
       <workItem from="1687006487740" duration="4713000" />
+      <workItem from="1687087147025" duration="652000" />
+      <workItem from="1687090021158" duration="8315000" />
+      <workItem from="1687110691561" duration="5547000" />
+      <workItem from="1687136750594" duration="393000" />
+      <workItem from="1687137208451" duration="2250000" />
+      <workItem from="1687154195766" duration="1644000" />
+      <workItem from="1687198420226" duration="1354000" />
+      <workItem from="1687200539733" duration="1369000" />
+      <workItem from="1687246842689" duration="56000" />
+      <workItem from="1687270873898" duration="4181000" />
     </task>
     <task id="LOCAL-00001" summary="add readme">
       <created>1686663107815</created>
@@ -220,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686997645481</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="add screen dangKyKham">
+      <created>1687145794529</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1687145794529</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,6 +276,23 @@
     <MESSAGE value="add admin's menu interface" />
     <MESSAGE value="send data between scenes" />
     <MESSAGE value="add view pet function" />
-    <option name="LAST_COMMIT_MESSAGE" value="add view pet function" />
+    <MESSAGE value="add screen dangKyKham" />
+    <option name="LAST_COMMIT_MESSAGE" value="add screen dangKyKham" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/menu/DangKyKhamScreenController.java</url>
+          <line>43</line>
+          <properties field="datePickerNgayKham" class="menu.DangKyKhamScreenController" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
