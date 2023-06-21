@@ -15,9 +15,9 @@ public class ViewPetController {
 
     public void getPetList(User user) throws SQLException, ClassNotFoundException {
         PreparedStatement ps = null;
-        System.out.println("abcdxyz");
-        System.out.println("abcdxyz" + user == null);
-        System.out.println("abcdxyz");
+        if (user == null) {
+            return;
+        }
         if (user.getRole() == 1) { // admin
             // get all pets
             String sql = "SELECT * FROM pet";

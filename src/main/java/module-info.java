@@ -18,5 +18,7 @@ module com.example.itssn11 {
 
     opens entity to javafx.praphics, javafx.fxml, javafx.base;
     exports entity;
+    exports dangkydichvu;
+    opens dangkydichvu to javafx.fxml, javafx.praphics;
 
 }

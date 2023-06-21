@@ -1,5 +1,6 @@
 package menu;
 
+import dangkydichvu.DangKyKhamScreenController;
 import entity.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -44,7 +45,9 @@ public class UserUIController {
 
     public void dangKyTrongGiu(ActionEvent e) throws IOException {
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        System.out.println("asdasdas");
         URL url = Paths.get("./src/main/java/menu/dangKyTrongGiuScreen.fxml").toUri().toURL();
+
         Parent adminViewParent = FXMLLoader.load(url);
         Scene scene = new Scene(adminViewParent);
         stage.setScene(scene);
@@ -52,15 +55,16 @@ public class UserUIController {
     }
     public void dangKyKham(ActionEvent e) throws IOException {
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-        URL url = Paths.get("./src/main/java/menu/dangKyKhamScreen.fxml").toUri().toURL();
+        System.out.println("asdasdas");
+        URL url = Paths.get("./src/main/java/dangkydichvu/dangKyKhamScreen.fxml").toUri().toURL();
         FXMLLoader loader = new FXMLLoader();
-
         Parent adminViewParent = loader.load(url.openStream());
+        System.out.println("asdasdas");
         DangKyKhamScreenController dangKyKhamScreenController = loader.getController();
-        System.out.println(user.getName() + " " +  user.getRole());
+        System.out.println(user.getName() + "abcd " +  user.getRole());
         Scene scene = new Scene(adminViewParent);
         dangKyKhamScreenController.setUser(user);
-//        dangKyKhamScreenController.initialize(url, null);
+        dangKyKhamScreenController.initialize(url, null);
         stage.setScene(scene);
 
 

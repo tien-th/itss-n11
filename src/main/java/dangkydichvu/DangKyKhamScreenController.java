@@ -1,126 +1,96 @@
-package menu;
-
+package dangkydichvu;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 
+import java.net.URL;
 import java.sql.SQLException;
 
 import entity.*;
 import view_pet.*;
 
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-
-public class DangKyKhamScreenController {
-    @FXML
-    private AnchorPane anchorPane;
-
-    @FXML
-    private Label labelTenThuCung;
-
-    @FXML
-    private Label labelDangKyKham;
-
-    @FXML
-    private ChoiceBox<String> choiceBoxTenThuCung;
-
-    @FXML
-    private Label labelDichVu;
-
-    @FXML
-    private CheckBox checkBoxKhamBenh;
-
-    @FXML
-    private CheckBox checkBoxSpa;
-
-    @FXML
-    private CheckBox checkBoxTrongGiữ;
-
-    @FXML
-    private Label labelDatLich;
-
-    @FXML
-    private DatePicker datePickerNgayKham;
-
-    @FXML
-    private ComboBox<String> comboBoxThoiGian;
-
-    @FXML
-    private Label labelNgayKham;
-
-    @FXML
-    private Label labelThoiGian;
-
-    @FXML
-    private Button buttonLuu;
-
-    @FXML
-    private Button buttonThoat;
-
+public class DangKyKhamScreenController implements Initializable {
     User user = null;
-
     public void setUser(User user) {
         this.user = user;
     }
-
     @FXML
-    private void initialize() {
-        initializeChoiceBox(user);
-        initializeComboBox();
-        initializeButtons();
-    }
-
-
-
-    private ArrayList<String> extractPetNames(ArrayList<Pet> petList){
-        ArrayList<String> petNames = new ArrayList<>();
-        for(Pet pet: petList){
-            petNames.add(pet.getName());
+    private Label petNameLabel = new Label();
+    @FXML
+    private ChoiceBox<String> choiceBoxTenThuCung;
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle)  {
+        if (user == null) {
+            System.out.println("user is null in initializeChoiceBox");
+            return ; // fix bug
         }
-        return petNames;
-
-    }
-
-
-
-
-    private void initializeChoiceBox(User user) {
+        else {
+            System.out.println("user is not null in initializeDangKyKhamScreen");
+        }
         ViewPetController viewPetController = new ViewPetController();
         try {
             viewPetController.getPetList(user);
             ArrayList<Pet> petList = viewPetController.petList;
             ArrayList<String> petNames = extractPetNames(petList);
             choiceBoxTenThuCung.getItems().addAll(petNames);
-
-            choiceBoxTenThuCung.setOnAction(event -> {
-                String selectedName = choiceBoxTenThuCung.getValue();
-            });
-
+            choiceBoxTenThuCung.setOnAction(this::getPetNameLabel);
 
         } catch (SQLException | ClassNotFoundException e){
             e.printStackTrace();
         }
-
-
-
     }
 
+    private void getPetNameLabel(ActionEvent actionEvent) {
+        String petName = choiceBoxTenThuCung.getValue();
+        petNameLabel.setText(petName);
+    }
+    private ArrayList<String> extractPetNames(ArrayList<Pet> petList){
+        ArrayList<String> petNames = new ArrayList<>();
+        for(Pet pet: petList){
+            petNames.add(pet.getName());
+        }
+        return petNames;
+    }
+
+
+    @FXML
+    private CheckBox checkBoxKhamBenh;
+    @FXML
+    private CheckBox checkBoxSpa;
+    @FXML
+    private CheckBox checkBoxTrongGiu;
+    @FXML
+    private DatePicker datePickerNgayKham;
+    @FXML
+    private ComboBox<String> comboBoxThoiGian;
+
+
+//    @FXML
+//    private void initialize() {
+//        initializeChoiceBox(user);
+//        initializeComboBox();
+//        initializeButtons();
+//    }
     private void initializeComboBox() {
         comboBoxThoiGian.getItems().addAll("9:00 AM", "10:00 AM", "11:00 AM", "1:00 PM", "2:00 PM");
     }
 
-    private void initializeButtons() {
-        buttonLuu.setOnAction(event -> handleLuuButton());
-        buttonThoat.setOnAction(event -> handleThoatButton());
-    }
+//    private void initializeButtons() {
+//        buttonLuu.setOnAction(event -> handleLuuButton());
+//        buttonThoat.setOnAction(event -> handleThoatButton());
+//    }
 
     private void handleLuuButton() {
         // Xử lý lưu đăng ký khám tại đây
         String tenThuCung = choiceBoxTenThuCung.getValue();
         boolean khamBenh = checkBoxKhamBenh.isSelected();
         boolean spa = checkBoxSpa.isSelected();
-        boolean trongGiữ = checkBoxTrongGiữ.isSelected();
+        boolean trongGiữ = checkBoxTrongGiu.isSelected();
         String ngayKham = datePickerNgayKham.getValue().toString();
         String thoiGian = comboBoxThoiGian.getValue();
 
@@ -145,4 +115,6 @@ public class DangKyKhamScreenController {
         // Thực hiện các thao tác khi người dùng thoát khỏi giao diện đăng ký khám
         System.out.println("Thoát");
     }
+
+
 }
