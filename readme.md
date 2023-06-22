@@ -25,3 +25,16 @@ state VARCHAR(10),
 pet_id INT REFERENCES pet(pet_id),
 PRIMARY KEY (chuong_id, start_time, end_time)
 );
+
+6-22-23
+drop table dichvuvs;
+CREATE TABLE dichvuVS (
+loai_dv VARCHAR(255),
+day date,
+time_slot INT,
+state VARCHAR(10),
+PRIMARY KEY (loai_dv, day, time_slot)
+);
+
+ALTER TABLE lichkham
+RENAME COLUMN time TO time_slot;

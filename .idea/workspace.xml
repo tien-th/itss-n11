@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="fix TRung's bug">
+    <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="update database">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +152,7 @@
       <workItem from="1687335637393" duration="4599000" />
       <workItem from="1687344167998" duration="7740000" />
       <workItem from="1687359589370" duration="1000" />
-      <workItem from="1687406696181" duration="5626000" />
+      <workItem from="1687406696181" duration="6844000" />
     </task>
     <task id="LOCAL-00001" summary="add readme">
       <created>1686663107815</created>
@@ -251,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687351844352</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="update database">
+      <created>1687415000161</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1687415000161</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,7 +288,8 @@
     <MESSAGE value="add screen dangKyKham" />
     <MESSAGE value="fix view_pet bug" />
     <MESSAGE value="fix TRung's bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix TRung's bug" />
+    <MESSAGE value="update database" />
+    <option name="LAST_COMMIT_MESSAGE" value="update database" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
