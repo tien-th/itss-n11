@@ -13,3 +13,15 @@ ALTER TABLE lichkham DROP time ;
 ALTER TABLE lichkham ADD day date NOT NULL;
 ALTER TABLE lichkham ADD time int NOT NULL;
 
+6-22-2023 
+
+Drop table dvtrong_giu ;
+
+CREATE TABLE dvtrong_giu (
+chuong_id INT,
+start_time TIMESTAMP,
+end_time TIMESTAMP,
+state VARCHAR(10),
+pet_id INT REFERENCES pet(pet_id),
+PRIMARY KEY (chuong_id, start_time, end_time)
+);

@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="fix view_pet bug">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dangkydichvu/A.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dangkydichvu/dangKyKhamScreen1.fxml" afterDir="false" />
+    <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="fix TRung's bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menu/DangKyKhamScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dangkydichvu/DangKyKhamScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menu/UserUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/UserUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menu/dangKyKhamScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dangkydichvu/dangKyKhamScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menu/dangKyTrongGiuScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/dangKyTrongGiuScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view_pet/ViewPetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view_pet/ViewPetController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +149,9 @@
       <workItem from="1687246842689" duration="56000" />
       <workItem from="1687270873898" duration="4181000" />
       <workItem from="1687335637393" duration="4599000" />
-      <workItem from="1687344167998" duration="7617000" />
+      <workItem from="1687344167998" duration="7740000" />
+      <workItem from="1687359589370" duration="1000" />
+      <workItem from="1687406696181" duration="5626000" />
     </task>
     <task id="LOCAL-00001" summary="add readme">
       <created>1686663107815</created>
@@ -251,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687145794529</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="fix TRung's bug">
+      <created>1687351844352</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1687351844352</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,7 +278,9 @@
     <MESSAGE value="send data between scenes" />
     <MESSAGE value="add view pet function" />
     <MESSAGE value="add screen dangKyKham" />
-    <option name="LAST_COMMIT_MESSAGE" value="add screen dangKyKham" />
+    <MESSAGE value="fix view_pet bug" />
+    <MESSAGE value="fix TRung's bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix TRung's bug" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
