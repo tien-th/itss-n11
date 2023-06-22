@@ -19,7 +19,7 @@ public class UserUIController {
 
     // Xử lý sự kiện
     @FXML
-    Label nameLabel ;
+    Label nameLabel = new Label() ;
     User user = null ;
     public void setUser(User user) {
         this.user = user;
@@ -39,8 +39,7 @@ public class UserUIController {
         Scene scene = new Scene(adminViewParent);
         viewPetUIController.setUser(user);
         viewPetUIController.initialize(url, null);
-        stage.setScene(scene);
-        // TODO: thiet ke man hinh xem thong tin pet trong file viewPetScreen.fxml
+        stage.setScene(scene);// TODO: thiet ke man hinh xem thong tin pet trong file viewPetScreen.fxml
     }
 
     public void dangKyTrongGiu(ActionEvent e) throws IOException {
