@@ -1,6 +1,8 @@
 package menu;
 
 import dangkydichvu.DangKyKhamScreenController;
+import dangkydichvu.DangKyTrongGiuScreenController;
+import dangkydichvu.DangKyVSScreenController;
 import entity.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -46,13 +48,19 @@ public class UserUIController {
     public void dangKyTrongGiu(ActionEvent e) throws IOException {
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         System.out.println("asdasdas");
-        URL url = Paths.get("./src/main/java/menu/dangKyTrongGiuScreen.fxml").toUri().toURL();
-
-        Parent adminViewParent = FXMLLoader.load(url);
+        URL url = Paths.get("./src/main/java/dangkydichvu/dangKyTrongGiuScreen.fxml").toUri().toURL();
+        FXMLLoader loader = new FXMLLoader();
+        Parent adminViewParent = loader.load(url.openStream());
+        System.out.println("asdasdas");
+        DangKyTrongGiuScreenController dangKyTrongGiuScreenController = loader.getController();
+        System.out.println(user.getName() + "abcd " +  user.getRole());
         Scene scene = new Scene(adminViewParent);
+        dangKyTrongGiuScreenController.setUser(user);
+        dangKyTrongGiuScreenController.initialize(url, null);
         stage.setScene(scene);
         // TODO -- Long : thiet ke man hinh dang ky trong giu trong file dangKyTrongGiuScreen.fxml
     }
+
     public void dangKyKham(ActionEvent e) throws IOException {
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         System.out.println("asdasdas");
@@ -82,9 +90,16 @@ public class UserUIController {
 
     public void dangKyVs(ActionEvent e) throws IOException {
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-        URL url = Paths.get("./src/main/java/menu/dangKyVsScreen.fxml").toUri().toURL();
-        Parent adminViewParent = FXMLLoader.load(url);
+        System.out.println("asdasdas");
+        URL url = Paths.get("./src/main/java/dangkydichvu/dangKyVSScreen.fxml").toUri().toURL();
+        FXMLLoader loader = new FXMLLoader();
+        Parent adminViewParent = loader.load(url.openStream());
+        System.out.println("asdasdas");
+        DangKyVSScreenController dangKyVSScreenController = loader.getController();
+        System.out.println(user.getName() + "abcd " +  user.getRole());
         Scene scene = new Scene(adminViewParent);
+        dangKyVSScreenController.setUser(user);
+        dangKyVSScreenController.initialize(url, null);
         stage.setScene(scene);
         // TODO -- Tuan : thiet ke man hinh dang ky vs trong file dangKyVsScreen.fxml
     }

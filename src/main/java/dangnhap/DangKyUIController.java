@@ -8,6 +8,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import java.sql.SQLException;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
+
 
 public class DangKyUIController {
 
@@ -17,6 +22,9 @@ public class DangKyUIController {
     private TextField passwordTextField;
     @FXML
     private TextField rePasswordTextField;
+
+    @FXML
+    private Label errorLabel;
 
     // TODO --Long : check if email is valid (action event)
     // để sau
@@ -63,13 +71,16 @@ public class DangKyUIController {
     }
 
 
+
     public void registerButtonClicked(ActionEvent e) throws SQLException, ClassNotFoundException {
         String username = usernameTextField.getText();
         String password = passwordTextField.getText();
         String rePassword = rePasswordTextField.getText();
         if (!password.equals(rePassword)) {
-            // TODO: show error message
-            System.out.println("Mật khẩu không trùng khớp");
+
+            errorLabel.setText("not match");
+
+//            System.out.println("Mật khẩu không trùng khớp");
             return ;
         }
 

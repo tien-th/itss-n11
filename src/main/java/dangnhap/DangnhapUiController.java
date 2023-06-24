@@ -63,7 +63,7 @@ public class DangnhapUiController {
             System.out.println("Move to admin screen");
             // TODO -- Tien   : move to another scene if login success base on role (admin or user)
             // open a new screen in admin.fxml
-            Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+             Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             URL url = Paths.get("./src/main/java/menu/admin.fxml").toUri().toURL();
             Parent adminViewParent = FXMLLoader.load(url);
             Scene scene = new Scene(adminViewParent);
