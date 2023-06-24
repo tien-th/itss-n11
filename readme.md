@@ -52,3 +52,7 @@ lodging_id int references lodging(lodging_id),
 start_time timestamp,
 end_time timestamp
 );
+
+6-25-23
+-- change ( day, time_slot) to primary key
+ALTER TABLE lichkham ADD CONSTRAINT pk_lichkham PRIMARY KEY (day, time_slot);

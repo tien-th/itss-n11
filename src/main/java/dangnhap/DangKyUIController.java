@@ -15,7 +15,6 @@ import javafx.scene.control.Label;
 
 
 public class DangKyUIController {
-
     @FXML
     private TextField usernameTextField;
     @FXML

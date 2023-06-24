@@ -19,28 +19,6 @@ public class DangKyKhamScreenController extends UserFuncBase implements Initiali
     private Label petNameLabel = new Label();
     @FXML
     private ChoiceBox<String> choiceBoxTenThuCung;
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle)  {
-        if (user == null) {
-            System.out.println("user is null in initializeChoiceBox");
-            return ; // fix bug
-        }
-        else {
-            System.out.println("user is not null in initializeDangKyKhamScreen");
-        }
-        ViewPetController viewPetController = new ViewPetController();
-        try {
-            viewPetController.getPetList(user);
-            ArrayList<Pet> petList = viewPetController.petList;
-            ArrayList<String> petNames = extractPetNames(petList);
-            choiceBoxTenThuCung.getItems().addAll(petNames);
-            choiceBoxTenThuCung.setOnAction(this::getPetNameLabel);
-
-        } catch (SQLException | ClassNotFoundException e){
-            e.printStackTrace();
-        }
-    }
-
     private void getPetNameLabel(ActionEvent actionEvent) {
         String petName = choiceBoxTenThuCung.getValue();
         petNameLabel.setText(petName);
@@ -53,44 +31,77 @@ public class DangKyKhamScreenController extends UserFuncBase implements Initiali
         return petNames;
     }
 
+    @FXML
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle)  {
+        if (user == null) {
+            System.out.println("user is null in initializeChoiceBox");
+            return ; // fix bug
+        }
+        else {
+            System.out.println("user is not null in initializeDangKyKhamScreen");
+        }
+        ViewPetController viewPetController = new ViewPetController();
+        try {
+            viewPetController.getPetList(user);
+            petList = viewPetController.petList;
+            ArrayList<String> petNames = extractPetNames(petList);
+            choiceBoxTenThuCung.getItems().addAll(petNames);
+            choiceBoxTenThuCung.setOnAction(this::getPetNameLabel);
 
-    @FXML
-    private CheckBox checkBoxKhamBenh;
-    @FXML
-    private CheckBox checkBoxSpa;
-    @FXML
-    private CheckBox checkBoxTrongGiu;
+        } catch (SQLException | ClassNotFoundException e){
+            e.printStackTrace();
+        }
+    }
+
     @FXML
     private DatePicker datePickerNgayKham;
     @FXML
-    private ComboBox<String> comboBoxThoiGian;
+    private ChoiceBox<String> comboBoxThoiGian;
 
-    private void initializeComboBox() {
-        comboBoxThoiGian.getItems().addAll("9:00 AM", "10:00 AM", "11:00 AM", "1:00 PM", "2:00 PM");
+    ArrayList<Pet> petList ;
+
+    public Pet getPet(String petName){
+        for(Pet pet: petList){
+            if(pet.getName().equals(petName)){
+                return pet;
+            }
+        }
+        return null;
     }
-    private void handleLuuButton() {
+
+    public void handleLuuButton(ActionEvent event) throws SQLException, ClassNotFoundException {
         // Xử lý lưu đăng ký khám tại đây
         String tenThuCung = choiceBoxTenThuCung.getValue();
-        boolean khamBenh = checkBoxKhamBenh.isSelected();
-        boolean spa = checkBoxSpa.isSelected();
-        boolean trongGiữ = checkBoxTrongGiu.isSelected();
+        Pet pet = getPet(tenThuCung);
         String ngayKham = datePickerNgayKham.getValue().toString();
         String thoiGian = comboBoxThoiGian.getValue();
+        String[] parts = thoiGian.split(":");
+        int startHour = Integer.parseInt(parts[0]);
+        System.out.println("day :" + ngayKham + "time: " + startHour);
+        DangKyDvController dangKyKhamController = new DangKyDvController();
+        if (dangKyKhamController.dangKyKham(pet, ngayKham, startHour) ) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("");
+            alert.setHeaderText("Đăng ký khám thành công");
+            alert.setContentText("Đăng ký cho " + pet.getName() + " thành công vào ngày " + ngayKham + " lúc " + startHour + " giờ");
+            alert.showAndWait();
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Đăng ký khám thất bại");
+            alert.setHeaderText("Đăng ký khám thất bại");
+            alert.setContentText("Đăng ký khám thất bại");
+            alert.showAndWait();
+        }
 
-        // Thực hiện các thao tác lưu đăng ký khám với các thông tin đã lấy được
-        System.out.println("Đăng ký khám");
-        System.out.println("Tên thú cưng: " + tenThuCung);
-        System.out.println("Dịch vụ:");
-        if (khamBenh) {
-            System.out.println("- Khám bệnh");
-        }
-        if (spa) {
-            System.out.println("- Spa");
-        }
-        if (trongGiữ) {
-            System.out.println("- Trông giữ");
-        }
-        System.out.println("Ngày khám: " + ngayKham);
-        System.out.println("Thời gian: " + thoiGian);
     }
+
+
+//    @FXML
+//    private CheckBox checkBoxKhamBenh;
+//    @FXML
+//    private CheckBox checkBoxSpa;
+//    @FXML
+//    private CheckBox checkBoxTrongGiu;
 }
