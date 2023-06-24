@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="update database">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dangkydichvu/DangKyTrongGiuScreenController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dangkydichvu/DangKyVSScreenController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dangkydichvu/dangKyVSScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangnhap/DangKyUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dangnhap/DangKyUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangnhap/DangnhapUiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dangnhap/DangnhapUiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menu/DangKyTrongGiuScreenController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menu/UserUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/UserUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menu/dangKyTrongGiuScreen.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menu/dangKyVsScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dangkydichvu/dangKyTrongGiuScreen.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="update screen trong giu, dich vu" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +19,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
@@ -181,7 +171,7 @@
       <workItem from="1687511090907" duration="26000" />
       <workItem from="1687594990962" duration="2221000" />
       <workItem from="1687597252622" duration="786000" />
-      <workItem from="1687598050977" duration="2433000" />
+      <workItem from="1687598050977" duration="2784000" />
     </task>
     <task id="LOCAL-00001" summary="add readme">
       <created>1686663107815</created>
@@ -288,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687415000161</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="update screen trong giu, dich vu">
+      <created>1687600690567</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1687600690567</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -329,7 +326,8 @@
     <MESSAGE value="fix view_pet bug" />
     <MESSAGE value="fix TRung's bug" />
     <MESSAGE value="update database" />
-    <option name="LAST_COMMIT_MESSAGE" value="update database" />
+    <MESSAGE value="update screen trong giu, dich vu" />
+    <option name="LAST_COMMIT_MESSAGE" value="update screen trong giu, dich vu" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
