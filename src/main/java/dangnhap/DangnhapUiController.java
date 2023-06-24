@@ -1,9 +1,6 @@
 package dangnhap;
 
 
-// DangnhapController.java is a controller for Dangnhap.fxml (see src\main\resources\dangnhap\Dangnhap.fxml)
-// It is used by DangnhapApplication.java (see src\main\java\dangnhap\DangnhapApplication.java)
-
 import entity.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import menu.AdminUIController;
 import menu.UserUIController;
 
 import java.io.IOException;
@@ -23,8 +21,7 @@ import java.sql.SQLException;
 
 public class DangnhapUiController {
 
-    // Get data that user input and check if it is valid in dataset json file (src/main/java/data/user.json)
-    // If valid, return true, else return false
+
     @FXML
     private TextField usernameTextField;
     @FXML
@@ -32,13 +29,6 @@ public class DangnhapUiController {
 
     // catch event for login button
     public void loginButtonClicked(ActionEvent e) throws SQLException, ClassNotFoundException, IOException {
-
-        // get data from user input
-
-//        String[] loginInfor = new String[2];
-//        loginInfor[0] = usernameTextField.getText();
-//        loginInfor[1] = passwordTextField.getText();
-//        return loginInfor ;
 
         String username = usernameTextField.getText();
         String password = passwordTextField.getText();
@@ -65,10 +55,11 @@ public class DangnhapUiController {
             // open a new screen in admin.fxml
              Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             URL url = Paths.get("./src/main/java/menu/admin.fxml").toUri().toURL();
-            Parent adminViewParent = FXMLLoader.load(url);
+            FXMLLoader loader = new FXMLLoader();
+            Parent adminViewParent = loader.load(url.openStream());
             Scene scene = new Scene(adminViewParent);
-            UserUIController userUIController = (UserUIController) adminViewParent.getOnScroll();
-            userUIController.setUser(u);
+            AdminUIController adminUIController= loader.getController();
+            adminUIController.setUser(u);
             stage.setScene(scene);
         }
         else if (u.getRole() == 0) {
@@ -88,7 +79,6 @@ public class DangnhapUiController {
         else {
             System.out.println("Login failed");
         }
-        // end copilot write this
     }
 
     // catch event for register button
@@ -98,9 +88,6 @@ public class DangnhapUiController {
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         URL url = Paths.get("./src/main/java/dangnhap/dangky.fxml").toUri().toURL();
         Parent registerViewParent = FXMLLoader.load(url);
-//        FXMLLoader loader = new FXMLLoader();
-//        loader.setLocation(getClass().getResource("/dangnhap/dangky.fxml"));
-//        Parent registerViewParent = loader.load();
         Scene scene = new Scene(registerViewParent);
         stage.setScene(scene);
     }

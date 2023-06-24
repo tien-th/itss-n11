@@ -38,3 +38,17 @@ PRIMARY KEY (loai_dv, day, time_slot)
 
 ALTER TABLE lichkham
 RENAME COLUMN time TO time_slot;
+
+6-22-23
+
+drop table dvtrong_giu ;
+create table lodging (
+lodging_id int primary key,
+status int
+);
+
+create table set_lodging (
+lodging_id int references lodging(lodging_id),
+start_time timestamp,
+end_time timestamp
+);
