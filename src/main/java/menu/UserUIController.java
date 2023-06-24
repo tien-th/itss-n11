@@ -103,4 +103,7 @@ public class UserUIController {
         // TODO -- Tuan : thiet ke man hinh dang ky vs trong file dangKyVsScreen.fxml
     }
 
+    public void signOut(ActionEvent event) {
+        // TODO
+    }
 }

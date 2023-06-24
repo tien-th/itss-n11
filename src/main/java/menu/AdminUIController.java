@@ -16,6 +16,9 @@ public class AdminUIController {
         nameLabel.setText(user.getName()); // TODO : refactor
     }
 
+    public void signOut(ActionEvent event) {
+        // TODO
+    }
     public void viewUserUI(ActionEvent actionEvent) {
         // TODO
     }

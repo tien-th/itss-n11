@@ -13,11 +13,7 @@ import view_pet.*;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class DangKyVSScreenController implements Initializable {
-    User user = null;
-    public void setUser(User user) {
-        this.user = user;
-    }
+public class DangKyVSScreenController extends UserFuncBase implements Initializable {
     @FXML
     private Label petNameLabel = new Label();
     @FXML

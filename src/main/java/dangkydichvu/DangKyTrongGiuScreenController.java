@@ -14,11 +14,7 @@ import view_pet.*;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class DangKyTrongGiuScreenController implements Initializable {
-    User user = null;
-    public void setUser(User user) {
-        this.user = user;
-    }
+public class DangKyTrongGiuScreenController extends UserFuncBase implements Initializable {
     @FXML
     private Label petNameLabel = new Label();
     @FXML
@@ -64,20 +60,10 @@ public class DangKyTrongGiuScreenController implements Initializable {
     private ComboBox<String> comboBoxThoiGian;
 
 
-    //    @FXML
-//    private void initialize() {
-//        initializeChoiceBox(user);
-//        initializeComboBox();
-//        initializeButtons();
-//    }
+
     private void initializeComboBox() {
         comboBoxThoiGian.getItems().addAll("1 Ngày", "2 Ngày", "3 Ngày", "4 Ngày", "2:00 PM");
     }
-
-//    private void initializeButtons() {
-//        buttonLuu.setOnAction(event -> handleLuuButton());
-//        buttonThoat.setOnAction(event -> handleThoatButton());
-//    }
 
     private void handleLuuButton() {
         // Xử lý lưu đăng ký khám tại đây
@@ -92,11 +78,5 @@ public class DangKyTrongGiuScreenController implements Initializable {
         System.out.println("Ngày khám: " + ngayKham);
         System.out.println("Thời gian: " + thoiGian);
     }
-
-    private void handleThoatButton() {
-        // Thực hiện các thao tác khi người dùng thoát khỏi giao diện đăng ký khám
-        System.out.println("Thoát");
-    }
-
 
 }

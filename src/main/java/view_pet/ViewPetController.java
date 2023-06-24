@@ -32,6 +32,7 @@ public class ViewPetController {
 //        else if (user.getRole() == 2) { // doctor
 //            // de sau nhe
 //        }
+
         ResultSet rs = ps.executeQuery();
         while (rs.next()){
             int id = rs.getInt("pet_id"); // id

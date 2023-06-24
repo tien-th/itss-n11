@@ -1,7 +1,7 @@
 package view_pet;
 
+import dangkydichvu.UserFuncBase;
 import entity.Pet;
-import entity.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -12,12 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ViewPetUIController implements Initializable {
-    User user = null ;
-    public void setUser(User user) {
-        System.out.println("set user " + user.getName() + " " + user.getRole());// fix bug
-        this.user = user;
-    }
+public class ViewPetUIController extends UserFuncBase implements Initializable {
 
     @FXML
     private TableView<Pet> petTableView;
@@ -37,7 +32,6 @@ public class ViewPetUIController implements Initializable {
     private TableColumn<Pet, String> genderColumn;
 
     private ObservableList<Pet> petList; // list of pets
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -62,7 +56,8 @@ public class ViewPetUIController implements Initializable {
         ageColumn.setCellValueFactory(new PropertyValueFactory<Pet, Integer>("age"));
         genderColumn.setCellValueFactory(new PropertyValueFactory<Pet, String>("gender"));
         petTableView.setItems(petList);
-
     }
+
+
 
 }
