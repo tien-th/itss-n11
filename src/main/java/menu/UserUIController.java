@@ -3,6 +3,7 @@ package menu;
 import dangkydichvu.DangKyKhamScreenController;
 import dangkydichvu.DangKyTrongGiuScreenController;
 import dangkydichvu.DangKyVSScreenController;
+import dangnhap.DangnhapUiController;
 import entity.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,6 +16,7 @@ import javafx.stage.Stage;
 import view_pet.ViewPetUIController;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Paths;
 public class UserUIController {
@@ -103,7 +105,14 @@ public class UserUIController {
         // TODO -- Tuan : thiet ke man hinh dang ky vs trong file dangKyVsScreen.fxml
     }
 
-    public void signOut(ActionEvent event) {
-        // TODO
+    public void signOut(ActionEvent event) throws IOException {
+        // TODO --- passed
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        URL url = Paths.get("./src/main/java/dangnhap/dangnhap.fxml").toUri().toURL();
+        FXMLLoader loader = new FXMLLoader();
+        Parent userViewParent = loader.load(url.openStream());
+        DangnhapUiController dangnhapUiController = loader.getController();
+        Scene scene = new Scene(userViewParent);
+        stage.setScene(scene);
     }
 }

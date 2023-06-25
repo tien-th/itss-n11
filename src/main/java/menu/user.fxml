@@ -13,5 +13,6 @@
         <Button fx:id="btn4" layoutX="71.0" layoutY="160.0" mnemonicParsing="false" onAction="#dangKyTrongGiu" text="Đăng ký trông giữ" />
 <!--        // add a text label to show the user's name-->
         <Label fx:id="nameLabel" layoutX="603.0" layoutY="29.0" text="name" />
+      <Button fx:id="btn5" layoutX="71.0" layoutY="376.0" mnemonicParsing="false" onAction="#signOut" text="Signout" />
     </children>
 </AnchorPane>

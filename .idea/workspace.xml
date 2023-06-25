@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="update screen trong giu, dich vu" />
+    <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="update screen trong giu, dich vu">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dangkydichvu/dangKyTrongGiuScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dangkydichvu/dangKyTrongGiuScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menu/AdminUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/AdminUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menu/UserUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/UserUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menu/admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/admin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menu/user.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/user.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -171,7 +178,8 @@
       <workItem from="1687511090907" duration="26000" />
       <workItem from="1687594990962" duration="2221000" />
       <workItem from="1687597252622" duration="786000" />
-      <workItem from="1687598050977" duration="2784000" />
+      <workItem from="1687598050977" duration="2901000" />
+      <workItem from="1687681706588" duration="3043000" />
     </task>
     <task id="LOCAL-00001" summary="add readme">
       <created>1686663107815</created>
@@ -285,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687600690567</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="update screen trong giu, dich vu">
+      <created>1687600908205</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1687600908205</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

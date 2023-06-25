@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="507.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dangkydichvu.DangKyTrongGiuScreenController">
+<AnchorPane prefHeight="507.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dangkydichvu.DangKyTrongGiuScreenController">
     <children>
         <Label layoutX="26.0" layoutY="74.0" text="Tên thú cưng">
             <font>
@@ -34,7 +33,7 @@
                 <Font size="16.0" />
             </font>
         </Button>
-        <Button fx:id="buttonThoat" layoutX="309.0" layoutY="403.0" mnemonicParsing="false" onAction="#goBack" text="Thoát">
+        <Button fx:id="buttonThoat" layoutX="309.0" layoutY="403.0" mnemonicParsing="false" text="Thoát">
             <font>
                 <Font size="16.0" />
             </font>
