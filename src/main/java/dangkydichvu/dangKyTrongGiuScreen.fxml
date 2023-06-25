@@ -5,6 +5,8 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
 <AnchorPane prefHeight="507.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dangkydichvu.DangKyTrongGiuScreenController">
     <children>
         <Label layoutX="26.0" layoutY="74.0" text="Tên thú cưng">
@@ -25,15 +27,30 @@
             </font>
         </Label>
         <DatePicker fx:id="datePickerNgayKham" layoutX="34.0" layoutY="265.0" />
-        <ComboBox fx:id="comboBoxThoiGian" layoutX="352.0" layoutY="265.0" prefWidth="150.0" />
+        <ChoiceBox fx:id="comboBoxThoiGian" layoutX="352.0" layoutY="265.0"  prefWidth="150.0">
+            <!--         onAction="getTimeSlot"-->
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="8:00" />
+                    <String fx:value="9:00" />
+                    <String fx:value="10:00" />
+                    <String fx:value="11:00" />
+                    <String fx:value="13:00" />
+                    <String fx:value="14:00" />
+                    <String fx:value="15:00" />
+                    <String fx:value="16:00" />
+                    <String fx:value="17:00" />
+                </FXCollections>
+            </items>
+        </ChoiceBox>
         <Label layoutX="20.0" layoutY="240.0" prefHeight="1.0" prefWidth="63.0" text="Ngày khám" />
         <Label layoutX="337.0" layoutY="224.0" prefHeight="18.0" prefWidth="62.0" text="Thời gian" />
-        <Button fx:id="buttonLuu" layoutX="159.0" layoutY="403.0" mnemonicParsing="false" text="Lưu">
+        <Button fx:id="buttonLuu" layoutX="159.0" layoutY="403.0" mnemonicParsing="false" onAction="#handleLuuButton" text="Lưu">
             <font>
                 <Font size="16.0" />
             </font>
         </Button>
-        <Button fx:id="buttonThoat" layoutX="309.0" layoutY="403.0" mnemonicParsing="false" text="Thoát">
+        <Button fx:id="buttonThoat" layoutX="309.0" layoutY="403.0" mnemonicParsing="false" onAction="#goBack" text="Thoát">
             <font>
                 <Font size="16.0" />
             </font>

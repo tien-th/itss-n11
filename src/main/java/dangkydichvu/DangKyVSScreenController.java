@@ -13,45 +13,7 @@ import view_pet.*;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class DangKyVSScreenController extends UserFuncBase implements Initializable {
-    @FXML
-    private Label petNameLabel = new Label();
-    @FXML
-    private ChoiceBox<String> choiceBoxTenThuCung;
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle)  {
-        if (user == null) {
-            System.out.println("user is null in initializeChoiceBox");
-            return ; // fix bug
-        }
-        else {
-            System.out.println("user is not null in initializeDangKyVsScreen");
-        }
-        ViewPetController viewPetController = new ViewPetController();
-        try {
-            viewPetController.getPetList(user);
-            ArrayList<Pet> petList = viewPetController.petList;
-            ArrayList<String> petNames = extractPetNames(petList);
-            choiceBoxTenThuCung.getItems().addAll(petNames);
-            choiceBoxTenThuCung.setOnAction(this::getPetNameLabel);
-
-        } catch (SQLException | ClassNotFoundException e){
-            e.printStackTrace();
-        }
-    }
-
-    private void getPetNameLabel(ActionEvent actionEvent) {
-        String petName = choiceBoxTenThuCung.getValue();
-        petNameLabel.setText(petName);
-    }
-    private ArrayList<String> extractPetNames(ArrayList<Pet> petList){
-        ArrayList<String> petNames = new ArrayList<>();
-        for(Pet pet: petList){
-            petNames.add(pet.getName());
-        }
-        return petNames;
-    }
-
+public class DangKyVSScreenController extends UserFuncBase  {
 
     @FXML
     private CheckBox checkBoxTiaLong;
@@ -59,29 +21,12 @@ public class DangKyVSScreenController extends UserFuncBase implements Initializa
     private CheckBox checkBoxLamMong;
     @FXML
     private CheckBox checkBoxTam;
-    @FXML
-    private DatePicker datePickerNgayKham;
-    @FXML
-    private ComboBox<String> comboBoxThoiGian;
 
-
-    //    @FXML
-//    private void initialize() {
-//        initializeChoiceBox(user);
-//        initializeComboBox();
-//        initializeButtons();
-//    }
     private void initializeComboBox() {
         comboBoxThoiGian.getItems().addAll("9:00 AM", "10:00 AM", "11:00 AM", "1:00 PM", "2:00 PM");
     }
 
-//    private void initializeButtons() {
-//        buttonLuu.setOnAction(event -> handleLuuButton());
-//        buttonThoat.setOnAction(event -> handleThoatButton());
-//    }
-
     private void handleLuuButton() {
-        // Xử lý lưu đăng ký khám tại đây
         String tenThuCung = choiceBoxTenThuCung.getValue();
         boolean khamBenh = checkBoxTiaLong.isSelected();
         boolean spa = checkBoxLamMong.isSelected();
@@ -110,6 +55,4 @@ public class DangKyVSScreenController extends UserFuncBase implements Initializa
         // Thực hiện các thao tác khi người dùng thoát khỏi giao diện đăng ký khám
         System.out.println("Thoát");
     }
-
-
 }

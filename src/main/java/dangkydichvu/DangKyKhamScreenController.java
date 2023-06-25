@@ -14,61 +14,7 @@ import view_pet.*;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class DangKyKhamScreenController extends UserFuncBase implements Initializable {
-    @FXML
-    private Label petNameLabel = new Label();
-    @FXML
-    private ChoiceBox<String> choiceBoxTenThuCung;
-    private void getPetNameLabel(ActionEvent actionEvent) {
-        String petName = choiceBoxTenThuCung.getValue();
-        petNameLabel.setText(petName);
-    }
-    private ArrayList<String> extractPetNames(ArrayList<Pet> petList){
-        ArrayList<String> petNames = new ArrayList<>();
-        for(Pet pet: petList){
-            petNames.add(pet.getName());
-        }
-        return petNames;
-    }
-
-    @FXML
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle)  {
-        if (user == null) {
-            System.out.println("user is null in initializeChoiceBox");
-            return ; // fix bug
-        }
-        else {
-            System.out.println("user is not null in initializeDangKyKhamScreen");
-        }
-        ViewPetController viewPetController = new ViewPetController();
-        try {
-            viewPetController.getPetList(user);
-            petList = viewPetController.petList;
-            ArrayList<String> petNames = extractPetNames(petList);
-            choiceBoxTenThuCung.getItems().addAll(petNames);
-            choiceBoxTenThuCung.setOnAction(this::getPetNameLabel);
-
-        } catch (SQLException | ClassNotFoundException e){
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
-    private DatePicker datePickerNgayKham;
-    @FXML
-    private ChoiceBox<String> comboBoxThoiGian;
-
-    ArrayList<Pet> petList ;
-
-    public Pet getPet(String petName){
-        for(Pet pet: petList){
-            if(pet.getName().equals(petName)){
-                return pet;
-            }
-        }
-        return null;
-    }
+public class DangKyKhamScreenController extends UserFuncBase {
 
     public void handleLuuButton(ActionEvent event) throws SQLException, ClassNotFoundException {
         // Xử lý lưu đăng ký khám tại đây
@@ -89,9 +35,9 @@ public class DangKyKhamScreenController extends UserFuncBase implements Initiali
         }
         else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Đăng ký khám thất bại");
+            alert.setTitle("");
             alert.setHeaderText("Đăng ký khám thất bại");
-            alert.setContentText("Đăng ký khám thất bại");
+            alert.setContentText("Khoảng thời gian đã hết chỗ");
             alert.showAndWait();
         }
 
@@ -104,4 +50,11 @@ public class DangKyKhamScreenController extends UserFuncBase implements Initiali
 //    private CheckBox checkBoxSpa;
 //    @FXML
 //    private CheckBox checkBoxTrongGiu;
+    //    @FXML
+//    private Label petNameLabel = new Label();
+//
+//    private void getPetNameLabel(ActionEvent actionEvent) {
+//        String petName = choiceBoxTenThuCung.getValue();
+//        petNameLabel.setText(petName);
+//    }
 }

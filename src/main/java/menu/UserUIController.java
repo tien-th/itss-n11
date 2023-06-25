@@ -75,18 +75,6 @@ public class UserUIController {
         dangKyKhamScreenController.setUser(user);
         dangKyKhamScreenController.initialize(url, null);
         stage.setScene(scene);
-
-
-
-
-
-
-//        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-//        URL url = Paths.get("./src/main/java/menu/dangKyKhamScreen.fxml").toUri().toURL();
-//        Parent adminViewParent = FXMLLoader.load(url);
-//        Scene scene = new Scene(adminViewParent);
-//        stage.setScene(scene);
-        // TODO -- Trung : thiet ke man hinh dang ky kham trong file dangKyKhamScreen.fxml
     }
 
     public void dangKyVs(ActionEvent e) throws IOException {

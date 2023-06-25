@@ -56,3 +56,6 @@ end_time timestamp
 6-25-23
 -- change ( day, time_slot) to primary key
 ALTER TABLE lichkham ADD CONSTRAINT pk_lichkham PRIMARY KEY (day, time_slot);
+
+6-25-23 l2
+ALTER TABLE set_lodging ADD COLUMN pet_id INTEGER REFERENCES pet(pet_id);
