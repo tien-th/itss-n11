@@ -15,6 +15,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.collections.FXCollections?>
 <AnchorPane prefHeight="507.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dangkydichvu.DangKyVSScreenController">
    <children>
       <Label layoutX="26.0" layoutY="74.0" text="Tên thú cưng">
@@ -28,37 +29,61 @@
          </font>
       </Label>
       <Line endX="143.0" endY="-1.1444091796875E-5" layoutX="197.0" layoutY="59.0" startX="-100.0" />
-      <ChoiceBox fx:id="choiceBoxTenThuCung" layoutX="143.0" layoutY="73.0" prefHeight="26.0" prefWidth="133.0" />
+      <ChoiceBox fx:id="choiceBoxTenThuCung" layoutX="143.0" layoutY="73.0" prefHeight="26.0" prefWidth="133.0" >
+
+      </ChoiceBox>
       <Label layoutX="26.0" layoutY="126.0" prefHeight="26.0" prefWidth="69.0" text="Dịch vụ">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <CheckBox fx:id="checkBoxTiaLong" layoutX="143.0" layoutY="130.0" mnemonicParsing="false" text="Tỉa lông">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </CheckBox>
-      <CheckBox fx:id="checkBoxTam" layoutX="143.0" layoutY="158.0" mnemonicParsing="false" text="Tắm">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </CheckBox>
-      <CheckBox fx:id="checkBoxLamMong" layoutX="277.0" layoutY="130.0" mnemonicParsing="false" text="Làm móng">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </CheckBox>
+
+
+         <RadioButton fx:id="buttonTiaLong" layoutX="143.0" layoutY="130.0" mnemonicParsing="false" onAction="#getDichVu" text="Tỉa lông">
+            <toggleGroup>
+               <ToggleGroup fx:id="dichvu" />
+            </toggleGroup>
+            <font>
+               <Font size="14.0" />
+            </font>
+         </RadioButton>
+
+         <RadioButton fx:id="buttonTam" layoutX="143.0" layoutY="158.0" mnemonicParsing="false" text="Tắm" onAction="#getDichVu" toggleGroup="$dichvu">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </RadioButton>
+
+         <RadioButton fx:id="buttonLamMong" layoutX="277.0" layoutY="130.0" mnemonicParsing="false" text="Làm móng" onAction="#getDichVu" toggleGroup="$dichvu" >
+            <font>
+               <Font size="14.0" />
+            </font>
+         </RadioButton>
+
       <Label layoutX="17.0" layoutY="188.0" prefHeight="18.0" prefWidth="86.0" text="Đặt lịch">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
       <DatePicker fx:id="datePickerNgayKham" layoutX="34.0" layoutY="265.0" />
-      <ChoiceBox fx:id="comboBoxThoiGian" layoutX="352.0" layoutY="265.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="comboBoxThoiGian" layoutX="352.0" layoutY="265.0" prefWidth="150.0" >
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="8:00" />
+               <String fx:value="9:00" />
+               <String fx:value="10:00" />
+               <String fx:value="11:00" />
+               <String fx:value="13:00" />
+               <String fx:value="14:00" />
+               <String fx:value="15:00" />
+               <String fx:value="16:00" />
+               <String fx:value="17:00" />
+            </FXCollections>
+         </items>
+        </ChoiceBox>
       <Label layoutX="30.0" layoutY="244.0" text="Ngày khám" />
       <Label layoutX="357.0" layoutY="244.0" text="Thời gian" />
-      <Button fx:id="buttonLuu" layoutX="159.0" layoutY="403.0" mnemonicParsing="false" text="Lưu">
+      <Button fx:id="buttonLuu" layoutX="159.0" layoutY="403.0" mnemonicParsing="false" onAction="#handleLuuButton" text="Lưu">
          <font>
             <Font size="16.0" />
          </font>

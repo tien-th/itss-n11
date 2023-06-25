@@ -20,7 +20,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Paths;
 public class UserUIController {
-
     // Xử lý sự kiện
     @FXML
     Label nameLabel = new Label() ;

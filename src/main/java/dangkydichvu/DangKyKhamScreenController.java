@@ -42,19 +42,4 @@ public class DangKyKhamScreenController extends UserFuncBase {
         }
 
     }
-
-
-//    @FXML
-//    private CheckBox checkBoxKhamBenh;
-//    @FXML
-//    private CheckBox checkBoxSpa;
-//    @FXML
-//    private CheckBox checkBoxTrongGiu;
-    //    @FXML
-//    private Label petNameLabel = new Label();
-//
-//    private void getPetNameLabel(ActionEvent actionEvent) {
-//        String petName = choiceBoxTenThuCung.getValue();
-//        petNameLabel.setText(petName);
-//    }
 }

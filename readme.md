@@ -59,3 +59,5 @@ ALTER TABLE lichkham ADD CONSTRAINT pk_lichkham PRIMARY KEY (day, time_slot);
 
 6-25-23 l2
 ALTER TABLE set_lodging ADD COLUMN pet_id INTEGER REFERENCES pet(pet_id);
+6-26-23
+ALTER TABLE dichvuvs ADD COLUMN pet_id INTEGER REFERENCES pet(pet_id);
