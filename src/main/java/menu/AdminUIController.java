@@ -10,7 +10,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Paths;
@@ -37,35 +36,26 @@ public class AdminUIController {
 
     public void viewUserUI(ActionEvent actionEvent) {
         // TODO
-
-
     }
-
     public void viewPetUI(ActionEvent actionEvent) throws IOException {
         UserUIController userUIController = new UserUIController();
         // TODO : refactor, inherritance or interface
         userUIController.setUser(user);
         userUIController.viewPet(actionEvent);
     }
-
     public void viewManageAppointmentsUI(ActionEvent actionEvent) {
         // TODO
     }
-
     public void viewManageCleaningUI(ActionEvent actionEvent) {
 // TODO
     }
-
     public void viewManageMedicineUI(ActionEvent actionEvent) {
         // TODO
     }
     public void viewManageCustodialUI(ActionEvent actionEvent) {
         // TODO
     }
-
     public void viewStatisticalUI(ActionEvent actionEvent) {
         // TODO
     }
-
-
 }

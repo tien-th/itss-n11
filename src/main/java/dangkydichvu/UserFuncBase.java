@@ -13,6 +13,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
+import menu.AdminUIController;
 import menu.UserUIController;
 import view_pet.ViewPetController;
 
@@ -22,6 +23,7 @@ import java.net.URL;
 import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
 import java.util.ResourceBundle;
 
 public class UserFuncBase implements Initializable {
@@ -81,13 +83,25 @@ public class UserFuncBase implements Initializable {
 
     public void goBack(ActionEvent e ) throws IOException {
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-        URL url = Paths.get("./src/main/java/menu/user.fxml").toUri().toURL();
+        URL url = null ;
         FXMLLoader loader = new FXMLLoader();
-        Parent userViewParent = loader.load(url.openStream());
-        Scene scene = new Scene(userViewParent);
-        UserUIController userUIController =  loader.getController();
-        userUIController.setUser(user);
-        stage.setScene(scene);
+//        Objects userUIController = null;
+        if (user.getRole() == 1) {
+            url = Paths.get("./src/main/java/menu/admin.fxml").toUri().toURL();
+            Parent userViewParent = loader.load(url.openStream());
+            Scene scene = new Scene(userViewParent);
+            AdminUIController userUIController =  loader.getController();
+            userUIController.setUser(user);
+            stage.setScene(scene);
+        }
+        else {
+            url = Paths.get("./src/main/java/menu/user.fxml").toUri().toURL();
+            Parent userViewParent = loader.load(url.openStream());
+            Scene scene = new Scene(userViewParent);
+            UserUIController userUIController =  loader.getController();
+            userUIController.setUser(user);
+            stage.setScene(scene);
+        }
     }
 
 }

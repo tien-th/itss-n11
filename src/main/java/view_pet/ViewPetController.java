@@ -4,7 +4,6 @@ import connection.DbConnection;
 import entity.Pet;
 import entity.User;
 
-import java.lang.reflect.Array;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -29,9 +28,6 @@ public class ViewPetController {
             ps = DbConnection.openConnection().prepareStatement(sql);
             ps.setString(1, user.getUsername());
         }
-//        else if (user.getRole() == 2) { // doctor
-//            // de sau nhe
-//        }
 
         ResultSet rs = ps.executeQuery();
         while (rs.next()){
@@ -47,4 +43,23 @@ public class ViewPetController {
         }
     }
 
+    public boolean updatePet(Pet pet) throws SQLException, ClassNotFoundException {
+        String sql = "select * from pet where pet_id = " + pet.getId();
+        PreparedStatement ps = DbConnection.openConnection().prepareStatement(sql);
+        ResultSet rs = ps.executeQuery();
+        if (rs.next() ) {
+            // update pet in database
+            sql = "update pet set category = ?, age = ?, color = ?, name= ? where pet_id = ?" ;
+            ps = DbConnection.openConnection().prepareStatement(sql);
+            ps.setString(1, pet.getCategory());
+            ps.setInt(2, pet.getAge());
+            ps.setString(3, pet.getColor());
+            ps.setString(4, pet.getName());
+            ps.setInt(5, pet.getId());
+            ps.executeUpdate();
+            return true;
+        }
+
+        return false ;
+    }
 }
