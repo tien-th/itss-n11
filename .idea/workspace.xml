@@ -5,12 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="update screen trong giu, dich vu">
+      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/AdminFuncBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/AdminUIController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/CageMIUIController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/MedicalMUIController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/PetMUIController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/ServicesMUIController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/UserMUIController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/adminUI.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/petMUI.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/servicesMUI.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/userMUI.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangkydichvu/dangKyTrongGiuScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dangkydichvu/dangKyTrongGiuScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menu/AdminUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/AdminUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menu/UserUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/UserUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menu/admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/admin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menu/user.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/user.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dangkydichvu/DangKyKhamScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dangkydichvu/DangKyKhamScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dangkydichvu/UserFuncBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dangkydichvu/UserFuncBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dangnhap/DangnhapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dangnhap/DangnhapController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view_pet/viewPetScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view_pet/viewPetScreen.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -179,7 +189,13 @@
       <workItem from="1687594990962" duration="2221000" />
       <workItem from="1687597252622" duration="786000" />
       <workItem from="1687598050977" duration="2901000" />
-      <workItem from="1687681706588" duration="3043000" />
+      <workItem from="1687681706588" duration="4547000" />
+      <workItem from="1687749663905" duration="8680000" />
+      <workItem from="1687788137313" duration="600000" />
+      <workItem from="1687831966257" duration="322000" />
+      <workItem from="1687938233502" duration="1427000" />
+      <workItem from="1687940650599" duration="7772000" />
+      <workItem from="1687951472038" duration="694000" />
     </task>
     <task id="LOCAL-00001" summary="add readme">
       <created>1686663107815</created>
@@ -300,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687600908205</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="update screen trong giu, dich vu">
+      <created>1687685826317</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1687685826318</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -2,8 +2,11 @@ package dangnhap;
 
 import connection.DbConnection;
 import entity.User;
+import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
+import java.io.IOException;
 import java.sql.*;
 
 public class DangnhapController {
@@ -88,9 +91,18 @@ public class DangnhapController {
             stmt.executeUpdate();
             // TODO: Prompt user to login successfully
             System.out.println("Đăng ký thành công");
+            showAlert("Success.");
         }catch (SQLException e){
             // TODO: Prompt user to login failed
             e.printStackTrace();
+            showAlert("Failed!");
         }
+    }
+    public void showAlert(String content) {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle(null);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
     }
 }
