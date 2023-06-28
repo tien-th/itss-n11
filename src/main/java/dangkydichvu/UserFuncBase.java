@@ -11,9 +11,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import menu.UserUIController;
 import view_pet.ViewPetController;
+
 
 import java.io.IOException;
 import java.net.URL;
@@ -87,4 +89,5 @@ public class UserFuncBase implements Initializable {
         userUIController.setUser(user);
         stage.setScene(scene);
     }
+
 }
