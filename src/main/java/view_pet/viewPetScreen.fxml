@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -22,5 +19,6 @@
 <!--       button to go back -->
         <Button fx:id="" layoutX="45.0" layoutY="99.0" mnemonicParsing="false" onAction="#goBack" prefHeight="31.0" prefWidth="74.0" text="Back" />
        <Button fx:id="updateButton" layoutX="223.0" layoutY="99.0" mnemonicParsing="false" onAction="#updatePet" prefHeight="31.0" prefWidth="74.0" text="Update" />
+         <Button fx:id="deleteButton" layoutX="401.0" layoutY="99.0" mnemonicParsing="false" onAction="#deletePet" prefHeight="31.0" prefWidth="74.0" text="Delete" />
    </children>
 </AnchorPane>

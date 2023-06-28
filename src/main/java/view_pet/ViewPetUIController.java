@@ -63,7 +63,32 @@ public class ViewPetUIController extends UserFuncBase implements Initializable {
         petTableView.setItems(petList);
     }
 
+    @FXML
+    private void deletePet( ActionEvent event) {
+        if (user.getRole() == 1 ){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error");
+            alert.setContentText("You are not allowed to delete pet");
+            alert.showAndWait();
+            return ;
+        }
 
+        Pet selectedPet = petTableView.getSelectionModel().getSelectedItem();
+        if (selectedPet != null) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Delete Pet");
+            alert.setHeaderText("Delete Pet");
+            alert.setContentText("Are you sure you want to delete this pet?");
+
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == ButtonType.OK) {
+                ViewPetController viewPetController = new ViewPetController();
+                viewPetController.deletePet(selectedPet);
+                petList.remove(selectedPet);
+            }
+        }
+    }
 
     @FXML
     private void updatePet( ActionEvent event ) {

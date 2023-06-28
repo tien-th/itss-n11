@@ -61,3 +61,19 @@ ALTER TABLE lichkham ADD CONSTRAINT pk_lichkham PRIMARY KEY (day, time_slot);
 ALTER TABLE set_lodging ADD COLUMN pet_id INTEGER REFERENCES pet(pet_id);
 6-26-23
 ALTER TABLE dichvuvs ADD COLUMN pet_id INTEGER REFERENCES pet(pet_id);
+6-28-23
+alter table pet drop constraint pet_username_fkey, add  constraint pet_username_fkey foreign key (username) references public.user(username) ON DELETE CASCADE ON UPDATE CASCADE;
+
+alter table benhan drop constraint benhan_pet_id_fkey, add  constraint benhan_pet_id_fkey foreign key (pet_id) references pet(pet_id) ON DELETE CASCADE ON UPDATE CASCADE;
+
+alter table dichvuvs drop constraint dichvuvs_pet_id_fkey, add  constraint dichvuvs_pet_id_fkey foreign key (pet_id) references pet(pet_id) ON DELETE CASCADE ON UPDATE CASCADE;
+
+alter table donthuoc drop constraint donthuoc_record_id_fkey, add constraint donthuoc_record_id_fkey foreign key (record_id) references benhan(record_id) ON DELETE CASCADE ON UPDATE CASCADE;
+
+alter table donthuoc drop constraint donthuoc_thuoc_id_fkey, add constraint donthuoc_thuoc_id_fkey foreign key (thuoc_id) references thuoc(thuoc_id) ON DELETE CASCADE ON UPDATE CASCADE;
+
+alter table lichkham drop constraint fk_pet_id, add constraint fk_pet_id foreign key (pet_id) references pet(pet_id) ON DELETE CASCADE ON UPDATE CASCADE;
+
+alter table set_lodging drop constraint set_lodging_pet_id_fkey, add constraint set_lodging_pet_id_fkey foreign key (pet_id) references pet(pet_id) ON DELETE CASCADE ON UPDATE CASCADE;
+
+alter table set_lodging drop constraint set_lodging_lodging_id_fkey, add constraint set_lodging_lodging_id_fkey foreign key (lodging_id) references lodging(lodging_id) ON DELETE CASCADE ON UPDATE CASCADE;

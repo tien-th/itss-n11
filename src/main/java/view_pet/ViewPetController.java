@@ -62,4 +62,14 @@ public class ViewPetController {
 
         return false ;
     }
+
+    public void deletePet(Pet selectedPet) {
+        String sql = "delete from pet where pet_id = " + selectedPet.getId();
+        try {
+            PreparedStatement ps = DbConnection.openConnection().prepareStatement(sql);
+            ps.executeUpdate();
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 }
