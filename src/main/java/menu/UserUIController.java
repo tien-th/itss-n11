@@ -42,7 +42,7 @@ public class UserUIController {
         Scene scene = new Scene(adminViewParent);
         viewPetUIController.setUser(user);
         viewPetUIController.initialize(url, null);
-        stage.setScene(scene);// TODO: thiet ke man hinh xem thong tin pet trong file viewPetScreen.fxml
+        stage.setScene(scene);
     }
 
     public void dangKyTrongGiu(ActionEvent e) throws IOException {
@@ -58,7 +58,6 @@ public class UserUIController {
         dangKyTrongGiuScreenController.setUser(user);
         dangKyTrongGiuScreenController.initialize(url, null);
         stage.setScene(scene);
-        // TODO -- Long : thiet ke man hinh dang ky trong giu trong file dangKyTrongGiuScreen.fxml
     }
 
     public void dangKyKham(ActionEvent e) throws IOException {
@@ -89,11 +88,9 @@ public class UserUIController {
         dangKyVSScreenController.setUser(user);
         dangKyVSScreenController.initialize(url, null);
         stage.setScene(scene);
-        // TODO -- Tuan : thiet ke man hinh dang ky vs trong file dangKyVsScreen.fxml
     }
 
     public void signOut(ActionEvent event) throws IOException {
-        // TODO --- passed
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         URL url = Paths.get("./src/main/java/dangnhap/dangnhap.fxml").toUri().toURL();
         FXMLLoader loader = new FXMLLoader();
