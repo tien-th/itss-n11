@@ -9,12 +9,6 @@ public class Pet {
     private int age ;
     private String gender ;
 
-
-
-
-
-
-
     public Pet(int id, String username, String name) {
         this.id = id;
         this.username = username;

@@ -177,10 +177,94 @@ public class ViewPetUIController extends UserFuncBase implements Initializable {
                 }
                 // Update the table view with the modified pet list
                 petTableView.refresh();
-
                 // Display a confirmation message
-
             });
         }
+    }
+
+    public void addPet(ActionEvent event) {
+        // Create a dialog for adding pet information
+        Dialog<Pet> dialog = new Dialog<>();
+        dialog.setTitle("Add Pet Information");
+
+// Set the button types (Apply and Cancel)
+        dialog.getDialogPane().getButtonTypes().addAll(ButtonType.APPLY, ButtonType.CANCEL);
+
+// Create text fields for the updated information
+        TextField nameTextField = new TextField();
+        TextField categoryTextField = new TextField();
+        TextField ageTextField = new TextField();
+        TextField colorTextField = new TextField();
+
+// Create a choice box for the gender
+        ChoiceBox<String> genderChoiceBox = new ChoiceBox<>();
+        genderChoiceBox.getItems().addAll("Male", "Female");
+
+// Create a grid pane and add the input fields
+        GridPane gridPane = new GridPane();
+        gridPane.add(new Label("Name:"), 0, 0);
+        gridPane.add(nameTextField, 1, 0);
+        gridPane.add(new Label("Category:"), 0, 1);
+        gridPane.add(categoryTextField, 1, 1);
+        gridPane.add(new Label("Age:"), 0, 2);
+        gridPane.add(ageTextField, 1, 2);
+        gridPane.add(new Label("Color:"), 0, 3);
+        gridPane.add(colorTextField, 1, 3);
+        gridPane.add(new Label("Gender:"), 0, 4);
+        gridPane.add(genderChoiceBox, 1, 4);
+
+        dialog.getDialogPane().setContent(gridPane);
+
+// Set the result converter to retrieve the updated information
+        dialog.setResultConverter(dialogButton -> {
+            if (dialogButton == ButtonType.APPLY) {
+                return new Pet(
+                        0, user.getUsername(),
+                        nameTextField.getText(),
+                        colorTextField.getText(),
+                        categoryTextField.getText(),
+                        Integer.parseInt(ageTextField.getText()),
+                        genderChoiceBox.getValue().toString()
+                );
+            }
+            return null;
+        });
+
+
+        // Show the dialog and wait for the user's response
+        Optional<Pet> result = dialog.showAndWait();
+        System.out.println(result);
+        result.ifPresent(newInfo -> {
+            String newName = newInfo.getName();
+            String newCategory = newInfo.getCategory();
+            int newAge = newInfo.getAge();
+            String newColor = newInfo.getColor();
+            String newGender = newInfo.getGender();
+
+            // Perform the update operation using the updated information
+            Pet newPet = new Pet( 0, user.getUsername(), newName, newColor,newCategory, newAge, newGender );
+
+//            insert into database
+
+
+//            System.out.println("add pet " + newPet.getName() + " " + newPet.getCategory() + " " + newPet.getAge() + " " + newPet.getColor());
+
+            // Update database
+            ViewPetController viewPetController = new ViewPetController();
+            int newId = viewPetController.addPet(newPet);
+            if (newId == -1){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Add Failed");
+                alert.setHeaderText(null);
+                alert.setContentText("Pet information has not been added!");
+                alert.showAndWait();
+
+                return;
+            }
+            newPet.setId(newId);
+            petList.add(newPet);
+            petTableView.setItems(petList); // Update the table view with the modified pet list
+            petTableView.refresh();
+        });
     }
 }

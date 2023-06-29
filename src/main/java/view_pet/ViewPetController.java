@@ -72,4 +72,24 @@ public class ViewPetController {
             throwables.printStackTrace();
         }
     }
+
+    public int addPet(Pet newPet) {
+        // query database to get the last pet_id
+        String sql = "select max(pet_id) from pet";
+        try {
+            PreparedStatement ps = DbConnection.openConnection().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                int id = rs.getInt(1) + 1;
+                sql = "INSERT INTO pet VALUES (" + id + ", '" + newPet.getUsername() + "', '" + newPet.getCategory() + "', " + newPet.getAge() + ", '" + newPet.getGender() + "', '" + newPet.getColor() + "', '" + newPet.getName() + "')";
+                ps = DbConnection.openConnection().prepareStatement(sql);
+                System.out.println(sql);
+                ps.executeUpdate();
+                return id;
+            }
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
+        return -1 ;
+    }
 }
