@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="827.0" prefWidth="1026.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view_pet.ViewPetUIController">
    <children>
-      <TableView fx:id="petTableView" layoutX="82.0" layoutY="167.0" prefHeight="396.0" prefWidth="655.0">
+      <TableView fx:id="petTableView" layoutX="82.0" layoutY="167.0" prefHeight="496.0" prefWidth="821.0">
         <columns>
           <TableColumn fx:id="idColumn" prefWidth="62.0" text="ID" />
-          <TableColumn fx:id="nameColumn" prefWidth="178.0" text="name" />
-            <TableColumn fx:id="usernameColumn" prefWidth="78.0" text="username" />
-            <TableColumn fx:id="categoryColumn" prefWidth="155.0" text="category" />
-            <TableColumn fx:id="ageColumn" prefWidth="50.0" text="age" />
-            <TableColumn fx:id="colorColumn" prefWidth="53.0" text="color" />
-            <TableColumn fx:id="genderColumn" prefWidth="63.0" text="gender" />
+          <TableColumn fx:id="nameColumn" prefWidth="172.0" text="name" />
+            <TableColumn fx:id="usernameColumn" prefWidth="99.0" text="username" />
+            <TableColumn fx:id="categoryColumn" prefWidth="140.0" text="category" />
+            <TableColumn fx:id="ageColumn" prefWidth="61.0" text="age" />
+            <TableColumn fx:id="colorColumn" prefWidth="58.0" text="color" />
+            <TableColumn fx:id="genderColumn" prefWidth="100.0" text="gender" />
         </columns>
       </TableView>
 <!--       button to go back -->
-        <Button fx:id="" layoutX="108.0" layoutY="100.0" mnemonicParsing="false" onAction="#goBack" prefHeight="31.0" prefWidth="74.0" text="Back" />
-       <Button fx:id="updateButton" layoutX="277.0" layoutY="100.0" mnemonicParsing="false" onAction="#updatePet" prefHeight="31.0" prefWidth="74.0" text="Update" />
-         <Button fx:id="deleteButton" layoutX="450.0" layoutY="100.0" mnemonicParsing="false" onAction="#deletePet" prefHeight="31.0" prefWidth="74.0" text="Delete" />
-       <Button fx:id="addButton" layoutX="621.0" layoutY="100.0" mnemonicParsing="false" onAction="#addPet" prefHeight="31.0" prefWidth="74.0" text="Add" />
+        <Button fx:id="" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBack" prefHeight="31.0" prefWidth="74.0" text="Back" />
+       <Button fx:id="updateButton" layoutX="539.0" layoutY="100.0" mnemonicParsing="false" onAction="#updatePet" prefHeight="31.0" prefWidth="74.0" text="Update" />
+         <Button fx:id="deleteButton" layoutX="672.0" layoutY="100.0" mnemonicParsing="false" onAction="#deletePet" prefHeight="31.0" prefWidth="74.0" text="Delete" />
+       <Button fx:id="addButton" layoutX="806.0" layoutY="100.0" mnemonicParsing="false" onAction="#addPet" prefHeight="31.0" prefWidth="74.0" text="Add" />
+      <Button fx:id="updateButton1" layoutX="419.0" layoutY="100.0" mnemonicParsing="false" onAction="#searchPet" prefHeight="31.0" prefWidth="74.0" text="Search" />
+        <TextField fx:id="searchTextField" layoutX="82.0" layoutY="100.0" prefHeight="31.0" prefWidth="315.0" />
 
    </children>
 </AnchorPane>

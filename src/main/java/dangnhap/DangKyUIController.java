@@ -8,10 +8,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import java.sql.SQLException;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.event.ActionEvent;
-import javafx.scene.control.Label;
 
 
 public class DangKyUIController {
@@ -23,7 +19,7 @@ public class DangKyUIController {
     private TextField rePasswordTextField;
 
     @FXML
-    private Label errorLabel;
+    private Label errorLabel = new Label();
 
     // TODO --Long : check if email is valid (action event)
     // để sau
@@ -76,7 +72,7 @@ public class DangKyUIController {
         String password = passwordTextField.getText();
         String rePassword = rePasswordTextField.getText();
         if (!password.equals(rePassword)) {
-
+            // TODO
             errorLabel.setText("not match");
 
 //            System.out.println("Mật khẩu không trùng khớp");

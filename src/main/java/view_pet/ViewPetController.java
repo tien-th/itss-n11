@@ -59,7 +59,6 @@ public class ViewPetController {
             ps.executeUpdate();
             return true;
         }
-
         return false ;
     }
 
