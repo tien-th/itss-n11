@@ -276,9 +276,6 @@ public class ViewPetUIController extends UserFuncBase implements Initializable {
             // Perform the update operation using the updated information
             Pet newPet = new Pet( 0, user.getUsername(), newName, newColor,newCategory, newAge, newGender );
 
-//            insert into database
-//            System.out.println("add pet " + newPet.getName() + " " + newPet.getCategory() + " " + newPet.getAge() + " " + newPet.getColor());
-
             // Update database
             ViewPetController viewPetController = new ViewPetController();
             int newId = viewPetController.addPet(newPet);
@@ -288,7 +285,6 @@ public class ViewPetUIController extends UserFuncBase implements Initializable {
                 alert.setHeaderText(null);
                 alert.setContentText("Pet information has not been added!");
                 alert.showAndWait();
-
                 return;
             }
             newPet.setId(newId);
