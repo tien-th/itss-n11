@@ -2,6 +2,7 @@ package view_pet;
 
 import dangkydichvu.UserFuncBase;
 import entity.Pet;
+import entity.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,8 +17,6 @@ import java.util.ResourceBundle;
 import javafx.scene.layout.GridPane;
 
 public class ViewPetUIController extends UserFuncBase implements Initializable {
-
-    // TODO : add update pet function, delete pet function, add pet function
 
     @FXML
     private TableView<Pet> petTableView;
@@ -37,6 +36,7 @@ public class ViewPetUIController extends UserFuncBase implements Initializable {
     private TableColumn<Pet, String> genderColumn;
 
     private ObservableList<Pet> petList; // list of pets
+    ViewPetController viewPetController = new ViewPetController();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -45,7 +45,6 @@ public class ViewPetUIController extends UserFuncBase implements Initializable {
             return ; // fix bug
         }
         System.out.println("init user " + user.getName() + " " + user.getRole());// fix bug
-        ViewPetController viewPetController = new ViewPetController();
         try {
             viewPetController.getPetList(user);
         } catch (Exception e) {
@@ -61,6 +60,40 @@ public class ViewPetUIController extends UserFuncBase implements Initializable {
         ageColumn.setCellValueFactory(new PropertyValueFactory<Pet, Integer>("age"));
         genderColumn.setCellValueFactory(new PropertyValueFactory<Pet, String>("gender"));
         petTableView.setItems(petList);
+    }
+
+    @FXML
+    private TextField searchTextField; // Add this field to your UI
+    @FXML
+    private void searchPet(ActionEvent event) {
+        String searchQuery = searchTextField.getText();
+        if (searchQuery.isEmpty()) {
+            // No search query provided
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Lỗi");
+            alert.setHeaderText("Không có từ khóa tìm kiếm");
+            alert.setContentText("Vui lòng nhập từ khóa tìm kiếm");
+            alert.showAndWait();
+            return;
+        }
+
+        // Clear previous search results
+        petList.clear();
+
+        for (Pet pet : viewPetController.petList) {
+            if (pet.getName().contains(searchQuery)) {
+                petList.add(pet);
+            }
+        }
+
+        if (petList.isEmpty()) {
+            // No users found
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Thông báo");
+            alert.setHeaderText("Không tìm thấy người dùng");
+            alert.setContentText("Không có người dùng phù hợp với từ khóa tìm kiếm");
+            alert.showAndWait();
+        }
     }
 
     @FXML
@@ -83,7 +116,7 @@ public class ViewPetUIController extends UserFuncBase implements Initializable {
 
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == ButtonType.OK) {
-                ViewPetController viewPetController = new ViewPetController();
+//                ViewPetController viewPetController = new ViewPetController();
                 viewPetController.deletePet(selectedPet);
                 petList.remove(selectedPet);
             }
@@ -243,9 +276,6 @@ public class ViewPetUIController extends UserFuncBase implements Initializable {
             // Perform the update operation using the updated information
             Pet newPet = new Pet( 0, user.getUsername(), newName, newColor,newCategory, newAge, newGender );
 
-//            insert into database
-//            System.out.println("add pet " + newPet.getName() + " " + newPet.getCategory() + " " + newPet.getAge() + " " + newPet.getColor());
-
             // Update database
             ViewPetController viewPetController = new ViewPetController();
             int newId = viewPetController.addPet(newPet);
@@ -255,7 +285,6 @@ public class ViewPetUIController extends UserFuncBase implements Initializable {
                 alert.setHeaderText(null);
                 alert.setContentText("Pet information has not been added!");
                 alert.showAndWait();
-
                 return;
             }
             newPet.setId(newId);
