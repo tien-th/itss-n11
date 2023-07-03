@@ -5,22 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="update screen trong giu, dich vu">
-      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/AdminFuncBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/AdminUIController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/CageMIUIController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/MedicalMUIController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/PetMUIController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/ServicesMUIController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/UserMUIController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/adminUI.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/petMUI.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/servicesMUI.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/userMUI.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/CareServicesMUIController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/careServicesMUI..fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangkydichvu/DangKyKhamScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dangkydichvu/DangKyKhamScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangkydichvu/UserFuncBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dangkydichvu/UserFuncBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangnhap/DangnhapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dangnhap/DangnhapController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view_pet/viewPetScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view_pet/viewPetScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/ServicesMUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/ServicesMUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/petMUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/petMUI.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -74,6 +63,9 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
   <component name="ProjectId" id="2R6OEQOOMj1CDSpL4E1DdvBGkPh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -99,7 +91,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.1150748&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -196,6 +188,11 @@
       <workItem from="1687938233502" duration="1427000" />
       <workItem from="1687940650599" duration="7772000" />
       <workItem from="1687951472038" duration="694000" />
+      <workItem from="1687952181988" duration="65000" />
+      <workItem from="1688040125382" duration="1919000" />
+      <workItem from="1688042361761" duration="1048000" />
+      <workItem from="1688046240902" duration="662000" />
+      <workItem from="1688358083996" duration="2496000" />
     </task>
     <task id="LOCAL-00001" summary="add readme">
       <created>1686663107815</created>
@@ -323,7 +320,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687685826318</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="update screen trong giu, dich vu">
+      <created>1687952200518</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1687952200518</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
