@@ -212,7 +212,6 @@ public class ViewPetUIController extends UserFuncBase implements Initializable {
         gridPane.add(colorTextField, 1, 3);
         gridPane.add(new Label("Gender:"), 0, 4);
         gridPane.add(genderChoiceBox, 1, 4);
-
         dialog.getDialogPane().setContent(gridPane);
 
 // Set the result converter to retrieve the updated information
@@ -245,8 +244,6 @@ public class ViewPetUIController extends UserFuncBase implements Initializable {
             Pet newPet = new Pet( 0, user.getUsername(), newName, newColor,newCategory, newAge, newGender );
 
 //            insert into database
-
-
 //            System.out.println("add pet " + newPet.getName() + " " + newPet.getCategory() + " " + newPet.getAge() + " " + newPet.getColor());
 
             // Update database

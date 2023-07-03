@@ -21,4 +21,6 @@ module com.example.itssn11 {
     exports dangkydichvu;
     opens dangkydichvu to javafx.fxml, javafx.praphics;
 
+    exports quanly;
+    opens quanly to javafx.fxml, javafx.praphics;
 }

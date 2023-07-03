@@ -57,9 +57,10 @@ public class DangnhapUiController {
             URL url = Paths.get("./src/main/java/menu/admin.fxml").toUri().toURL();
             FXMLLoader loader = new FXMLLoader();
             Parent adminViewParent = loader.load(url.openStream());
-            Scene scene = new Scene(adminViewParent);
+
             AdminUIController adminUIController= loader.getController();
             adminUIController.setUser(u);
+            Scene scene = new Scene(adminViewParent);
             stage.setScene(scene);
         }
         else if (u.getRole() == 0) {

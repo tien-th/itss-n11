@@ -10,6 +10,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import quanly.UserMUIController;
+import utils.Utils;
+
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Paths;
@@ -34,14 +37,23 @@ public class AdminUIController {
         stage.setScene(scene);
     }
 
-    public void viewUserUI(ActionEvent actionEvent) {
-        // TODO
-    }
+
     public void viewPetUI(ActionEvent actionEvent) throws IOException {
         UserUIController userUIController = new UserUIController();
-        // TODO : refactor, inherritance or interface
         userUIController.setUser(user);
         userUIController.viewPet(actionEvent);
+    }
+
+    public void viewUserUI(ActionEvent event) throws IOException {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        URL url = Paths.get("./src/main/java/quanly/userMUI.fxml").toUri().toURL();
+        FXMLLoader loader = new FXMLLoader();
+        Parent userViewParent = loader.load(url.openStream());
+        Scene scene = new Scene(userViewParent);
+        UserMUIController  userMUIController = loader.getController();
+        userMUIController.setUser(user);
+//        Scene scene = Utils.showScreen("./src/main/java/quanly/userMUI.fxml");
+        stage.setScene(scene);
     }
     public void viewManageAppointmentsUI(ActionEvent actionEvent) {
         // TODO
