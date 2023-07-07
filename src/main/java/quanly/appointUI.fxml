@@ -14,8 +14,9 @@
         <TableView fx:id="appointTableView" layoutX="-1.0" layoutY="103.0" prefHeight="294.0" prefWidth="606.0">
             <columns>
                 <TableColumn fx:id="petIdColumn" prefWidth="94.4000244140625" text="id pet" />
-                <TableColumn fx:id="datetimeColumn" prefWidth="311.20001220703125" text="Thời gian" />
-                <TableColumn fx:id="statusColumn" prefWidth="198.20004272460938" text="trạng thái" />
+                <TableColumn fx:id="datetimeColumn" prefWidth="166.2000274658203" text="Ngày" />
+                <TableColumn fx:id="time_slotColumn" prefWidth="186.5999755859375" text="Thời gian" />
+            <TableColumn fx:id="statusColumn" prefWidth="153.79998779296875" text="Trạng thái" />
             </columns>
         </TableView>
         <Button fx:id="back" layoutX="561.0" layoutY="1.0" mnemonicParsing="false" onAction="#goBack" text="back" />

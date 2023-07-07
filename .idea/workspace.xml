@@ -4,28 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="update screen trong giu, dich vu">
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/Appoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/AppointController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/AppointUIController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/styles/login.css" afterDir="false" />
+    <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="home, appoint">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangkydichvu/DangKyDvController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dangkydichvu/DangKyDvController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangkydichvu/DangKyTrongGiuScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dangkydichvu/DangKyTrongGiuScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangkydichvu/UserFuncBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dangkydichvu/UserFuncBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangnhap/DangnhapUiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dangnhap/DangnhapUiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangnhap/dangnhap.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dangnhap/dangnhap.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Pet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menu/AdminUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/AdminUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menu/UserUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/UserUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/AdminFuncBase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/CareServicesMUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/CareServicesMUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/MedicalMUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/MedicalMUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/PetMUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/PetMUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/ServicesMUIController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/UserManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/UserManageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/adminUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/adminUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/servicesMUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/appointUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Appoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Appoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/AppointController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/AppointController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/AppointUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/AppointUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/appointUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/appointUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view_pet/ViewPetUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view_pet/ViewPetUIController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +220,7 @@
       <workItem from="1688614899814" duration="2972000" />
       <workItem from="1688622385174" duration="2714000" />
       <workItem from="1688679235285" duration="9775000" />
-      <workItem from="1688720073643" duration="1380000" />
+      <workItem from="1688720073643" duration="6371000" />
     </task>
     <task id="LOCAL-00001" summary="add readme">
       <created>1686663107815</created>
@@ -377,7 +362,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688385070047</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="home, appoint">
+      <created>1688721614960</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1688721614960</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -419,7 +411,8 @@
     <MESSAGE value="fix TRung's bug" />
     <MESSAGE value="update database" />
     <MESSAGE value="update screen trong giu, dich vu" />
-    <option name="LAST_COMMIT_MESSAGE" value="update screen trong giu, dich vu" />
+    <MESSAGE value="home, appoint" />
+    <option name="LAST_COMMIT_MESSAGE" value="home, appoint" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

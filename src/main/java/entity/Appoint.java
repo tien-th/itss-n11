@@ -1,24 +1,12 @@
 package entity;
 
 public class Appoint {
-       // tạo cho tôi các thuộc tính sau: state(String), pet_id(int), day(date), time_slot(int)
     private String state;
     private int pet_id;
     private String day;
     private int time_slot;
-    // contructor
-    public Appoint(String state, int pet_id, String day, int time_slot) {
-        this.state = state;
-        this.pet_id = pet_id;
-        this.day = day;
-        this.time_slot = time_slot;
-    }
-    public Appoint(String state, int pet_id, String day){
-        this.state = state;
-        this.pet_id = pet_id;
-        this.day = day;
-    }
-    public Appoint(int id, String day, int time, String state) {
+
+    public Appoint(int pet_id, String day, int time_slot, String state) {
         this.state = state;
         this.pet_id = pet_id;
         this.day = day;

@@ -41,7 +41,6 @@ public class ViewPetUIController extends UserFuncBase implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if (user == null) {
-            System.out.println("user is null");
             return ; // fix bug
         }
         System.out.println("init user " + user.getName() + " " + user.getRole());// fix bug
