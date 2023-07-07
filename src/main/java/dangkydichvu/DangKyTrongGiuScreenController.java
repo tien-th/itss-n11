@@ -23,10 +23,19 @@ public class DangKyTrongGiuScreenController extends UserFuncBase {
         DangKyDvController dangKyDvController = new DangKyDvController();
         int lod = dangKyDvController.dangKyTrongGiu(pet, ngayKham, startHour);
         if (lod != 0 ) {
-            System.out.println("lod: " + lod);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("");
+            alert.setHeaderText("Đăng ký dịch vụ thành công");
+            alert.setContentText("Đăng ký cho " + pet.getName() + " thành công vào ngày " + ngayKham + " lúc " + startHour + " giờ");
+            alert.showAndWait();
         }
         else {
-            System.out.println("full slot");
+//            System.out.println("full slot");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("");
+            alert.setHeaderText("Đăng ký dịch vụ thất bại");
+            alert.setContentText("Hiện tại chuồng đã hết chỗ. Vui lòng chọn ngày khác");
+            alert.showAndWait();
         }
     }
 

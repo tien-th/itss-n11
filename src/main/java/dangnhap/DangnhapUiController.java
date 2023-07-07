@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import menu.AdminUIController;
@@ -25,13 +26,13 @@ public class DangnhapUiController {
     @FXML
     private TextField usernameTextField;
     @FXML
-    private TextField passwordTextField;
+    private PasswordField passwordField;
 
     // catch event for login button
     public void loginButtonClicked(ActionEvent e) throws SQLException, ClassNotFoundException, IOException {
 
         String username = usernameTextField.getText();
-        String password = passwordTextField.getText();
+        String password = passwordField.getText();
         DangnhapController login = new DangnhapController();
         User u = login.checkLogin(username, password);
 
@@ -54,7 +55,7 @@ public class DangnhapUiController {
             // TODO -- Tien   : move to another scene if login success base on role (admin or user)
             // open a new screen in admin.fxml
              Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-            URL url = Paths.get("./src/main/java/menu/admin.fxml").toUri().toURL();
+            URL url = Paths.get("./src/main/java/menu/adminUI.fxml").toUri().toURL();
             FXMLLoader loader = new FXMLLoader();
             Parent adminViewParent = loader.load(url.openStream());
 

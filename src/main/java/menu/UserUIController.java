@@ -91,9 +91,11 @@ public class UserUIController {
     }
 
     public void signOut(ActionEvent event) throws IOException {
+
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         URL url = Paths.get("./src/main/java/dangnhap/dangnhap.fxml").toUri().toURL();
         FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(url);
         Parent userViewParent = loader.load(url.openStream());
         DangnhapUiController dangnhapUiController = loader.getController();
         Scene scene = new Scene(userViewParent);

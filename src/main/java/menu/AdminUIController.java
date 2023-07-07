@@ -10,8 +10,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import quanly.AppointUIController;
 import quanly.UserMUIController;
-import utils.Utils;
 
 import java.io.IOException;
 import java.net.URL;
@@ -20,6 +20,7 @@ import java.nio.file.Paths;
 public class AdminUIController {
     @FXML
     Label nameLabel = new Label() ;
+    @FXML
     User user = null ;
     public void setUser(User user) {
         this.user = user ;
@@ -27,10 +28,11 @@ public class AdminUIController {
     }
 
     public void signOut(ActionEvent event) throws IOException {
-        // TODO --- passed
+
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         URL url = Paths.get("./src/main/java/dangnhap/dangnhap.fxml").toUri().toURL();
         FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(url);
         Parent userViewParent = loader.load(url.openStream());
         DangnhapUiController dangnhapUiController = loader.getController();
         Scene scene = new Scene(userViewParent);
@@ -55,11 +57,34 @@ public class AdminUIController {
 //        Scene scene = Utils.showScreen("./src/main/java/quanly/userMUI.fxml");
         stage.setScene(scene);
     }
-    public void viewManageAppointmentsUI(ActionEvent actionEvent) {
+    public void viewManageAppointmentsUI(ActionEvent actionEvent) throws IOException {
         // TODO
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        URL url = Paths.get("./src/main/java/quanly/appointUI.fxml").toUri().toURL();
+        FXMLLoader loader = new FXMLLoader();
+        Parent userViewParent = loader.load(url.openStream());
+
+        Scene scene = new Scene(userViewParent);
+        AppointUIController servicesMUIController = loader.getController();
+        servicesMUIController.setUser(user);
+
+        stage.setScene(scene);
+
     }
-    public void viewManageCleaningUI(ActionEvent actionEvent) {
+    public void viewManageCleaningUI(ActionEvent actionEvent) throws IOException {
 // TODO
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        URL url = Paths.get("./src/main/java/quanly/cleaningMUI.fxml").toUri().toURL();
+        FXMLLoader loader = new FXMLLoader();
+        Parent userViewParent = null;
+        try {
+            userViewParent = loader.load(url.openStream());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Scene scene = new Scene(userViewParent);
+        stage.setScene(scene);
+
     }
     public void viewManageMedicineUI(ActionEvent actionEvent) {
         // TODO

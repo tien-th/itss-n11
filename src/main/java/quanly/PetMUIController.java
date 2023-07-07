@@ -1,5 +1,10 @@
 package quanly;
 
-public class PetMUIController {
+import dangkydichvu.UserFuncBase;
+import entity.User;
+
+import java.util.concurrent.FutureTask;
+
+public class PetMUIController extends UserFuncBase {
 
 }

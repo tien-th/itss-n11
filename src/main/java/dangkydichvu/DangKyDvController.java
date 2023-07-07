@@ -19,7 +19,7 @@ public class DangKyDvController {
                 System.out.println("Time slot is not available");
                 return false;
             } else {
-                String state = "ok" ;
+                String state = "dich vu ve sinh" ;
                 String sql = "insert into dichvuvs (loai_dv ,state ,pet_id, day, time_slot) values ('"+ dichVu +"', '" + state + "', " + pet.getId() + ", '" + day + "', " + startHour + ")";
                 PreparedStatement ps = connection.prepareStatement(sql);
                 ps.executeUpdate();
@@ -39,7 +39,7 @@ public class DangKyDvController {
             System.out.println("Time slot is not available");
             return false;
         } else {
-            String state = "ok" ;
+            String state = "" ;
 //            sql = "insert into lichkham (state ,idpet, ngaykham, starthour) values ('" + state + "' ," + pet.getId() + ", '" + ngayKham + "', " + startHour + ")";
             sql = "insert into lichkham (state ,pet_id, day, time_slot) values ('" + state + "' ," + pet.getId() + ", '" + ngayKham + "', " + startHour + ")";
             ps = DbConnection.openConnection().prepareStatement(sql);

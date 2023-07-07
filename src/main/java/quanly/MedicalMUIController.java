@@ -1,4 +1,5 @@
 package quanly;
+import dangkydichvu.UserFuncBase;
 
-public class MedicalMUIController {
+public class MedicalMUIController extends UserFuncBase {
 }

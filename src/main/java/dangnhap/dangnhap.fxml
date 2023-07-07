@@ -1,22 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <!--Write a sign in user interface -->
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dangnhap.DangnhapUiController">
-    <children>
-        <Label layoutX="14.0" layoutY="14.0" text="Đăng nhập" />
-        <Label layoutX="14.0" layoutY="60.0" text="Tên đăng nhập" />
-        <TextField id="usernameTextField" fx:id="usernameTextField" layoutX="14.0" layoutY="80.0" />
-        <Label layoutX="14.0" layoutY="120.0" text="Mật khẩu" />
-        <PasswordField id="passwordTextField" fx:id="passwordTextField" layoutX="14.0" layoutY="140.0" />
-        <Button fx:id="btnLogin" layoutX="14.0" layoutY="180.0" mnemonicParsing="false" onAction="#loginButtonClicked" text="Đăng nhập" />
-        <Button fx:id="btnRegister" layoutX="14.0" layoutY="220.0" mnemonicParsing="false" onAction="#registerButtonClicked" text="Đăng ký" />
-    </children>
-
-</AnchorPane>
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dangnhap.DangnhapUiController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="255.0">
+         <children>
+            <AnchorPane layoutY="2.0" prefHeight="400.0" prefWidth="300.0" styleClass="gradient" stylesheets="@../utils/styles/login.css">
+               <children>
+                  <ImageView fitHeight="410.0" fitWidth="300.0" layoutY="-10.0">
+                     <image>
+                        <Image url="@../utils/img/homepage.png" />
+                     </image>
+                  </ImageView>
+               </children></AnchorPane>
+            <AnchorPane layoutX="300.0" prefHeight="400.0" prefWidth="300.0" styleClass="white-form" stylesheets="@../utils/styles/login.css">
+               <children>
+                  <Label contentDisplay="CENTER" layoutX="77.0" layoutY="52.0" prefHeight="48.0" prefWidth="146.0" text="Sign in to ITSS">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="usernameTextField" layoutX="40.0" layoutY="132.0" prefHeight="30.0" prefWidth="220.0" />
+                  <Hyperlink layoutX="157.0" layoutY="162.0" text="Forgot password?" />
+                  <Button fx:id="button1" layoutX="40.0" layoutY="228.0" mnemonicParsing="false" onAction="#loginButtonClicked" prefHeight="24.0" prefWidth="220.0" styleClass="white-form-button" stylesheets="@../utils/styles/login.css" text="Sign in " />
+                  <Label layoutX="40.0" layoutY="114.0" text="Username or email address" textFill="#1b1818" />
+                  <Label layoutX="40.0" layoutY="165.0" text="Password" textFill="#262222" />
+                  <Label layoutX="42.0" layoutY="298.0" text="New to ITSS?" />
+                  <Button fx:id="button2" layoutX="37.0" layoutY="316.0" mnemonicParsing="false" onAction="#registerButtonClicked" prefHeight="26.0" prefWidth="220.0" styleClass="white-form-button" text="Sign up">
+                     <cursor>
+                        <Cursor fx:constant="SW_RESIZE" />
+                     </cursor></Button>
+                  <PasswordField fx:id="passwordField" layoutX="38.0" layoutY="188.0" prefHeight="30.0" prefWidth="220.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

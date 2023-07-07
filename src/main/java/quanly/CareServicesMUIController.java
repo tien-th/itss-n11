@@ -1,4 +1,6 @@
 package quanly;
 
-public class CareServicesMUIController {
+import  dangkydichvu.UserFuncBase;
+
+public class CareServicesMUIController extends  UserFuncBase {
 }

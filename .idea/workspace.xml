@@ -5,11 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="update screen trong giu, dich vu">
-      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/CareServicesMUIController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/careServicesMUI..fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/Appoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/AppointController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/AppointUIController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/styles/login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/ServicesMUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/ServicesMUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/petMUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/petMUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dangkydichvu/DangKyDvController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dangkydichvu/DangKyDvController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dangkydichvu/DangKyTrongGiuScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dangkydichvu/DangKyTrongGiuScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dangkydichvu/UserFuncBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dangkydichvu/UserFuncBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dangnhap/DangnhapUiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dangnhap/DangnhapUiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dangnhap/dangnhap.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dangnhap/dangnhap.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Pet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menu/AdminUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/AdminUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menu/UserUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/UserUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/AdminFuncBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/CareServicesMUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/CareServicesMUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/MedicalMUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/MedicalMUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/PetMUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/PetMUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/ServicesMUIController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/UserManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/UserManageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/adminUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/adminUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/servicesMUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/appointUI.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +36,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
+        <option value="CSS File" />
         <option value="Class" />
       </list>
     </option>
@@ -38,6 +55,9 @@
     &quot;state&quot;: &quot;OPEN&quot;
   }
 }</component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="e0b52418-2968-44a6-be57-69e67a389bf9" />
+  </component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -47,6 +67,16 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/menu/UserUIController.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -76,6 +106,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
@@ -83,12 +114,13 @@
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/Cloud/Hust/2022-2/ITSS/Project/src/main/java/dangkydichvu&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.1150748&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
@@ -105,11 +137,11 @@
       <recent name="D:\Cloud\Hust\2022-2\ITSS\Project\src\main\java\dangkydichvu" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Cloud\Hust\2022-2\ITSS\Project\src\main\java\utils" />
+      <recent name="D:\Cloud\Hust\2022-2\ITSS\Project\src\main\java\menu" />
       <recent name="C:\Users\baota\IdeaProjects\itss-n11\src\main\java\dangkydichvu" />
       <recent name="C:\Users\baota\IdeaProjects\itss-n11\src\main\java\view_pet" />
       <recent name="C:\Users\baota\IdeaProjects\itss-n11\src\main\java\entity" />
-      <recent name="C:\Users\baota\IdeaProjects\itss-n11\src\main\java\dangnhap" />
-      <recent name="C:\Users\baota\IdeaProjects\itss-n11\src\main\java" />
     </key>
   </component>
   <component name="RunManager">
@@ -128,6 +160,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestLogin" />
+        <item itemvalue="Application.TestLogin" />
         <item itemvalue="Application.TestLogin" />
       </list>
     </recent_temporary>
@@ -192,7 +226,16 @@
       <workItem from="1688040125382" duration="1919000" />
       <workItem from="1688042361761" duration="1048000" />
       <workItem from="1688046240902" duration="662000" />
-      <workItem from="1688358083996" duration="2496000" />
+      <workItem from="1688358083996" duration="5014000" />
+      <workItem from="1688387624895" duration="605000" />
+      <workItem from="1688411333990" duration="14000" />
+      <workItem from="1688434420385" duration="5340000" />
+      <workItem from="1688462131253" duration="1896000" />
+      <workItem from="1688465278233" duration="740000" />
+      <workItem from="1688614899814" duration="2972000" />
+      <workItem from="1688622385174" duration="2714000" />
+      <workItem from="1688679235285" duration="9775000" />
+      <workItem from="1688720073643" duration="1380000" />
     </task>
     <task id="LOCAL-00001" summary="add readme">
       <created>1686663107815</created>
@@ -327,7 +370,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687952200518</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="update screen trong giu, dich vu">
+      <created>1688385070047</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1688385070047</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -370,6 +420,16 @@
     <MESSAGE value="update database" />
     <MESSAGE value="update screen trong giu, dich vu" />
     <option name="LAST_COMMIT_MESSAGE" value="update screen trong giu, dich vu" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -87,7 +87,7 @@ public class UserFuncBase implements Initializable {
         FXMLLoader loader = new FXMLLoader();
 //        Objects userUIController = null;
         if (user.getRole() == 1) {
-            url = Paths.get("./src/main/java/menu/admin.fxml").toUri().toURL();
+            url = Paths.get("./src/main/java/menu/adminUI.fxml").toUri().toURL();
             Parent userViewParent = loader.load(url.openStream());
             Scene scene = new Scene(userViewParent);
             AdminUIController userUIController =  loader.getController();
@@ -103,5 +103,6 @@ public class UserFuncBase implements Initializable {
             stage.setScene(scene);
         }
     }
+
 
 }

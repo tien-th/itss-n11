@@ -21,7 +21,7 @@ public class UserManageController {
             String password = rs.getString("pass"); // password
             String email = rs.getString("email"); // username
             String name = rs.getString("hoten"); // username
-            String birthday = rs.getDate("birthday").toString(); // name
+            String birthday = String.valueOf(rs.getDate("birthday")); // name
             int role = rs.getInt("role") ;
             String gender = rs.getString("gender");
             User p = new User(username, password,email ,name, birthday, gender ,role);
@@ -30,13 +30,16 @@ public class UserManageController {
     }
 
     public void deleteUser(User user) {
-        String sql = "DELETE FROM public.user WHERE username = ?";
+
+        String sql = "DELETE FROM public.user WHERE username = ? AND role = 0";
         try {
             PreparedStatement ps = DbConnection.openConnection().prepareStatement(sql);
             ps.setString(1, user.getUsername());
             ps.executeUpdate();
-        } catch (SQLException | ClassNotFoundException throwables) {
+        } catch (SQLException throwables) {
             throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
     }
 }

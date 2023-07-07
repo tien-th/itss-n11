@@ -25,6 +25,10 @@ public class Pet {
         this.gender = gender;
     }
 
+    public Pet() {
+
+    }
+
     public int getId() {
         return id;
     }
