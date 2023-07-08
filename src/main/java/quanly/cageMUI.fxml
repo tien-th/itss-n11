@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="quanly.CageMIUIController">
+    <children>
+        <Label layoutX="236.0" layoutY="14.0" style="-fx-font-size: 24px;" text="Quản lý chuồng" />
+        <Line endX="344.8" endY="0.0" layoutX="236.0" layoutY="42.0" startX="-211.2" startY="0.0" />
+        <Button layoutX="383.0" layoutY="73.0" mnemonicParsing="false" prefWidth="65.0" style="-fx-font-size: 14px;" text="Thêm" textAlignment="CENTER" />
+        <Button layoutX="449.0" layoutY="73.0" mnemonicParsing="false" prefWidth="65.0" style="-fx-font-size: 14px;" text="Sửa" textAlignment="CENTER" />
+        <Button layoutX="317.0" layoutY="73.0" mnemonicParsing="false" prefWidth="65.0" style="-fx-font-size: 14px;" text="Tìm" textAlignment="CENTER" />
+        <Button layoutX="515.0" layoutY="73.0" mnemonicParsing="false" prefWidth="65.0" style="-fx-font-size: 14px;" text="Xóa" textAlignment="CENTER" />
+        <TableView layoutX="23.0" layoutY="103.0" prefHeight="277.0" prefWidth="560.0">
+            <columns>
+                <TableColumn prefWidth="150.0" style="-fx-alignment: CENTER;" text="ID chuồng" />
+                <TableColumn prefWidth="150.0" style="-fx-alignment: CENTER;" text="Trạng thái" />
+                <TableColumn prefWidth="260.0" style="-fx-alignment: CENTER;" text="ID thú cưng" />
+            </columns>
+        </TableView>
+        <Button layoutX="520.0" layoutY="14.0" mnemonicParsing="false" prefWidth="65.0" style="-fx-font-size: 14px;" text="Back" textAlignment="CENTER" />
+    </children>
+</AnchorPane>

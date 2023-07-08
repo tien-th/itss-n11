@@ -26,7 +26,7 @@ public class DangKyUIController {
     @FXML
     private TextField emailTextField;
 
-//    public void checkEmail(ActionEvent e) {
+//    public void checkEmail(ActionEvent Cage) {
 //        String email = emailTextField.getText();
 //        if (email.contains("@")) {
 //            System.out.println("Email hợp lệ");
