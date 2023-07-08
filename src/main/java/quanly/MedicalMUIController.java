@@ -3,14 +3,19 @@ import dangkydichvu.UserFuncBase;
 import entity.Medical;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
 
 import java.net.URL;
+import java.sql.Date;
+import java.sql.SQLException;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class MedicalMUIController extends UserFuncBase  implements Initializable {
@@ -52,5 +57,159 @@ public class MedicalMUIController extends UserFuncBase  implements Initializable
 
 
     }
+    @FXML
+    private TextField searchTextField;
+    @FXML
+    private void searchMedical(ActionEvent event) {
+        String searchQuery = searchTextField.getText();
+        if (searchQuery.isEmpty()) {
+            // No search query provided
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Lỗi");
+            alert.setHeaderText("Không có từ khóa tìm kiếm");
+            alert.setContentText("Vui lòng nhập từ khóa tìm kiếm");
+            alert.showAndWait();
+            return;
+        }
+
+        medicalList.clear();
+
+        for (Medical medical : medicalController.medicalList) {
+            if (medical.getTenThuoc().contains(searchQuery)) {
+                medicalList.add(medical);
+            }
+        }
+
+        if (medicalList.isEmpty()) {
+            // No users found
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Thông báo");
+            alert.setHeaderText("Không tìm thấy thuốc");
+            alert.setContentText("Vui lòng nhập lại từ khóa tìm kiếm");
+            alert.showAndWait();
+        }
+    }
+
+    public void addMedical(ActionEvent event) throws SQLException, ClassNotFoundException {
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.setTitle("Thêm thuốc");
+        dialog.getDialogPane().getButtonTypes().addAll(ButtonType.APPLY, ButtonType.CANCEL);
+        TextField tenThuoc = new TextField();
+        TextField nhomThuoc = new TextField();
+        TextField soLuong = new TextField();
+        TextField nhaSx = new TextField();
+        DatePicker hsd = new DatePicker();
+
+        GridPane gridPane = new GridPane();
+        gridPane.add(new Label("Tên thuốc"), 0, 0);
+        gridPane.add(tenThuoc, 1, 0);
+        gridPane.add(new Label("Nhóm thuốc"), 0, 1);
+        gridPane.add(nhomThuoc, 1, 1);
+        gridPane.add(new Label("Số lượng"), 0, 2);
+        gridPane.add(soLuong, 1, 2);
+        gridPane.add(new Label("Nhà sản xuất"), 0, 3);
+        gridPane.add(nhaSx, 1, 3);
+        gridPane.add(new Label("Hạn sử dụng"), 0, 4);
+        gridPane.add(hsd, 1, 4);
+        dialog.getDialogPane().setContent(gridPane);
+        dialog.showAndWait();
+        if (dialog.getResult() == ButtonType.APPLY) {
+
+            int thuocId = medicalController.medicalList.get(medicalController.medicalList.size() - 1).getThuocId() + 1;
+
+            Medical medical = new Medical(thuocId,tenThuoc.getText(), nhomThuoc.getText(), Integer.parseInt(soLuong.getText()), nhaSx.getText(), Date.valueOf(hsd.getValue()));
+            medicalController.add(medical);
+            medicalList.add(medical);
+            medicalTableView.setItems(medicalList);
+            medicalTableView.refresh();
+        }
+    }
+
+    public void deleteMedical(ActionEvent event) throws SQLException, ClassNotFoundException {
+        Medical selectedMedical = medicalTableView.getSelectionModel().getSelectedItem();
+        if (selectedMedical == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Lỗi");
+            alert.setHeaderText("Không có thuốc được chọn");
+            alert.setContentText("Vui lòng chọn thuốc");
+            alert.showAndWait();
+            return;
+        }else {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Xác nhận");
+            alert.setHeaderText("Xác nhận xóa thuốc");
+            alert.setContentText("Bạn có chắc chắn muốn xóa thuốc này?");
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == ButtonType.OK) {
+                medicalController.delete(selectedMedical);
+                medicalList.remove(selectedMedical);
+                medicalTableView.setItems(medicalList);
+                medicalTableView.refresh();
+            }
+        }
+    }
+
+    public void updateMedical(ActionEvent event) throws SQLException, ClassNotFoundException {
+        Medical selectedMedical = medicalTableView.getSelectionModel().getSelectedItem();
+        if (selectedMedical == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Lỗi");
+            alert.setHeaderText("Không có thuốc được chọn");
+            alert.setContentText("Vui lòng chọn thuốc");
+            alert.showAndWait();
+            return;
+        }
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.setTitle("Cập nhật thông tin thuốc");
+        dialog.getDialogPane().getButtonTypes().addAll(ButtonType.APPLY, ButtonType.CANCEL);
+        TextField tenThuoc = new TextField(selectedMedical.getTenThuoc());
+        TextField nhomThuoc = new TextField(selectedMedical.getNhomThuoc());
+        TextField soLuong = new TextField(String.valueOf(selectedMedical.getSoLuong()));
+        TextField nhaSx = new TextField(selectedMedical.getNhaSx());
+        // chon ngay han su dung javafx
+        DatePicker hsd = new DatePicker();
+        hsd.setValue(selectedMedical.getHsd().toLocalDate());
+
+        GridPane grid = new GridPane();
+        grid.add(new Label("Tên thuốc:"), 1, 1);
+        grid.add(tenThuoc, 2, 1);
+        grid.add(new Label("Nhóm thuốc:"), 1, 2);
+        grid.add(nhomThuoc, 2, 2);
+        grid.add(new Label("Số lượng:"), 1, 3);
+        grid.add(soLuong, 2, 3);
+        grid.add(new Label("Nhà sản xuất:"), 1, 4);
+        grid.add(nhaSx, 2, 4);
+        grid.add(new Label("Hạn sử dụng:"), 1, 5);
+        grid.add(hsd, 2, 5);
+        dialog.getDialogPane().setContent(grid);
+        dialog.showAndWait();
+if (dialog.getResult() == ButtonType.APPLY) {
+            selectedMedical.setTenThuoc(tenThuoc.getText());
+            selectedMedical.setNhomThuoc(nhomThuoc.getText());
+            selectedMedical.setSoLuong(Integer.parseInt(soLuong.getText()));
+            selectedMedical.setNhaSx(nhaSx.getText());
+            selectedMedical.setHsd(java.sql.Date.valueOf(hsd.getValue()));
+            medicalController.update(selectedMedical);
+            MedicalController medicalController = new MedicalController();
+            boolean result = medicalController.update(selectedMedical);
+            if (result) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Thông báo");
+                alert.setHeaderText("Cập nhật thông tin thuốc thành công");
+                alert.setContentText("Vui lòng chọn thuốc");
+                alert.showAndWait();
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Lỗi");
+                alert.setHeaderText("Cập nhật thông tin thuốc thất bại");
+                alert.setContentText("Vui lòng chọn thuốc");
+                alert.showAndWait();
+            }
+            medicalTableView.refresh();
+        }
+
+    }
+
+
 
 }

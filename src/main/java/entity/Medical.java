@@ -19,6 +19,14 @@ public class Medical {
         this.hsd = hsd;
     }
 
+//    public Medical(String tenThuoc, String nhomThuoc, int soLuong, String nhaSx, Date hsd) {
+//        this.tenThuoc = tenThuoc;
+//        this.nhomThuoc = nhomThuoc;
+//        this.soLuong = soLuong;
+//        this.nhaSx = nhaSx;
+//        this.hsd = hsd;
+//    }
+
     public int getThuocId() {
         return thuocId;
     }

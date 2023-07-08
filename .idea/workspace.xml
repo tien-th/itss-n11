@@ -5,11 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="cage">
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/Care.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/CareController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/careServicesMUI.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Cage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Cage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/CageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/CageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/CageMUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/CageMUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/cageMUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/cageMUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Medical.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Medical.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menu/AdminUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/AdminUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/CareServicesMUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/CareServicesMUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/MedicalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/MedicalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/MedicalMUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/MedicalMUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/careServicesMUI..fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/medicalMUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/medicalMUI.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,35 +95,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "20",
-    "last_opened_file_path": "D:/Program/jdbcSQL/postgresql-42.6.0.jar",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.1150748",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Program/jdbcSQL/postgresql-42.6.0.jar&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.1150748&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="quanly" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Cloud\Hust\2022-2\ITSS\Project\src\main\java\dangkydichvu" />
     </key>
@@ -225,6 +234,7 @@
       <workItem from="1688729711845" duration="1256000" />
       <workItem from="1688783255990" duration="3177000" />
       <workItem from="1688786720929" duration="18911000" />
+      <workItem from="1688825316103" duration="12787000" />
     </task>
     <task id="LOCAL-00001" summary="add readme">
       <created>1686663107815</created>

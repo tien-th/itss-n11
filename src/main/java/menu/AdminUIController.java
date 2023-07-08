@@ -10,10 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-import quanly.AppointUIController;
-import quanly.CageMUIController;
-import quanly.MedicalMUIController;
-import quanly.UserMUIController;
+import quanly.*;
 
 import java.io.IOException;
 import java.net.URL;
@@ -73,8 +70,18 @@ public class AdminUIController {
         stage.setScene(scene);
 
     }
-    public void viewManageCleaningUI(ActionEvent actionEvent) throws IOException {
+    public void viewManageCareUI(ActionEvent actionEvent) throws IOException {
 // TODO
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        URL url = Paths.get("src/main/java/quanly/careServicesMUI.fxml").toUri().toURL();
+        FXMLLoader loader = new FXMLLoader();
+        Parent userViewParent = loader.load(url.openStream());
+
+        Scene scene = new Scene(userViewParent);
+        CareServicesMUIController servicesMUIController = loader.getController();
+        servicesMUIController.setUser(user);
+
+        stage.setScene(scene);
 
     }
     public void viewManageMedicineUI(ActionEvent actionEvent) throws IOException {

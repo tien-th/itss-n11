@@ -15,57 +15,89 @@ public class MedicalController {
     public ArrayList<Medical> medicalList = new ArrayList<Medical>();
      public void getMedicalList() throws SQLException, ClassNotFoundException {
          PreparedStatement preparedStatement = null;
-         String sql = "SELECT * FROM Medical";
+         String sql = "SELECT * FROM thuoc" ;
             preparedStatement = DbConnection.openConnection().prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                int id = resultSet.getInt("Medical_id");
-                String ten_Medical = resultSet.getString("ten_Medical");
-                String nhom_Medical = resultSet.getString("nhom_Medical");
+                int id = resultSet.getInt("thuoc_id");
+                String ten_thuoc = resultSet.getString("ten_thuoc");
+                String nhom_thuoc = resultSet.getString("nhom_thuoc");
                 int soluong = resultSet.getInt("soluong");
                 String nhasx = resultSet.getString("nhasx");
                 Date hsd = resultSet.getDate("hsd");
-                Medical a = new Medical(id, ten_Medical, nhom_Medical, soluong, nhasx, hsd);
+                Medical a = new Medical(id, ten_thuoc, nhom_thuoc, soluong, nhasx, hsd);
                 medicalList.add(a);
             }
      }
 
 
 
-    public boolean add(Medical Medical) throws SQLException {
-        String query = "INSERT INTO Medical (Medical_id, ten_Medical, nhom_Medical, soluong, nhasx, hsd) VALUES (?, ?, ?, ?, ?, ?)";
-        try (PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setInt(1, Medical.getThuocId());
-            statement.setString(2, Medical.getTenThuoc());
-            statement.setString(3, Medical.getNhomThuoc());
-            statement.setInt(4, Medical.getSoLuong());
-            statement.setString(5, Medical.getNhaSx());
-            statement.setDate(6, Medical.getHsd());
-            int rowsInserted = statement.executeUpdate();
-            return rowsInserted > 0;
+    public int add(Medical Medical) throws SQLException {
+        String sql  = "select max(thuoc_id) from thuoc";
+        try{
+            PreparedStatement ps = DbConnection.openConnection().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()){
+                int id = rs.getInt(1);
+                sql = "insert into thuoc values ("+ (id+1) + ",'" + Medical.getTenThuoc() + "','" + Medical.getNhomThuoc() + "'," + Medical.getSoLuong() + ",'" + Medical.getNhaSx() + "','" + Medical.getHsd() +"')";
+                ps = DbConnection.openConnection().prepareStatement(sql);
+                ps.executeUpdate();
+                return id+1;
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
+        return  -1;
     }
 
-    public boolean update(Medical Medical) throws SQLException {
-        String query = "UPDATE Medical SET ten_Medical=?, nhom_Medical=?, soluong=?, nhasx=?, hsd=? WHERE Medical_id=?";
-        try (PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setString(1, Medical.getTenThuoc());
-            statement.setString(2, Medical.getNhomThuoc());
-            statement.setInt(3, Medical.getSoLuong());
-            statement.setString(4, Medical.getNhaSx());
-            statement.setDate(5, Medical.getHsd());
-            statement.setInt(6, Medical.getThuocId());
-            int rowsUpdated = statement.executeUpdate();
-            return rowsUpdated > 0;
+    public boolean update(Medical Medical) throws SQLException, ClassNotFoundException {
+        String sql = "select * from thuoc where thuoc_id = " + Medical.getThuocId();
+        PreparedStatement ps = DbConnection.openConnection().prepareStatement(sql);
+        ResultSet rs = ps.executeQuery();
+        if (rs.next() ) {
+            // update pet in database
+            sql = "update thuoc set ten_thuoc = ?, nhom_thuoc = ?, soluong = ?, nhasx = ?, hsd = ? where thuoc_id = ?" ;
+            ps = DbConnection.openConnection().prepareStatement(sql);
+            ps.setString(1, Medical.getTenThuoc());
+            ps.setString(2, Medical.getNhomThuoc());
+            ps.setInt(3, Medical.getSoLuong());
+            ps.setString(4, Medical.getNhaSx());
+            ps.setDate(5, Medical.getHsd());
+            ps.setInt(6, Medical.getThuocId());
+            ps.executeUpdate();
+            return true;
         }
+        return false;
     }
 
-    public boolean delete(int MedicalId) throws SQLException {
-        String query = "DELETE FROM Medical WHERE Medical_id=?";
+    public void delete(Medical medical) throws SQLException {
+        String query = "DELETE FROM thuoc WHERE thuoc_id=" + medical.getThuocId();
+        PreparedStatement ps = null;
+        try {
+            ps = DbConnection.openConnection().prepareStatement(query);
+            ps.executeUpdate();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+     }
+    public Medical getMedical(int MedicalId) throws SQLException {
+        Medical Medical = null;
+        String query = "SELECT * FROM thuoc WHERE thuoc_id=?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, MedicalId);
-            int rowsDeleted = statement.executeUpdate();
-            return rowsDeleted > 0;
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                String ten_thuoc = resultSet.getString("ten_thuoc");
+                String nhom_thuoc = resultSet.getString("nhom_thuoc");
+                int soluong = resultSet.getInt("soluong");
+                String nhasx = resultSet.getString("nhasx");
+                Date hsd = resultSet.getDate("hsd");
+                Medical = new Medical(MedicalId, ten_thuoc, nhom_thuoc, soluong, nhasx, hsd);
+            }
         }
+        return Medical;
     }
 }

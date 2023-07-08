@@ -14,7 +14,7 @@
                   <Button fx:id="users" layoutY="29.0" mnemonicParsing="false" onAction="#viewUserUI" prefHeight="30.0" prefWidth="175.0" text="Quản lý người dùng" />
                   <Button fx:id="pet" layoutY="59.0" mnemonicParsing="false" onAction="#viewPetUI" prefHeight="30.0" prefWidth="175.0" text="Quản lý Thú cưng" />
                   <Button fx:id="medical" layoutY="145.0" mnemonicParsing="false" onAction="#viewManageMedicineUI" prefHeight="30.0" prefWidth="175.0" text="Quản lý thuốc" />
-                  <Button fx:id="services" layoutX="-3.0" layoutY="115.0" mnemonicParsing="false" onAction="#viewManageCleaningUI" prefHeight="30.0" prefWidth="182.0" text="Quản lý dịch vụ" />
+                  <Button fx:id="services" layoutX="-3.0" layoutY="115.0" mnemonicParsing="false" onAction="#viewManageCareUI" prefHeight="30.0" prefWidth="182.0" text="Quản lý dịch vụ" />
                   <Button fx:id="cage" layoutX="-4.0" layoutY="175.0" mnemonicParsing="false" onAction="#viewManageCage" prefHeight="30.0" prefWidth="182.0" text="Quản lý chuồng" />
                   <Button fx:id="signout" layoutX="-3.0" layoutY="236.0" mnemonicParsing="false" onAction="#signOut" prefHeight="30.0" prefWidth="182.0" text="Đăng xuất" />
                   <Button fx:id="dashboard" layoutX="-3.0" layoutY="-1.0" mnemonicParsing="false" onAction="#viewStatisticalUI" prefHeight="30.0" prefWidth="182.0" text="Dashboard" />
