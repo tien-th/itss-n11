@@ -9,8 +9,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
-
-
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.Optional;
@@ -26,15 +24,8 @@ public class AppointUIController extends UserFuncBase implements Initializable {
     private TableColumn<Appoint, String> time_slotColumn;
     @FXML
     private TableColumn<Appoint, String> statusColumn;
-
     private ObservableList<Appoint> appointList;
     AppointController appointController = new AppointController();
-    // in ra lichkham có từ appointController
-//    public void printAppointList() {
-//        for (Appoint appoint : appointController.appointList) {
-//            System.out.println(appoint);
-//        }
-//    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
@@ -148,9 +139,7 @@ public class AppointUIController extends UserFuncBase implements Initializable {
             alert.showAndWait();
             appointList.set(appointList.indexOf(selectedAppoint), updatedAppoint); // Update the list
             appointTableView.refresh(); // Refresh the table view
-
         });
-
     }
     @FXML
     private TextField searchTextField; // Add this field to your UI

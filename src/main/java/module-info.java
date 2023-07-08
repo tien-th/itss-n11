@@ -23,4 +23,7 @@ module com.example.itssn11 {
 
     exports quanly;
     opens quanly to javafx.fxml, javafx.praphics;
+
+    exports kham;
+    opens kham to javafx.fxml, javafx.praphics;
 }

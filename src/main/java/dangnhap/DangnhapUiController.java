@@ -66,7 +66,6 @@ public class DangnhapUiController {
         }
         else if (u.getRole() == 0) {
             System.out.println("Move to user screen");
-            // TODO -- done : move to another scene if login success base on role: user
             // open a new screen in user.fxml
             Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             URL url = Paths.get("./src/main/java/menu/user.fxml").toUri().toURL();
@@ -77,8 +76,18 @@ public class DangnhapUiController {
             UserUIController userUIController =  loader.getController();
             userUIController.setUser(u);
             stage.setScene(scene);
-        }
-        else {
+        } else if (u.getRole() == 2) {
+            System.out.println("Move to manager screen");
+            // open a new screen in manager.fxml
+            Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            URL url = Paths.get("./src/main/java/kham/listAppoint.fxml").toUri().toURL();
+            FXMLLoader loader = new FXMLLoader();
+            Parent managerViewParent = loader.load(url.openStream());
+
+            Scene scene = new Scene(managerViewParent);
+            stage.setScene(scene);
+
+        } else {
             System.out.println("Login failed");
         }
     }
