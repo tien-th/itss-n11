@@ -13,9 +13,6 @@ import javafx.scene.layout.GridPane;
 
 import java.net.URL;
 import java.sql.SQLException;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
 public class AppointUIController extends UserFuncBase implements Initializable {
@@ -155,10 +152,7 @@ public class AppointUIController extends UserFuncBase implements Initializable {
         });
 
     }
-
-
     @FXML
     private TextField searchTextField; // Add this field to your UI
-
 
 }
