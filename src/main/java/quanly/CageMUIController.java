@@ -15,9 +15,7 @@ import javafx.scene.layout.GridPane;
 
 import java.net.URL;
 import java.sql.SQLException;
-import java.util.IllegalFormatConversionException;
-import java.util.Optional;
-import java.util.ResourceBundle;
+import java.util.*;
 
 
 public class CageMUIController extends UserFuncBase implements Initializable {
@@ -52,6 +50,7 @@ public class CageMUIController extends UserFuncBase implements Initializable {
 
 
         cageTableView.setItems(cageList);
+
     }
 
     public void deleteCage(ActionEvent event) throws SQLException, ClassNotFoundException {
@@ -142,6 +141,24 @@ public class CageMUIController extends UserFuncBase implements Initializable {
         });
 
     }
+    public void addCage(ActionEvent event) throws SQLException, ClassNotFoundException{
+
+        int newid = cageList.get(cageList.size() - 1).getId_cage() + 1;
+        int newStatus = 0;
+        Cage cage = new Cage(newid, newStatus);
+
+        cageController.addCage(cage);
+        cageList.add(cage);
+        cageTableView.setItems(cageList);
+        cageTableView.refresh();
+    }
+
+ public void showCageListByStatus (ActionEvent event) throws SQLException, ClassNotFoundException{
+      List<Cage> cageList = CageController.getCageListByStatus(1);
+     cageIdColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+     cageStatusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
+     cageTableView.setItems(FXCollections.observableList(cageList));
+ }
 }
 
 

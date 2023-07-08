@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="cage">
-      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/CageMUIController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/medicalMUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/Cage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Cage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menu/AdminUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/AdminUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menu/adminUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/adminUI.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/quanly/CageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/CageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/CageMIUIController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/MedicalMUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/MedicalMUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/CageMUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/CageMUIController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/quanly/cageMUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/cageMUI.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -230,7 +224,7 @@
       <workItem from="1688728910212" duration="660000" />
       <workItem from="1688729711845" duration="1256000" />
       <workItem from="1688783255990" duration="3177000" />
-      <workItem from="1688786720929" duration="14317000" />
+      <workItem from="1688786720929" duration="18911000" />
     </task>
     <task id="LOCAL-00001" summary="add readme">
       <created>1686663107815</created>
@@ -393,7 +387,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688786336333</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="cage">
+      <created>1688806197228</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1688806197228</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

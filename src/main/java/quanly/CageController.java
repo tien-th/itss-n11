@@ -46,10 +46,19 @@ public class CageController {
         ps.executeUpdate();
     }
     public static void addCage(Cage cage) throws SQLException, ClassNotFoundException {
-        String sql = "insert into lodging (status) values (?)";
-        PreparedStatement ps = DbConnection.openConnection().prepareStatement(sql);
-        ps.setInt(1, cage.isStatus());
-        ps.executeUpdate();
+        String sql = "select max(lodging_id) as max_id from lodging";
+        try {
+            PreparedStatement ps = DbConnection.openConnection().prepareStatement(sql);
+            java.sql.ResultSet rs = ps.executeQuery();
+            if(rs.next()) {
+                int id = rs.getInt(1) + 1;
+                sql = "insert into lodging values ("+ id +", 0)";
+                ps = DbConnection.openConnection().prepareStatement(sql);
+                ps.executeUpdate();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static List<Cage> getCageListByStatus(int status) throws SQLException, ClassNotFoundException {

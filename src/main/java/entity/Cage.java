@@ -28,6 +28,7 @@ public class Cage {
 
     }
 
+
     //getter and setter
     public int getId_cage() {
         return id_cage;
