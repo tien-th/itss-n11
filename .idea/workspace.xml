@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="delete and update Appoint">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="delete and update Appoint" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,6 +27,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -81,7 +80,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "20",
-    "last_opened_file_path": "C:/Users/Public/Desktop/JavaFX Scene Builder 2.0.lnk",
+    "last_opened_file_path": "D:/Downloads",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -224,7 +223,7 @@
       <workItem from="1688775248300" duration="359000" />
       <workItem from="1688775636955" duration="2239000" />
       <workItem from="1688778046510" duration="810000" />
-      <workItem from="1688778871278" duration="30233000" />
+      <workItem from="1688778871278" duration="30547000" />
     </task>
     <task id="LOCAL-00001" summary="add readme">
       <created>1686663107815</created>
@@ -397,7 +396,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688813164327</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="delete and update Appoint">
+      <option name="closed" value="true" />
+      <created>1688813471255</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1688813471255</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
