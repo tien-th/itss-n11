@@ -1,9 +1,6 @@
 package connection;
-
 import java.sql.*;
-
 public class DbConnection {
-
     public static Connection openConnection() throws ClassNotFoundException, SQLException {
         // connect to postgresql
         Class.forName("org.postgresql.Driver");
@@ -12,8 +9,6 @@ public class DbConnection {
         String password = "itss";
         return DriverManager.getConnection(connectionURL, username, password);
     }
-
-
     public static void main(String[] args) {
         try {
             Connection con = openConnection();
@@ -28,8 +23,6 @@ public class DbConnection {
             System.out.println("Error: " + e.getMessage());
         }
     }
-
-
 
     // to fix bug connect db
     public static void printResultSet(ResultSet rs) throws SQLException {

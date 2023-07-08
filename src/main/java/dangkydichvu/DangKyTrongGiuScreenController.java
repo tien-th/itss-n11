@@ -6,8 +6,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
 import java.sql.SQLException;
-
-
 public class DangKyTrongGiuScreenController extends UserFuncBase {
     @FXML
     private Label petNameLabel = new Label();

@@ -6,11 +6,23 @@ public class Appoint {
     private String day;
     private int time_slot;
 
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+        this.time_slot = Integer.parseInt(time.split(":")[0]);
+    }
+
+    private String time; // for display
+
     public Appoint(int pet_id, String day, int time_slot, String state) {
         this.state = state;
         this.pet_id = pet_id;
         this.day = day;
         this.time_slot = time_slot;
+        this.time =  String.valueOf(time_slot) + ":00";
     }
     public String getState() {
         return state;
@@ -35,7 +47,9 @@ public class Appoint {
         return time_slot;
     }
     public void setTime_slot(int time_slot) {
+
         this.time_slot = time_slot;
+        this.time =  String.valueOf(time_slot) + ":00";
     }
     // toString
     @Override
