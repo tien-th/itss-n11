@@ -13,19 +13,19 @@
         <Button layoutX="563.0" layoutY="77.0" mnemonicParsing="false" text="Xóa" />
         <Button layoutX="446.0" layoutY="77.0" mnemonicParsing="false" text="Tìm" />
 
-        <TableView layoutX="0.0" layoutY="103.0" prefHeight="294.0" prefWidth="600.0">
+        <TableView fx:id="medicalTableView" layoutX="0.0" layoutY="103.0" prefHeight="294.0" prefWidth="600.0">
             <columns>
-                <TableColumn prefWidth="100.0" text="ID" />
-                <TableColumn prefWidth="100.0" text="Tên" />
-                <TableColumn prefWidth="100.0" text="Loại" />
-                <TableColumn prefWidth="100.0" text="Tồn kho" />
-                <TableColumn prefWidth="89.00003051757812" text="Nguồn" />
-            <TableColumn prefWidth="109.60000610351562" text="hạn sử dụng" />
+                <TableColumn fx:id="thuocID" prefWidth="100.0" text="ID" />
+                <TableColumn fx:id="tenThuoc" prefWidth="100.0" text="Tên" />
+                <TableColumn fx:id="nhomThuoc" prefWidth="100.0" text="Loại" />
+                <TableColumn fx:id="soLuong" prefWidth="100.0" text="Tồn kho" />
+                <TableColumn fx:id="nhaSx" prefWidth="89.00003051757812" text="Nguồn" />
+            <TableColumn fx:id="hsd" prefWidth="109.60000610351562" text="hạn sử dụng" />
             </columns>
         </TableView>
 
         <Line endX="345.0" endY="0.0" layoutX="236.0" layoutY="42.0" startX="-211.0" startY="0.0" />
 
-        <Button layoutX="561.0" layoutY="1.0" mnemonicParsing="false" text="Back" />
+        <Button layoutX="561.0" layoutY="1.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
     </children>
 </AnchorPane>

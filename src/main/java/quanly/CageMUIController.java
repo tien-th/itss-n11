@@ -159,6 +159,7 @@ public class CageMUIController extends UserFuncBase implements Initializable {
      cageStatusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
      cageTableView.setItems(FXCollections.observableList(cageList));
  }
+
 }
 
 

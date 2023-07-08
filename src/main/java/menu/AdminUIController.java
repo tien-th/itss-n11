@@ -80,14 +80,10 @@ public class AdminUIController {
     public void viewManageMedicineUI(ActionEvent actionEvent) throws IOException {
         // TODO
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        URL url = Paths.get("./src/main/java/quanly/medicalUI.fxml").toUri().toURL();
+        URL url = Paths.get("./src/main/java/quanly/medicalMUI.fxml").toUri().toURL();
         FXMLLoader loader = new FXMLLoader();
-        Parent userViewParent = null;
-        try {
-            userViewParent = loader.load(url.openStream());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Parent userViewParent = userViewParent = loader.load(url.openStream());
+
         Scene scene = new Scene(userViewParent);
         MedicalMUIController medicalMUIController = loader.getController();
         medicalMUIController.setUser(user);

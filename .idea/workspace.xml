@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="cage">
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/Medical.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/quanly/MedicalController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Cage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Cage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/CageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/CageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/menu/AdminUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/menu/AdminUIController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/quanly/CageMUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/CageMUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/MedicalMUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/MedicalMUIController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/quanly/cageMUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/cageMUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/medicalMUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/medicalMUI.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +227,7 @@
       <workItem from="1688728910212" duration="660000" />
       <workItem from="1688729711845" duration="1256000" />
       <workItem from="1688783255990" duration="3177000" />
-      <workItem from="1688786720929" duration="18911000" />
+      <workItem from="1688786720929" duration="22724000" />
     </task>
     <task id="LOCAL-00001" summary="add readme">
       <created>1686663107815</created>
@@ -394,7 +397,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688806197228</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="cage">
+      <created>1688810521646</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1688810521646</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -447,6 +457,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.IllegalArgumentException" package="java.lang" />
           <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.io.FileNotFoundException" package="java.io" />
+          <option name="timeStamp" value="3" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
