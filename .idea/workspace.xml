@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="home, appoint">
+    <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="delete and update Appoint">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Appoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Appoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/AppointController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/AppointController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/AppointUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/AppointUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/appointUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/quanly/appointUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view_pet/ViewPetUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view_pet/ViewPetUIController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +15,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="CSS File" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -40,9 +35,6 @@
     &quot;state&quot;: &quot;OPEN&quot;
   }
 }</component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="e0b52418-2968-44a6-be57-69e67a389bf9" />
-  </component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -52,16 +44,7 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/consoles/db/10891d0e-6664-48c9-9dad-57888f7c3587/console.sql" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/menu/UserUIController.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -89,35 +72,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Cloud/Hust/2022-2/ITSS/Project/src/main/java/dangkydichvu&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.1150748&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "20",
+    "last_opened_file_path": "C:/Users/Public/Desktop/JavaFX Scene Builder 2.0.lnk",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.1150748",
+    "settings.editor.selected.configurable": "preferences.JavaFX",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="entity" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Cloud\Hust\2022-2\ITSS\Project\src\main\java\dangkydichvu" />
     </key>
@@ -129,7 +115,20 @@
       <recent name="C:\Users\baota\IdeaProjects\itss-n11\src\main\java\entity" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.TestLogin">
+    <configuration name="DbConnection" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="connection.DbConnection" />
+      <module name="itss-n11" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="connection.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestLogin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dangnhap.TestLogin" />
       <module name="itss-n11" />
@@ -146,6 +145,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.TestLogin" />
+        <item itemvalue="Application.DbConnection" />
         <item itemvalue="Application.TestLogin" />
         <item itemvalue="Application.TestLogin" />
       </list>
@@ -221,6 +221,10 @@
       <workItem from="1688622385174" duration="2714000" />
       <workItem from="1688679235285" duration="9775000" />
       <workItem from="1688720073643" duration="6371000" />
+      <workItem from="1688775248300" duration="359000" />
+      <workItem from="1688775636955" duration="2239000" />
+      <workItem from="1688778046510" duration="810000" />
+      <workItem from="1688778871278" duration="30233000" />
     </task>
     <task id="LOCAL-00001" summary="add readme">
       <created>1686663107815</created>
@@ -369,7 +373,31 @@
       <option name="project" value="LOCAL" />
       <updated>1688721614960</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="delete and update Appoint">
+      <option name="closed" value="true" />
+      <created>1688797155262</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1688797155262</updated>
+    </task>
+    <task id="LOCAL-00023" summary="delete and update Appoint">
+      <option name="closed" value="true" />
+      <created>1688797312150</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1688797312150</updated>
+    </task>
+    <task id="LOCAL-00024" summary="delete and update Appoint">
+      <option name="closed" value="true" />
+      <created>1688813164327</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1688813164327</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -412,7 +440,8 @@
     <MESSAGE value="update database" />
     <MESSAGE value="update screen trong giu, dich vu" />
     <MESSAGE value="home, appoint" />
-    <option name="LAST_COMMIT_MESSAGE" value="home, appoint" />
+    <MESSAGE value="delete and update Appoint" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete and update Appoint" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
