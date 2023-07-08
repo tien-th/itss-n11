@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="quanly.MedicalMUIController">
+    <children>
+        <Label layoutX="249.0" layoutY="14.0" text="Quản lý thuốc" />
+
+        <Button layoutX="482.0" layoutY="77.0" mnemonicParsing="false" text="Thêm" />
+        <Button layoutX="532.0" layoutY="77.0" mnemonicParsing="false" text="Sửa" />
+        <Button layoutX="563.0" layoutY="77.0" mnemonicParsing="false" text="Xóa" />
+        <Button layoutX="446.0" layoutY="77.0" mnemonicParsing="false" text="Tìm" />
+
+        <TableView layoutX="0.0" layoutY="103.0" prefHeight="294.0" prefWidth="600.0">
+            <columns>
+                <TableColumn prefWidth="100.0" text="ID" />
+                <TableColumn prefWidth="100.0" text="Tên" />
+                <TableColumn prefWidth="100.0" text="Loại" />
+                <TableColumn prefWidth="100.0" text="Tồn kho" />
+                <TableColumn prefWidth="89.00003051757812" text="Nguồn" />
+            <TableColumn prefWidth="109.60000610351562" text="hạn sử dụng" />
+            </columns>
+        </TableView>
+
+        <Line endX="345.0" endY="0.0" layoutX="236.0" layoutY="42.0" startX="-211.0" startY="0.0" />
+
+        <Button layoutX="561.0" layoutY="1.0" mnemonicParsing="false" text="Back" />
+    </children>
+</AnchorPane>

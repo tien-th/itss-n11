@@ -11,6 +11,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import quanly.AppointUIController;
+import quanly.CageMUIController;
+import quanly.MedicalMUIController;
 import quanly.UserMUIController;
 
 import java.io.IOException;
@@ -73,8 +75,12 @@ public class AdminUIController {
     }
     public void viewManageCleaningUI(ActionEvent actionEvent) throws IOException {
 // TODO
+
+    }
+    public void viewManageMedicineUI(ActionEvent actionEvent) throws IOException {
+        // TODO
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        URL url = Paths.get("./src/main/java/quanly/cleaningMUI.fxml").toUri().toURL();
+        URL url = Paths.get("./src/main/java/quanly/medicalUI.fxml").toUri().toURL();
         FXMLLoader loader = new FXMLLoader();
         Parent userViewParent = null;
         try {
@@ -83,16 +89,27 @@ public class AdminUIController {
             e.printStackTrace();
         }
         Scene scene = new Scene(userViewParent);
+        MedicalMUIController medicalMUIController = loader.getController();
+        medicalMUIController.setUser(user);
         stage.setScene(scene);
-
-    }
-    public void viewManageMedicineUI(ActionEvent actionEvent) {
-        // TODO
     }
     public void viewManageCustodialUI(ActionEvent actionEvent) {
         // TODO
     }
     public void viewStatisticalUI(ActionEvent actionEvent) {
         // TODO
+    }
+    public void viewManageCage(ActionEvent actionEvent) throws IOException{
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        URL url = Paths.get("./src/main/java/quanly/cageMUI.fxml").toUri().toURL();
+        FXMLLoader loader = new FXMLLoader();
+        Parent userViewParent = loader.load(url.openStream());
+        Scene scene = new Scene(userViewParent);
+        CageMUIController cageMUIController = loader.getController();
+        cageMUIController.setUser(user);
+
+        stage.setScene(scene);
+
+
     }
 }
