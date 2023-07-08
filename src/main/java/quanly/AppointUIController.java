@@ -1,5 +1,4 @@
 package quanly;
-
 import dangkydichvu.UserFuncBase;
 import entity.Appoint;
 import javafx.collections.FXCollections;
@@ -7,21 +6,16 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.GridPane;
 
 
 import java.net.URL;
-import java.util.ArrayList;
+import java.sql.SQLException;
+import java.util.Optional;
 import java.util.ResourceBundle;
-
-
-
 public class AppointUIController extends UserFuncBase implements Initializable {
-
     @FXML
     private TableView<Appoint> appointTableView ;
     @FXML
@@ -29,7 +23,7 @@ public class AppointUIController extends UserFuncBase implements Initializable {
     @FXML
     private TableColumn<Appoint, String> datetimeColumn;
     @FXML
-    private TableColumn<Appoint, Integer> time_slotColumn;
+    private TableColumn<Appoint, String> time_slotColumn;
     @FXML
     private TableColumn<Appoint, String> statusColumn;
 
@@ -51,101 +45,114 @@ public class AppointUIController extends UserFuncBase implements Initializable {
         appointList = FXCollections.observableArrayList(appointController.appointList);
         petIdColumn.setCellValueFactory(new PropertyValueFactory<Appoint, Integer>("pet_id"));
         datetimeColumn.setCellValueFactory(new PropertyValueFactory<Appoint, String>("day"));
-        time_slotColumn.setCellValueFactory(new PropertyValueFactory<Appoint, Integer>("time_slot"));
-        statusColumn.setCellValueFactory(new PropertyValueFactory<Appoint, String>("state"));
+        time_slotColumn.setCellValueFactory(new PropertyValueFactory<Appoint, String>("time"));
 
         appointTableView.setItems(appointList);
     }
 
-    @FXML
-    private TextField searchTextField; // Add this field to your UI
-
-    @FXML
-    private void searchPet(ActionEvent event) {
-        String searchQuery = searchTextField.getText();
-        if (searchQuery.isEmpty()) {
-            // No search query provided
+    public void deleteAppoint( ActionEvent event) throws SQLException, ClassNotFoundException {
+        if (user.getRole() != 1 ){
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Lỗi");
-            alert.setHeaderText("Không có từ khóa tìm kiếm");
-            alert.setContentText("Vui lòng nhập từ khóa tìm kiếm");
+            alert.setTitle("Error");
+            alert.setHeaderText("Error");
+            alert.setContentText("You are not allowed to delete pet");
             alert.showAndWait();
-            return;
+            return ;
         }
-
-        // Clear previous search results
-        appointList.clear();
-
-        for (Appoint appoint : appointController.appointList) {
-            String petIdStr = String.valueOf(appoint.getPet_id());
-            int index = petIdStr.indexOf(searchQuery);
-            if (index != -1) {
-                appointList.add(appoint);
-            }
-        }
-
-        if (appointList.isEmpty()) {
-            // No users found
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo");
-            alert.setHeaderText("Không tìm thấy người dùng");
-            alert.setContentText("Không có người dùng phù hợp với từ khóa tìm kiếm");
-            alert.showAndWait();
-        }
-    }
-
-    // update information for lichkham
-
-    private void updateAppoint(ActionEvent event) {
         Appoint selectedAppoint = appointTableView.getSelectionModel().getSelectedItem();
         if (selectedAppoint == null) {
-            // No user selected
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Lỗi");
-            alert.setHeaderText("Không có lịch khám được chọn");
-            alert.setContentText("Vui lòng chọn một lịch khám để cập nhật");
-            alert.showAndWait();
             return;
         }
-
-        // Get the selected user's ID
         int selectedAppointId = selectedAppoint.getPet_id();
-
-        // Find the user with this ID in the ArrayList
-        Appoint selectedAppointToUpdate = null;
-        for (Appoint appoint : appointController.appointList) {
-            if (appoint.getPet_id() == selectedAppointId) {
-                selectedAppointToUpdate = appoint;
-                break;
-            }
-        }
-
-        if (selectedAppointToUpdate == null) {
-            // This should never happen
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Lỗi");
-            alert.setHeaderText("Không tìm thấy lịch khám");
-            alert.setContentText("Không tìm thấy lịch khám để cập nhật");
-            alert.showAndWait();
-            return;
-        }
-
-        // Update the user's information
-        selectedAppointToUpdate.setDay(selectedAppoint.getDay());
-        selectedAppointToUpdate.setTime_slot(selectedAppoint.getTime_slot());
-        selectedAppointToUpdate.setState(selectedAppoint.getState());
-
-        // Refresh the TableView to show the changes
-        appointTableView.refresh();
+        String day = selectedAppoint.getDay();
+        int time = selectedAppoint.getTime_slot();
+        AppointController.deleteAppoint(selectedAppointId, day, time);
+        appointList.remove(selectedAppoint);
     }
 
-    
+    public void updateAppoint(ActionEvent event) throws SQLException, ClassNotFoundException {
+        if (user.getRole() != 1) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error");
+            alert.setContentText("You are not allowed to update appointments");
+            alert.showAndWait();
+            return;
+        }
 
+        Appoint selectedAppoint = appointTableView.getSelectionModel().getSelectedItem();
+        if (selectedAppoint == null) {
+            return;
+        }
 
+        Dialog<Appoint> dialog = new Dialog<>();
+        dialog.setTitle("Update Appointment");
 
+        ButtonType updateButtonType = new ButtonType("Update", ButtonBar.ButtonData.OK_DONE);
+        dialog.getDialogPane().getButtonTypes().addAll(updateButtonType, ButtonType.CANCEL);
 
+        // Create text fields for the updated information
+        TextField dayTextField = new TextField(selectedAppoint.getDay());
+        TextField timeTextField = new TextField(Integer.toString(selectedAppoint.getTime_slot()));
 
+        // Create a grid pane and add the text fields
+        GridPane gridPane = new GridPane();
+        gridPane.setHgap(10);
+        gridPane.setVgap(10);
 
+        gridPane.add(new Label("Day:"), 0, 0);
+        gridPane.add(dayTextField, 1, 0);
+        gridPane.add(new Label("Time Slot:"), 0, 1);
+        gridPane.add(timeTextField, 1, 1);
 
+        dialog.getDialogPane().setContent(gridPane);
+
+        // Set the result converter to retrieve the updated information
+        dialog.setResultConverter(dialogButton -> {
+            if (dialogButton == updateButtonType) {
+                return new Appoint(
+                        selectedAppoint.getPet_id(),
+                        dayTextField.getText(),
+                        Integer.parseInt(timeTextField.getText()),
+                        selectedAppoint.getState()
+                );
+            }
+            return null;
+        });
+
+        // Show the dialog and wait for the user's input
+        Optional<Appoint> result = dialog.showAndWait();
+        result.ifPresent(updatedAppoint -> {
+            int notification = appointController.updateAppoint(updatedAppoint, selectedAppoint); // Update the appointment using the controller
+            if (notification == 0) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Error");
+                alert.setContentText("The appointment is not changed");
+                alert.showAndWait();
+                return;
+            }
+            else if (notification == -1) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Error");
+                alert.setContentText("The appointment is not available at this time");
+                alert.showAndWait();
+                return;
+            }
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Update Appointment");
+            alert.setHeaderText("Success");
+            System.out.println(notification);
+            alert.setContentText("The appointment is updated successfully");
+            alert.showAndWait();
+            appointList.set(appointList.indexOf(selectedAppoint), updatedAppoint); // Update the list
+            appointTableView.refresh(); // Refresh the table view
+
+        });
+
+    }
+    @FXML
+    private TextField searchTextField; // Add this field to your UI
 
 }
