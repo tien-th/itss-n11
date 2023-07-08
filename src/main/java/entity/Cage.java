@@ -1,19 +1,33 @@
 package entity;
-import entity.Pet;
 
-import java.util.List;
 
 public class Cage {
     private int id_cage;
-    private boolean status;   // true if cage is empty, false if cage is full
+    private int status;   // true if cage is empty, false if cage is full
     private Pet pet;
 
     // constructor
-    public Cage(int id_cage, boolean status) {
+    public Cage(int id_cage, int status, Pet pet) {
         this.id_cage = id_cage;
         this.status = status;
         this.pet = null;
     }
+
+//    public Cage(int id, int petId, int status) {
+//        this.id_cage = id;
+//        this.status = status;
+//        this.pet = null;    // pet is null when cage is empty
+//    }
+
+    public Cage(int id, int status) {
+        this.id_cage = id;
+        this.status = status;
+    }
+
+    public Cage() {
+
+    }
+
     //getter and setter
     public int getId_cage() {
         return id_cage;
@@ -23,11 +37,11 @@ public class Cage {
         this.id_cage = id_cage;
     }
 
-    public boolean isStatus() {
+    public int isStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 
