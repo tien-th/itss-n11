@@ -1,16 +1,24 @@
 package dangnhap;
 
+import dangkydichvu.UserFuncBase;
 import entity.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.stage.Stage;
+import menu.AdminUIController;
+
+import java.io.IOException;
+import java.net.URL;
+import java.nio.file.Paths;
 import java.sql.SQLException;
 
 
-public class DangKyUIController {
+public class DangKyUIController extends UserFuncBase {
     @FXML
     private TextField usernameTextField;
     @FXML
@@ -43,6 +51,7 @@ public class DangKyUIController {
     private DatePicker birthdayPicker ;
     @FXML
     private Label birthdayLabel = new Label();
+
 
     public void getBirthday(ActionEvent e) {
         birthdayLabel.setText(birthdayPicker.getValue().toString());
@@ -89,4 +98,15 @@ public class DangKyUIController {
         register.saveUserToDb(u);
 
     }
+    @FXML
+    private Button back;
+    public void back(ActionEvent e) throws IOException {
+        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        URL url = Paths.get("src/main/java/dangnhap/dangnhap.fxml").toUri().toURL();
+        Parent signInViewParent = FXMLLoader.load(url);
+        Scene scene = new Scene(signInViewParent);
+        stage.setScene(scene);
+    }
+
+
 }

@@ -15,7 +15,8 @@
         <TableView fx:id="cageTableView" layoutX="23.0" layoutY="103.0" prefHeight="277.0" prefWidth="560.0">
             <columns>
                 <TableColumn fx:id="cageIdColumn" prefWidth="213.60003662109375" style="-fx-alignment: CENTER;" text="ID chuồng" />
-                <TableColumn fx:id="cageStatusColumn" prefWidth="344.79998779296875" style="-fx-alignment: CENTER;" text="Trạng thái" />
+                <TableColumn fx:id="cageStatusColumn" prefWidth="193.8000030517578" style="-fx-alignment: CENTER;" text="Trạng thái" />
+            <TableColumn fx:id="petIdcolumn" prefWidth="148.199951171875" text="Pet_id" />
             </columns>
         </TableView>
         <Button layoutX="520.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBack" prefWidth="65.0" style="-fx-font-size: 14px;" text="Back" textAlignment="CENTER" />

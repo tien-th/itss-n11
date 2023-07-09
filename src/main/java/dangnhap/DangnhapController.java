@@ -1,6 +1,7 @@
 package dangnhap;
 
 import connection.DbConnection;
+import dangkydichvu.UserFuncBase;
 import entity.User;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
@@ -9,7 +10,7 @@ import javafx.scene.control.Alert.AlertType;
 import java.io.IOException;
 import java.sql.*;
 
-public class DangnhapController {
+public class DangnhapController extends UserFuncBase {
 
     // DB connection
     public User getUser(String username, String password) throws SQLException, ClassNotFoundException{

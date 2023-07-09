@@ -7,10 +7,8 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -39,10 +37,23 @@ public class CareServicesMUIController extends  UserFuncBase implements Initiali
             e.printStackTrace();
         }
         careList = FXCollections.observableArrayList(careController.careList);
-        petIdColumn.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<Care, Integer>("pet_id"));
-        dichvuColumn.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<Care, String>("name_services"));
-        datetimeColumn.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<Care, String>("day"));
-        timeSlotColumn.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<Care, String>("time_slot"));
+        petIdColumn.setCellValueFactory(new PropertyValueFactory<Care, Integer>("pet_id"));
+        dichvuColumn.setCellValueFactory(new PropertyValueFactory<Care, String>("services"));
+        datetimeColumn.setCellValueFactory(new PropertyValueFactory<Care, String>("day"));
+        timeSlotColumn.setCellValueFactory(new PropertyValueFactory<Care, String>("timeslot"));
+        timeSlotColumn.setCellFactory(column -> {
+            return new TableCell<Care, String>() {
+                @Override
+                protected void updateItem(String timeslot, boolean empty) {
+                    super.updateItem(timeslot, empty);
+                    if (empty) {
+                        setText(null);
+                    } else {
+                        setText(timeslot + ":00");
+                    }
+                }
+            };
+        });
 
         careTableView.setItems(careList);
 

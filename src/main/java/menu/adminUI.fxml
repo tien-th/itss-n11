@@ -6,36 +6,28 @@
 <?import javafx.scene.shape.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="menu.AdminUIController">
-   <children>
-      <SplitPane dividerPositions="0.29797979797979796" layoutY="118.0" prefHeight="282.0" prefWidth="600.0">
-        <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="329.0" prefWidth="150.0">
-               <children>
-                  <Button fx:id="users" layoutY="29.0" mnemonicParsing="false" onAction="#viewUserUI" prefHeight="30.0" prefWidth="175.0" text="Quản lý người dùng" />
-                  <Button fx:id="pet" layoutY="59.0" mnemonicParsing="false" onAction="#viewPetUI" prefHeight="30.0" prefWidth="175.0" text="Quản lý Thú cưng" />
-                  <Button fx:id="medical" layoutY="145.0" mnemonicParsing="false" onAction="#viewManageMedicineUI" prefHeight="30.0" prefWidth="175.0" text="Quản lý thuốc" />
-                  <Button fx:id="services" layoutX="-3.0" layoutY="115.0" mnemonicParsing="false" onAction="#viewManageCareUI" prefHeight="30.0" prefWidth="182.0" text="Quản lý dịch vụ" />
-                  <Button fx:id="cage" layoutX="-4.0" layoutY="175.0" mnemonicParsing="false" onAction="#viewManageCage" prefHeight="30.0" prefWidth="182.0" text="Quản lý chuồng" />
-                  <Button fx:id="signout" layoutX="-3.0" layoutY="236.0" mnemonicParsing="false" onAction="#signOut" prefHeight="30.0" prefWidth="182.0" text="Đăng xuất" />
-                  <Button fx:id="dashboard" layoutX="-3.0" layoutY="-1.0" mnemonicParsing="false" onAction="#viewStatisticalUI" prefHeight="30.0" prefWidth="182.0" text="Dashboard" />
-                  <Button fx:id="appointtments" layoutY="89.0" mnemonicParsing="false" onAction="#viewManageAppointmentsUI" prefHeight="26.0" prefWidth="175.0" text="Quan ly lich kham" />
-               </children>
-            </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-               <children>
-                  <ScrollPane layoutX="-1.0" layoutY="-1.0" prefHeight="282.0" prefWidth="418.0" vbarPolicy="ALWAYS">
-                     <content>
-                        <Label prefHeight="147.0" prefWidth="335.0" text="                        pha ke mấy cái đồ thị vô đây" />
-                     </content>
-                  </ScrollPane>
-               </children>
-            </AnchorPane>
-        </items>
-      </SplitPane>
-      <ImageView fitHeight="114.0" fitWidth="182.0" pickOnBounds="true" preserveRatio="true" />
-      <Label layoutX="14.0" layoutY="15.0" text="Tên  ứng dụng" />
-      <Line endX="344.79998779296875" endY="-1.1444091796875E-5" layoutX="236.0" layoutY="42.0" startX="-211.20001220703125" startY="-1.1444091796875E-5" />
-      <Label layoutX="482.0" layoutY="15.0" text="account setting" />
-      <Label layoutX="119.0" layoutY="48.0" text="dashboard - thống kê" />
-   </children>
+    <children>
+        <SplitPane dividerPositions="0.29797979797979796" layoutY="118.0" prefHeight="282.0" prefWidth="600.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="329.0" prefWidth="150.0">
+                    <children>
+                        <Button fx:id="users" layoutY="29.0" mnemonicParsing="false" onAction="#viewUserUI" prefHeight="30.0" prefWidth="180.0" text="Quản lý người dùng" />
+                        <Button fx:id="pet" layoutY="59.0" mnemonicParsing="false" onAction="#viewPetUI" prefHeight="30.0" prefWidth="180.0" text="Quản lý Thú cưng" />
+                        <Button fx:id="medical" layoutY="145.0" mnemonicParsing="false" onAction="#viewManageMedicineUI" prefHeight="30.0" prefWidth="180.0" text="Quản lý thuốc" />
+                        <Button fx:id="services" layoutX="-3.0" layoutY="115.0" mnemonicParsing="false" onAction="#viewManageCareUI" prefHeight="30.0" prefWidth="180.0" text="Quản lý dịch vụ" />
+                        <Button fx:id="cage" layoutX="-4.0" layoutY="175.0" mnemonicParsing="false" onAction="#viewManageCage" prefHeight="30.0" prefWidth="180.0" text="Quản lý chuồng" />
+                        <Button fx:id="signout" layoutX="-3.0" layoutY="236.0" mnemonicParsing="false" onAction="#signOut" prefHeight="30.0" prefWidth="180.0" text="Đăng xuất" />
+                        <Button fx:id="dashboard" layoutX="-3.0" layoutY="-1.0" mnemonicParsing="false" onAction="#viewStatisticalUI" prefHeight="30.0" prefWidth="180.0" text="Dashboard" />
+                        <Button fx:id="appointtments" layoutY="89.0" mnemonicParsing="false" onAction="#viewManageAppointmentsUI" prefHeight="30.0" prefWidth="180.0" text="Quan ly lich kham" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+            </items>
+        </SplitPane>
+        <ImageView fitHeight="114.0" fitWidth="182.0" pickOnBounds="true" preserveRatio="true" />
+        <Label layoutX="14.0" layoutY="15.0" text="Tên  ứng dụng" />
+        <Line endX="344.79998779296875" endY="-1.1444091796875E-5" layoutX="236.0" layoutY="42.0" startX="-211.20001220703125" startY="-1.1444091796875E-5" />
+        <Label layoutX="482.0" layoutY="15.0" text="account setting" />
+        <Label layoutX="119.0" layoutY="48.0" text="dashboard - thống kê" />
+    </children>
 </AnchorPane>

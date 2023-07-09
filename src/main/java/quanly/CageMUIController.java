@@ -25,8 +25,8 @@ public class CageMUIController extends UserFuncBase implements Initializable {
     private TableColumn<Cage, Integer> cageIdColumn;
     @FXML
     private TableColumn<Cage, String> cageStatusColumn;
-//    @FXML
-//    private TableColumn<Cage, Integer> petIdcolumn;
+    @FXML
+    private TableColumn<Cage, Integer> petIdcolumn;
 
     private ObservableList<Cage> cageList;
     CageController cageController = new CageController();
@@ -46,7 +46,7 @@ public class CageMUIController extends UserFuncBase implements Initializable {
             String status = cellData.getValue().isStatus() == 1 ? "đã sử dụng" : "trống";
             return new SimpleStringProperty(status);
         });
-//        petIdcolumn.setCellValueFactory(new PropertyValueFactory<Cage, Integer>("Pet.getId()"));
+        petIdcolumn.setCellValueFactory(new PropertyValueFactory<Cage, Integer>("pet_id"));
 
 
         cageTableView.setItems(cageList);

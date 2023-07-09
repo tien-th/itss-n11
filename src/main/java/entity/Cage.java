@@ -2,34 +2,31 @@ package entity;
 
 
 public class Cage {
+
     private int id_cage;
-    private int status;   // true if cage is empty, false if cage is full
-    private Pet pet;
+    private int status;
+    private int pet_id;
 
-    // constructor
-    public Cage(int id_cage, int status, Pet pet) {
-        this.id_cage = id_cage;
+
+    public Cage(int id, int status, int pet_id) {
+        this.id_cage = id;
         this.status = status;
-        this.pet = null;
+        this.pet_id =pet_id;
     }
-
-//    public Cage(int id, int petId, int status) {
-//        this.id_cage = id;
-//        this.status = status;
-//        this.pet = null;    // pet is null when cage is empty
-//    }
 
     public Cage(int id, int status) {
         this.id_cage = id;
         this.status = status;
     }
 
-    public Cage() {
 
-    }
+//    public Cage(int id, int status) {
+//        this.id_cage = id;
+//        this.status = status;
+//    }
 
 
-    //getter and setter
+// getter and setter
     public int getId_cage() {
         return id_cage;
     }
@@ -46,18 +43,12 @@ public class Cage {
         this.status = status;
     }
 
-    public  Pet getPet() {
-        return pet;
+    public int getPet_id() {
+        return pet_id;
     }
 
-    public void setPet(Pet pet) {
-        this.pet = pet;
-    }
-
-    // toString
-    @Override
-    public String toString() {
-        return "Cage{" + "id_cage=" + id_cage + ", status=" + status + ", pet=" + pet + '}';
+    public void setPet_id(int pet_id) {
+        this.pet_id = pet_id;
     }
 }
 

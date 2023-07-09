@@ -16,17 +16,18 @@ public class CageController {
 
    public void getCageList() throws SQLException, ClassNotFoundException{
        PreparedStatement ps = null;
-       String sql = "SELECT * FROM lodging";
-//       String sql = "SELECT lodging.id_lodging, set_lodging.pet_id, lodging.status\n" +
-//               "FROM lodging\n" +
-//               "JOIN set_lodging ON lodging.id_lodging = set_lodging.lodging_id;";
+       String sql1 = "SELECT * FROM lodging";
+       String sql = "SELECT l.lodging_id, s.pet_id, l.status " +
+               "FROM lodging l " +
+               "JOIN set_lodging s ON l.lodging_id = s.lodging_id";
          ps = DbConnection.openConnection().prepareStatement(sql);
 
          java.sql.ResultSet rs = ps.executeQuery();
          while (rs.next()){
               int id = rs.getInt("lodging_id");
               int status = rs.getInt("status");
-              Cage c = new Cage(id, status);
+              int pet_id = rs.getInt("pet_id");
+              Cage c = new Cage(id, status, pet_id);
               cageList.add(c);
          }
 
@@ -69,7 +70,8 @@ public class CageController {
         java.sql.ResultSet rs = ps.executeQuery();
         while (rs.next()) {
             int id = rs.getInt("lodging_id");
-            Cage c = new Cage(id, status);
+            int pet_id = rs.getInt("pet_id");
+            Cage c = new Cage(id, status, pet_id);
             cageList.add(c);
         }
         return cageList;
