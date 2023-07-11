@@ -13,6 +13,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.*;
@@ -26,7 +27,7 @@ public class CageMUIController extends UserFuncBase implements Initializable {
     @FXML
     private TableColumn<Cage, String> cageStatusColumn;
     @FXML
-    private TableColumn<Cage, Integer> petIdcolumn;
+    private TableColumn<Cage, String> petIdcolumn;
 
     private ObservableList<Cage> cageList;
     CageController cageController = new CageController();
@@ -46,7 +47,10 @@ public class CageMUIController extends UserFuncBase implements Initializable {
             String status = cellData.getValue().isStatus() == 1 ? "đã sử dụng" : "trống";
             return new SimpleStringProperty(status);
         });
-        petIdcolumn.setCellValueFactory(new PropertyValueFactory<Cage, Integer>("pet_id"));
+       petIdcolumn.setCellValueFactory(cellData -> {
+            String petId = cellData.getValue().getPet_id() ==0 ? "null" : Integer.toString(cellData.getValue().getPet_id());
+            return new SimpleStringProperty(petId);
+        });
 
 
         cageTableView.setItems(cageList);
@@ -142,8 +146,11 @@ public class CageMUIController extends UserFuncBase implements Initializable {
 
     }
     public void addCage(ActionEvent event) throws SQLException, ClassNotFoundException{
+        //newid = cageList.get(cageList.size() - 1).getId_cage() + 1;  if (cageList.size() == 0) newid = 1;
+        int newid = 0;
+        if(cageList.size() == 0) newid = 1;
+        else newid = cageList.get(cageList.size() - 1).getId_cage() + 1;
 
-        int newid = cageList.get(cageList.size() - 1).getId_cage() + 1;
         int newStatus = 0;
         Cage cage = new Cage(newid, newStatus);
 
@@ -158,6 +165,32 @@ public class CageMUIController extends UserFuncBase implements Initializable {
      cageIdColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
      cageStatusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
      cageTableView.setItems(FXCollections.observableList(cageList));
+ }
+
+
+
+ public void detailInfo(ActionEvent event) throws SQLException, ClassNotFoundException, IOException {
+     Cage selectedCage = cageTableView.getSelectionModel().getSelectedItem();
+     int id_pet_selected = selectedCage.getPet_id();
+     if (selectedCage == null) {
+         Alert alert = new Alert(Alert.AlertType.ERROR);
+         alert.setTitle("Error");
+         alert.setHeaderText("Error");
+         alert.setContentText("Please choose a cage");
+         alert.showAndWait();
+         return;
+     }else if (id_pet_selected == 0){
+         Alert alert = new Alert(Alert.AlertType.ERROR);
+         alert.setTitle("Error");
+         alert.setHeaderText("Error");
+         alert.setContentText("Not pet in this cage");
+         alert.showAndWait();
+         return;
+     }else
+     {
+         cageController.detailInfo(id_pet_selected);
+     }
+
  }
 
 }

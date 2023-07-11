@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="quanly.CageMUIController">
+<AnchorPane fx:id="de" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="quanly.CageMUIController">
     <children>
         <Label layoutX="236.0" layoutY="14.0" style="-fx-font-size: 24px;" text="Quản lý chuồng" />
         <Line endX="344.8" endY="0.0" layoutX="236.0" layoutY="42.0" startX="-211.2" startY="0.0" />
@@ -20,5 +20,6 @@
             </columns>
         </TableView>
         <Button layoutX="520.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBack" prefWidth="65.0" style="-fx-font-size: 14px;" text="Back" textAlignment="CENTER" />
+      <Button fx:id="detail" layoutX="116.0" layoutY="61.0" mnemonicParsing="false" onAction="#detailInfo" text="info" />
     </children>
 </AnchorPane>

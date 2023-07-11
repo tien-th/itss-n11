@@ -2,9 +2,16 @@ package quanly;
 
 import connection.DbConnection;
 import entity.*;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 
+import java.io.IOException;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -75,6 +82,42 @@ public class CageController {
             cageList.add(c);
         }
         return cageList;
+    }
+
+    public void detailInfo(int id_pet_selected) throws IOException, SQLException, ClassNotFoundException {
+
+        PreparedStatement ps = null;
+        String sql = "SELECT p.pet_id, p.name,p.category, u.username" +
+                "FROM pet p " +
+                "INNER JOIN user u ON p.username = u.username"+
+                "WHERE p.petid = id_pet_selected";
+        ps = DbConnection.openConnection().prepareStatement(sql);
+        ResultSet rs = ps.executeQuery();
+        System.out.println(rs.getString("p.pet_id") + " " + rs.getString("p.name") + " " + rs.getString("p.category") + " " + rs.getString("u.hoten"));
+        int pet_id = rs.getInt("p.pet_id");
+        String name = rs.getString("p.name");
+        String category = rs.getString("p.category");
+        String hoten = rs.getString("u.username");
+        Pet p = new Pet(pet_id, name, category, hoten);
+
+
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setTitle("Pet Information");
+        VBox vbox = new VBox();
+        Label label = new Label("Pet Information");
+        Label label1 = new Label("Pet ID: " + p.getId());
+        Label label2 = new Label("Pet Name: " + p.getName());
+        Label label3 = new Label("Pet Category: " + p.getCategory());
+        Label label4 = new Label("Owner: " + p.getUsername());
+        vbox.getChildren().addAll(label, label1, label2, label3, label4);
+
+        Scene scene = new Scene(vbox, 400, 300);
+        stage.setScene(scene);
+        stage.showAndWait();
+
+
+
     }
 
 
