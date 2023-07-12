@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 import java.nio.file.Paths;
+import java.util.Objects;
 
 
 public class TestLogin extends Application {
@@ -21,8 +22,10 @@ public class TestLogin extends Application {
         try {
             URL url = Paths.get("./src/main/java/dangnhap/dangnhap.fxml").toUri().toURL();
             Parent root = FXMLLoader.load(url);
-//            Parent root = FXMLLoader.load(this.getClass().getClassLoader().getResource("dangnhap.fxml"));
+
             Scene scene = new Scene(root);
+           // theem file sytle.css
+//            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("l.css")).toExternalForm());
             primaryStage.setScene(scene);
             primaryStage.show();
 

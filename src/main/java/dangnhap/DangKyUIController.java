@@ -25,9 +25,13 @@ public class DangKyUIController extends UserFuncBase {
     private TextField passwordTextField;
     @FXML
     private TextField rePasswordTextField;
-
     @FXML
-    private Label errorLabel = new Label();
+    private Tooltip errorLabel;
+    @FXML
+    public void initialize() {
+        Tooltip passwordTooltip = new Tooltip("Mật khẩu và xác nhận mật khẩu không khớp");
+        Tooltip.install(rePasswordTextField, passwordTooltip);
+    }
 
     // TODO --Long : check if email is valid (action event)
     // để sau
@@ -54,14 +58,22 @@ public class DangKyUIController extends UserFuncBase {
 
 
     public void getBirthday(ActionEvent e) {
+        // nếu ngày lớn hơn ngày hiện tại thì báo lỗi
+        if (birthdayPicker.getValue().isAfter(java.time.LocalDate.now())) {
+            // alert to show error
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Invalid birthday");
+            alert.setContentText("Please try again");
+            alert.showAndWait();
+            return ;
+        }
         birthdayLabel.setText(birthdayPicker.getValue().toString());
-        System.out.println(birthdayPicker.getValue().toString());
     }
 
 
     @FXML
     private Label gender = new Label();
-
     @FXML
     private RadioButton male, female;
     public void getGender(ActionEvent e) {
@@ -76,16 +88,18 @@ public class DangKyUIController extends UserFuncBase {
 
 
 
-    public void registerButtonClicked(ActionEvent e) throws SQLException, ClassNotFoundException {
+
+    public void registerButtonClicked(ActionEvent e) throws SQLException, ClassNotFoundException, IOException {
         String username = usernameTextField.getText();
         String password = passwordTextField.getText();
         String rePassword = rePasswordTextField.getText();
         if (!password.equals(rePassword)) {
-            // TODO
-            errorLabel.setText("not match");
+            rePasswordTextField.getStyleClass().add("error");
+            Tooltip passwordTooltip = new Tooltip("Mật khẩu và xác nhận mật khẩu không khớp");
+            rePasswordTextField.setTooltip(passwordTooltip);
+            passwordTooltip.setAutoHide(false);
+            return;
 
-//            System.out.println("Mật khẩu không trùng khớp");
-            return ;
         }
 
         String email = emailTextField.getText();
@@ -95,7 +109,28 @@ public class DangKyUIController extends UserFuncBase {
 
         DangnhapController register = new DangnhapController();
         User u = new User(username, password, email, name, birthday, genderStr);
-        register.saveUserToDb(u);
+
+
+        if (register.saveUserToDb(u)) {
+            // alert to show success
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Success");
+            alert.setHeaderText("Register successfully");
+            alert.setContentText("Please login to continue");
+            alert.showAndWait();
+            back(e);
+
+        }
+        else {
+            // alert to show error
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Register failed");
+            alert.setContentText("Please try again");
+            alert.showAndWait();
+        }
+
+
 
     }
     @FXML

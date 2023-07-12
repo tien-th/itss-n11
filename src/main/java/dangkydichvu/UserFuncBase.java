@@ -1,5 +1,6 @@
 package dangkydichvu;
 
+import connection.DbConnection;
 import entity.Pet;
 import entity.User;
 import javafx.event.ActionEvent;
@@ -12,15 +13,23 @@ import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import menu.AdminUIController;
 import menu.UserUIController;
 import view_pet.ViewPetController;
 
+import java.sql.Array;
+import java.sql.ResultSet;
 
+
+import javax.xml.transform.Result;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Paths;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -82,6 +91,7 @@ public class UserFuncBase implements Initializable {
     }
 
     public void goBack(ActionEvent e ) throws IOException {
+
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         URL url = null ;
         FXMLLoader loader = new FXMLLoader();
@@ -103,6 +113,9 @@ public class UserFuncBase implements Initializable {
             stage.setScene(scene);
         }
     }
+
+
+
 
 
 }

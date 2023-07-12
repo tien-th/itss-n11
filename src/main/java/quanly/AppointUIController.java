@@ -33,6 +33,11 @@ public class AppointUIController extends UserFuncBase implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        // data in all column align center
+        petIdColumn.setStyle("-fx-alignment: CENTER;");
+        datetimeColumn.setStyle("-fx-alignment: CENTER;");
+        time_slotColumn.setStyle("-fx-alignment: CENTER;");
+//        statusColumn.setStyle("-fx-alignment: CENTER;");
         appointList = FXCollections.observableArrayList(appointController.appointList);
         petIdColumn.setCellValueFactory(new PropertyValueFactory<Appoint, Integer>("pet_id"));
         datetimeColumn.setCellValueFactory(new PropertyValueFactory<Appoint, String>("day"));

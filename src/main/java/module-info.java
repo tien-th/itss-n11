@@ -2,6 +2,7 @@ module com.example.itssn11 {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
+    requires java.desktop;
 
 
     opens com.example.itssn11 to javafx.fxml;

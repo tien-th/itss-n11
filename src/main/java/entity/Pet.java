@@ -1,5 +1,7 @@
 package entity;
 
+import java.security.PrivateKey;
+
 public class Pet {
     private int id ;
     private String username ;
@@ -9,14 +11,15 @@ public class Pet {
     private int age ;
     private String gender ;
 
+
     public Pet(int id, String username, String name) {
         this.id = id;
         this.username = username;
         this.name = name;
     }
-    public Pet(int id, String username, String name, String color) {
+    public Pet(int id, String username, String name, String category) {
        this(id, username, name);
-        this.color = color;
+        this.category = category;
     }
     public Pet(int id, String username, String name, String color, String category, int age, String gender) {
         this(id, username, name, color);

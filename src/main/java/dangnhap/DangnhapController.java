@@ -37,20 +37,20 @@ public class DangnhapController extends UserFuncBase {
     }
 
     public boolean checkUserName(String username) throws SQLException, ClassNotFoundException {
-        String sql = "SELECT * FROM public.user";
-        try (
-                Connection con = DbConnection.openConnection();
-                PreparedStatement stmt = con.prepareStatement(sql);) {
-
-            ResultSet rs = stmt.executeQuery();
-            while (rs.next()) {
-                if (rs.getString("username").equals(username)) {
-                    return true;
-                }
-            }
-            return false;
+      // username valid: length(username)> 0 and not exits in database
+        String sql = "SELECT * FROM public.user u WHERE u.username = ?";
+        PreparedStatement ps = DbConnection.openConnection().prepareStatement(sql);
+        ps.setString(1, username);
+        ResultSet rs = ps.executeQuery();
+        if(rs.next()){
+            return true ;
         }
+        return false ;
+
     }
+
+
+
 
     public User checkLogin(String username, String password) throws SQLException, ClassNotFoundException {
         if (checkUserName(username)) {
@@ -62,7 +62,7 @@ public class DangnhapController extends UserFuncBase {
         return null;
     }
 
-    public void saveUserToDb(User u) throws SQLException, ClassNotFoundException {
+    public boolean saveUserToDb(User u) throws SQLException, ClassNotFoundException {
         String username = u.getUsername();
         boolean usernameExist = this.checkUserName(username);
         if (usernameExist) {
@@ -72,7 +72,20 @@ public class DangnhapController extends UserFuncBase {
             alert.setHeaderText("Username already exist");
             alert.setContentText("Please try again");
             alert.showAndWait();
-            return;
+            return false;
+        }
+
+
+        // check username valid with regex
+        String regex = "^[a-zA-Z0-9]{6,}$";
+        if (!username.matches(regex)) {
+            System.out.println("Username không hợp lệ");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Username invalid");
+            alert.setContentText("Please try again");
+            alert.showAndWait();
+            return false;
         }
         // Insert user to db
         String sql = "INSERT INTO public.user values (?, ?, ?, ?, ?, ?,?)";
@@ -98,6 +111,7 @@ public class DangnhapController extends UserFuncBase {
             e.printStackTrace();
             showAlert("Failed!");
         }
+        return true;
     }
     public void showAlert(String content) {
         Alert alert = new Alert(AlertType.INFORMATION);
@@ -106,4 +120,5 @@ public class DangnhapController extends UserFuncBase {
         alert.setContentText(content);
         alert.showAndWait();
     }
+
 }

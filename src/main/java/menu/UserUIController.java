@@ -14,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import view_pet.ViewPetUIController;
+import quanly.UpdatedInfoController;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -22,8 +23,9 @@ import java.nio.file.Paths;
 public class UserUIController {
     // Xử lý sự kiện
     @FXML
-    Label nameLabel = new Label() ;
-    User user = null ;
+    Label nameLabel = new Label();
+    User user = null;
+
     public void setUser(User user) {
         this.user = user;
         nameLabel.setText(user.getName());
@@ -38,7 +40,7 @@ public class UserUIController {
 
         Parent adminViewParent = loader.load(url.openStream());
         ViewPetUIController viewPetUIController = loader.getController();
-        System.out.println(user.getName() + " " +  user.getRole());
+        System.out.println(user.getName() + " " + user.getRole());
         Scene scene = new Scene(adminViewParent);
         viewPetUIController.setUser(user);
         viewPetUIController.initialize(url, null);
@@ -53,7 +55,7 @@ public class UserUIController {
         Parent adminViewParent = loader.load(url.openStream());
         System.out.println("asdasdas");
         DangKyTrongGiuScreenController dangKyTrongGiuScreenController = loader.getController();
-        System.out.println(user.getName() + "abcd " +  user.getRole());
+        System.out.println(user.getName() + "abcd " + user.getRole());
         Scene scene = new Scene(adminViewParent);
         dangKyTrongGiuScreenController.setUser(user);
         dangKyTrongGiuScreenController.initialize(url, null);
@@ -68,7 +70,7 @@ public class UserUIController {
         Parent adminViewParent = loader.load(url.openStream());
         System.out.println("asdasdas");
         DangKyKhamScreenController dangKyKhamScreenController = loader.getController();
-        System.out.println(user.getName() + "abcd " +  user.getRole());
+        System.out.println(user.getName() + "abcd " + user.getRole());
         Scene scene = new Scene(adminViewParent);
         dangKyKhamScreenController.setUser(user);
         dangKyKhamScreenController.initialize(url, null);
@@ -83,7 +85,7 @@ public class UserUIController {
         Parent adminViewParent = loader.load(url.openStream());
         System.out.println("asdasdas");
         DangKyVSScreenController dangKyVSScreenController = loader.getController();
-        System.out.println(user.getName() + "abcd " +  user.getRole());
+        System.out.println(user.getName() + "abcd " + user.getRole());
         Scene scene = new Scene(adminViewParent);
         dangKyVSScreenController.setUser(user);
         dangKyVSScreenController.initialize(url, null);
@@ -101,4 +103,18 @@ public class UserUIController {
         Scene scene = new Scene(userViewParent);
         stage.setScene(scene);
     }
+//    public <UpdateInfoController> void updateInfo(ActionEvent event) throws IOException {
+//
+//        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//        URL url = Paths.get("./src/main/java/dangnhap/updateInfo.fxml").toUri().toURL();
+//        FXMLLoader loader = new FXMLLoader();
+//        loader.setLocation(url);
+//        Parent userViewParent = loader.load(url.openStream());
+//        UpdateInfoController updateInfoController = loader.getController();
+//        updateInfoController.setUser(user);
+//        Scene scene = new Scene(userViewParent);
+//        stage.setScene(scene);
+//    }
+//}
+
 }

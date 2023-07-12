@@ -3,6 +3,8 @@ import dangkydichvu.UserFuncBase;
 import entity.Medical;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -60,34 +62,56 @@ public class MedicalMUIController extends UserFuncBase  implements Initializable
     @FXML
     private TextField searchTextField;
     @FXML
-    private void searchMedical(ActionEvent event) {
-        String searchQuery = searchTextField.getText();
-        if (searchQuery.isEmpty()) {
-            // No search query provided
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Lỗi");
-            alert.setHeaderText("Không có từ khóa tìm kiếm");
-            alert.setContentText("Vui lòng nhập từ khóa tìm kiếm");
-            alert.showAndWait();
-            return;
-        }
-
-        medicalList.clear();
-
-        for (Medical medical : medicalController.medicalList) {
-            if (medical.getTenThuoc().contains(searchQuery)) {
-                medicalList.add(medical);
-            }
-        }
-
-        if (medicalList.isEmpty()) {
-            // No users found
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo");
-            alert.setHeaderText("Không tìm thấy thuốc");
-            alert.setContentText("Vui lòng nhập lại từ khóa tìm kiếm");
-            alert.showAndWait();
-        }
+//    private void searchMedical(ActionEvent event) {
+//        String searchQuery = searchTextField.getText();
+//        if (searchQuery.isEmpty()) {
+//            // No search query provided
+//            Alert alert = new Alert(Alert.AlertType.ERROR);
+//            alert.setTitle("Lỗi");
+//            alert.setHeaderText("Không có từ khóa tìm kiếm");
+//            alert.setContentText("Vui lòng nhập từ khóa tìm kiếm");
+//            alert.showAndWait();
+//            return;
+//        }
+//
+//        medicalList.clear();
+//
+//        for (Medical medical : medicalController.medicalList) {
+//            if (medical.getTenThuoc().contains(searchQuery)) {
+//                medicalList.add(medical);
+//            }
+//            medicalTableView.refresh();
+//        }
+//
+//
+//        if (medicalList.isEmpty()) {
+//            // No users found
+//            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+//            alert.setTitle("Thông báo");
+//            alert.setHeaderText("Không tìm thấy thuốc");
+//            alert.setContentText("Vui lòng nhập lại từ khóa tìm kiếm");
+//            alert.showAndWait();
+//        }
+//        medicalTableView.setItems(medicalList);
+//        medicalTableView.refresh();
+//    }
+    public void searchMedical(ActionEvent event) throws SQLException, ClassNotFoundException {
+        FilteredList<Medical> filteredData = new FilteredList<>(medicalList, p -> true);
+        searchTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(medical -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+                String lowerCaseFilter = newValue.toLowerCase();
+                if (medical.getTenThuoc().toLowerCase().contains(lowerCaseFilter)) {
+                    return true;
+                }
+                return false;
+            });
+        });
+        SortedList<Medical> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(medicalTableView.comparatorProperty());
+        medicalTableView.setItems(sortedData);
     }
 
     public void addMedical(ActionEvent event) throws SQLException, ClassNotFoundException {

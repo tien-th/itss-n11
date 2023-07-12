@@ -2,32 +2,51 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dangnhap.DangKyUIController">
+<AnchorPane prefHeight="300.0" prefWidth="400.0" styleClass="rootsignup" stylesheets="@../../resources/login.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dangnhap.DangKyUIController">
     <children>
-        <Label layoutX="14.0" layoutY="14.0" text="Đăng ký" />
-        <Label layoutX="32.0" layoutY="40.0" text="Tên đăng nhập" />
+        <Label layoutX="6.0" layoutY="7.0" text="Đăng ký">
+         <font>
+            <Font name="System Italic" size="22.0" />
+         </font></Label>
+        <Label layoutX="163.0" layoutY="15.0" text="Tên đăng nhập">
+         <font>
+            <Font size="10.0" />
+         </font></Label>
         <TextField id="usernameTextField" fx:id="usernameTextField" layoutX="164.0" layoutY="35.0" />
-        <Label layoutX="31.0" layoutY="83.0" text="Mật khẩu" />
+        <Label layoutX="164.0" layoutY="61.0" text="Mật khẩu">
+         <font>
+            <Font size="10.0" />
+         </font></Label>
         <PasswordField id="passwordTextField" fx:id="passwordTextField" layoutX="164.0" layoutY="78.0" />
-        <Label layoutX="33.0" layoutY="125.0" text="Nhập lại mật khẩu" />
+        <Label layoutX="165.0" layoutY="104.0" text="Nhập lại mật khẩu">
+         <font>
+            <Font size="10.0" />
+         </font></Label>
         <PasswordField id="passwordTextField" fx:id="rePasswordTextField" layoutX="164.0" layoutY="120.0" />
-        <Button fx:id="btnRegister" layoutX="71.0" layoutY="343.0" mnemonicParsing="false" onAction="#registerButtonClicked" text="Đăng ký" />
-      <TextField id="" fx:id="emailTextField" layoutX="164.0" layoutY="159.0" />
-      <Label layoutX="45.0" layoutY="164.0" text="Email" />
-      <Label layoutX="31.0" layoutY="213.0" text="Name" />
-      <TextField id="" fx:id="nameTextField" layoutX="164.0" layoutY="208.0" />
-<!--        create a field for user select birthday on screen-->
-        <Label layoutX="24.0" layoutY="252.0" text="Birthday" />
-      <DatePicker id="" fx:id="birthdayPicker" layoutX="164.0" layoutY="247.0" onAction="#getBirthday" />
-<!--        creat a field for user select gender (only male or female)-->
-        <Label layoutX="23.0" layoutY="291.0" text="Giới tính" />
+        <Label layoutX="165.0" layoutY="150.0" text="Email">
+         <font>
+            <Font size="10.0" />
+         </font></Label>
+        <TextField id="" fx:id="emailTextField" layoutX="164.0" layoutY="165.0" />
+        <Label layoutX="165.0" layoutY="190.0" text="Name">
+         <font>
+            <Font size="10.0" />
+         </font></Label>
+        <TextField id="" fx:id="nameTextField" layoutX="164.0" layoutY="208.0" />
+        <Label layoutX="165.0" layoutY="234.0" text="Birthday">
+         <font>
+            <Font size="10.0" />
+         </font></Label>
+        <DatePicker id="" fx:id="birthdayPicker" layoutX="164.0" layoutY="255.0" onAction="#getBirthday" />
         <RadioButton fx:id="male" layoutX="173.0" layoutY="291.0" mnemonicParsing="false" onAction="#getGender" text="Nam">
-         <toggleGroup>
-            <ToggleGroup fx:id="gen" />
-         </toggleGroup></RadioButton>
+            <toggleGroup>
+                <ToggleGroup fx:id="gen" />
+            </toggleGroup>
+        </RadioButton>
         <RadioButton id="female" fx:id="female" layoutX="258.0" layoutY="291.0" mnemonicParsing="false" onAction="#getGender" text="Nữ" toggleGroup="$gen" />
-      <Button fx:id="back" layoutX="258.0" layoutY="343.0" mnemonicParsing="false" onAction="#back" text="Thoát" />
-
+        <Button fx:id="btnRegister" layoutX="165.0" layoutY="329.0" mnemonicParsing="false" onAction="#registerButtonClicked" text="Đăng ký" />
+        <Button fx:id="back" layoutX="273.0" layoutY="329.0" mnemonicParsing="false" onAction="#back" text="Thoát" />
     </children>
 </AnchorPane>

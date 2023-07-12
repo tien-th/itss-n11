@@ -171,7 +171,7 @@ public class CageMUIController extends UserFuncBase implements Initializable {
 
  public void detailInfo(ActionEvent event) throws SQLException, ClassNotFoundException, IOException {
      Cage selectedCage = cageTableView.getSelectionModel().getSelectedItem();
-     int id_pet_selected = selectedCage.getPet_id();
+
      if (selectedCage == null) {
          Alert alert = new Alert(Alert.AlertType.ERROR);
          alert.setTitle("Error");
@@ -179,17 +179,20 @@ public class CageMUIController extends UserFuncBase implements Initializable {
          alert.setContentText("Please choose a cage");
          alert.showAndWait();
          return;
-     }else if (id_pet_selected == 0){
-         Alert alert = new Alert(Alert.AlertType.ERROR);
-         alert.setTitle("Error");
-         alert.setHeaderText("Error");
-         alert.setContentText("Not pet in this cage");
-         alert.showAndWait();
-         return;
-     }else
-     {
-         cageController.detailInfo(id_pet_selected);
+     }else {
+         int id_pet_selected = selectedCage.getPet_id();
+         if (id_pet_selected == 0) {
+             Alert alert = new Alert(Alert.AlertType.ERROR);
+             alert.setTitle("Error");
+             alert.setHeaderText("Error");
+             alert.setContentText("Not pet in this cage");
+             alert.showAndWait();
+             return;
+         } else {
+             cageController.detailInfo(id_pet_selected);
+         }
      }
+
 
  }
 
