@@ -23,6 +23,7 @@ public class DangKyKhamScreenController extends UserFuncBase {
         String thoiGian = comboBoxThoiGian.getValue();
         String[] parts = thoiGian.split(":");
         int startHour = Integer.parseInt(parts[0]);
+
         System.out.println("day :" + ngayKham + "time: " + startHour);
         DangKyDvController dangKyKhamController = new DangKyDvController();
         if (dangKyKhamController.dangKyKham(pet, ngayKham, startHour) ) {

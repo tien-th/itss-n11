@@ -6,6 +6,8 @@ import entity.Pet;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,6 +15,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -34,26 +37,8 @@ public class CageMUIController extends UserFuncBase implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        try {
-            cageController.getCageList();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        cageList = FXCollections.observableArrayList(cageController.cageList);
-
-        cageIdColumn.setCellValueFactory(new PropertyValueFactory<Cage, Integer>("id_cage"));
-
-        cageStatusColumn.setCellValueFactory(cellData -> {
-            String status = cellData.getValue().isStatus() == 1 ? "đã sử dụng" : "trống";
-            return new SimpleStringProperty(status);
-        });
-       petIdcolumn.setCellValueFactory(cellData -> {
-            String petId = cellData.getValue().getPet_id() ==0 ? "null" : Integer.toString(cellData.getValue().getPet_id());
-            return new SimpleStringProperty(petId);
-        });
-
-
-        cageTableView.setItems(cageList);
+       showCage();
+       filterCage();
 
     }
 
@@ -193,6 +178,64 @@ public class CageMUIController extends UserFuncBase implements Initializable {
          }
      }
 
+
+
+ }
+
+ public void showCage(){
+     try {
+         cageController.getCageList();
+     } catch (Exception e) {
+         e.printStackTrace();
+     }
+     cageList = FXCollections.observableArrayList(cageController.cageList);
+
+     cageIdColumn.setCellValueFactory(new PropertyValueFactory<Cage, Integer>("id_cage"));
+
+     cageStatusColumn.setCellValueFactory(cellData -> {
+         String status = cellData.getValue().isStatus() == 1 ? "đã sử dụng" : "trống";
+         return new SimpleStringProperty(status);
+     });
+     petIdcolumn.setCellValueFactory(cellData -> {
+         String petId = cellData.getValue().getPet_id() ==0 ? "null" : Integer.toString(cellData.getValue().getPet_id());
+         return new SimpleStringProperty(petId);
+     });
+
+
+     cageTableView.setItems(cageList);
+
+ }
+
+ @FXML
+private TextField filterField;
+
+ public void filterCage(){
+     FilteredList<Cage> filteredData = new FilteredList<>(cageList, p -> true);
+     filterField.textProperty().addListener((observable, oldValue, newValue) -> {
+         filteredData.setPredicate(cage -> {
+             // If filter text is empty, display all cages.
+             if (newValue == null || newValue.isEmpty()) {
+                 return true;
+             }
+
+             // Compare cage id of every cage with filter text.
+             String lowerCaseFilter = newValue.toLowerCase();
+             if(String.valueOf(cage.getId_cage()).indexOf(lowerCaseFilter) != -1){
+                 return true;
+             }
+             else if(String.valueOf(cage.isStatus()).indexOf(lowerCaseFilter) != -1){
+                 return true;
+             }
+             else if(String.valueOf(cage.getPet_id()).indexOf(lowerCaseFilter) != -1){
+                 return true;
+             }
+             else
+                 return false; // Does not match.
+         });
+     });
+        SortedList<Cage> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(cageTableView.comparatorProperty());
+        cageTableView.setItems(sortedData);
 
  }
 

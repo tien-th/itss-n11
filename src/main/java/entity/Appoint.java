@@ -6,6 +6,7 @@ public class Appoint {
     private String day;
     private int time_slot;
 
+
     public String getTime() {
         return time;
     }

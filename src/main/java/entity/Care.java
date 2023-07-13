@@ -7,14 +7,26 @@ public class Care {
     private String services;
     private String day;
     private int time_slot;
+    private int price;
+
+
+    //định dạng tiền theo vnd
+
 //    private boolean state;
 
-    public Care(int pet_id, String services, String day, int time_slot) {
+    public Care(int pet_id, String services, String day, int time_slot, int price) {
         this.pet_id = pet_id;
         this.services = services;
         this.day = day;
         this.time_slot = time_slot;
+        // if services is bath or shower, price is 100k
+        if (services.equals("Tia lông") || services.equals("Tắm")) {
+            this.price = 100000;
+        } else {
+            this.price = 200000;
+        }
 //        this.state = state;
+
     }
 
     public int getPet_id() {
@@ -48,5 +60,14 @@ public class Care {
     public void setTime_slot(int time_slot) {
         this.time_slot = time_slot;
     }
+    //getter and setter for price
+    public int getPrice() {
+        return price;
+    }
+    //setter
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
 
 }

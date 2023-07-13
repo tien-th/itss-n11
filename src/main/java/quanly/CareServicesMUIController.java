@@ -1,15 +1,22 @@
 package quanly;
 
-import  dangkydichvu.UserFuncBase;
+import dangkydichvu.UserFuncBase;
 import entity.Care;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import javax.swing.*;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -24,13 +31,33 @@ public class CareServicesMUIController extends  UserFuncBase implements Initiali
     @FXML
     private TableColumn<Care, String> datetimeColumn;
     @FXML
-    private TableColumn<Care, String> timeSlotColumn;
-
+    private TableColumn<Care, Integer> timeSlotColumn;
+    @FXML
+    private TableColumn<Care, Integer> giatienColumn;
     private ObservableList<Care> careList;
     CareController careController = new CareController();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            showListCareServices();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            filter();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    @FXML
+    public void showListCareServices()throws SQLException, ClassNotFoundException{
         try {
             careController.getListCareServices();
         } catch (SQLException | ClassNotFoundException e) {
@@ -40,23 +67,17 @@ public class CareServicesMUIController extends  UserFuncBase implements Initiali
         petIdColumn.setCellValueFactory(new PropertyValueFactory<Care, Integer>("pet_id"));
         dichvuColumn.setCellValueFactory(new PropertyValueFactory<Care, String>("services"));
         datetimeColumn.setCellValueFactory(new PropertyValueFactory<Care, String>("day"));
-        timeSlotColumn.setCellValueFactory(new PropertyValueFactory<Care, String>("timeslot"));
-        timeSlotColumn.setCellFactory(column -> {
-            return new TableCell<Care, String>() {
-                @Override
-                protected void updateItem(String timeslot, boolean empty) {
-                    super.updateItem(timeslot, empty);
-                    if (empty) {
-                        setText(null);
-                    } else {
-                        setText(timeslot + ":00");
-                    }
-                }
-            };
+        timeSlotColumn.setCellValueFactory(new PropertyValueFactory<Care, Integer>("time_slot"));
+        timeSlotColumn.setCellFactory(column -> new TableCell<Care, Integer>() {
+            @Override
+            protected void updateItem(Integer item, boolean empty) {
+                super.updateItem(item, empty);
+                setText(empty || item == null ? "" : String.format("%02d:00", item));
+            }
         });
+        giatienColumn.setCellValueFactory(new PropertyValueFactory<Care, Integer>("price"));
 
         careTableView.setItems(careList);
-
     }
     public void deleteCareServices(ActionEvent event) throws SQLException, ClassNotFoundException{
         if (user.getRole() != 1 ){
@@ -79,4 +100,37 @@ public class CareServicesMUIController extends  UserFuncBase implements Initiali
         careTableView.refresh();
 
     }
+    @FXML
+    private TextField search;
+
+    @FXML
+    public void filter() throws SQLException, ClassNotFoundException{
+        FilteredList<Care> filteredList = new FilteredList<>(careList, b -> true);
+        search.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredList.setPredicate(care -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+                String lowerCaseFilter = newValue.toLowerCase();
+                if (care.getServices().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true;
+                } else if (care.getDay().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true;
+                }else if (Integer.toString(care.getPet_id()).indexOf(lowerCaseFilter)!= -1){
+                    return true;
+                }
+                else
+                      return false;
+            });
+        });
+        SortedList<Care> sortedList = new SortedList<>(filteredList);
+        sortedList.comparatorProperty().bind(careTableView.comparatorProperty());
+        careTableView.setItems(sortedList);
+
+        
+    }
+    public  void update(ActionEvent event) throws SQLException, ClassNotFoundException{
+
+    }
+
 }

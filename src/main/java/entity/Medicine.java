@@ -7,6 +7,20 @@ public class Medicine {
     private String medicineType;
     private String provider;
     private String date;
+    private int price;
+    private int quantity;
+
+    //constructor
+    public Medicine(int id, String medicineName, String medicineType, String provider, String date, int price, int quantity) {
+        this.id = id;
+        this.medicineName = medicineName;
+        this.medicineType = medicineType;
+        this.provider = provider;
+        this.date = date;
+        this.price = price;
+        this.quantity = quantity;
+    }
+
 
     public Medicine(int id, String medicineName, String medicineType, String provider, String date) {
         this.id = id;
@@ -15,6 +29,7 @@ public class Medicine {
         this.provider = provider;
         this.date = date;
     }
+
     public Medicine() {
     }
 

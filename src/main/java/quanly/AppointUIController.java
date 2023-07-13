@@ -3,6 +3,8 @@ import dangkydichvu.UserFuncBase;
 import entity.Appoint;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -21,7 +23,7 @@ public class AppointUIController extends UserFuncBase implements Initializable {
     @FXML
     private TableColumn<Appoint, String> datetimeColumn;
     @FXML
-    private TableColumn<Appoint, String> time_slotColumn;
+    private TableColumn<Appoint, Integer> time_slotColumn;
     @FXML
     private TableColumn<Appoint, String> statusColumn;
     private ObservableList<Appoint> appointList;
@@ -41,7 +43,7 @@ public class AppointUIController extends UserFuncBase implements Initializable {
         appointList = FXCollections.observableArrayList(appointController.appointList);
         petIdColumn.setCellValueFactory(new PropertyValueFactory<Appoint, Integer>("pet_id"));
         datetimeColumn.setCellValueFactory(new PropertyValueFactory<Appoint, String>("day"));
-        time_slotColumn.setCellValueFactory(new PropertyValueFactory<Appoint, String>("time"));
+        time_slotColumn.setCellValueFactory(new PropertyValueFactory<Appoint, Integer>("time"));
 
         appointTableView.setItems(appointList);
     }
@@ -148,5 +150,23 @@ public class AppointUIController extends UserFuncBase implements Initializable {
     }
     @FXML
     private TextField searchTextField; // Add this field to your UI
+    @FXML
+    public void search(ActionEvent event) throws  SQLException, ClassNotFoundException{
+        FilteredList<Appoint> filteredList = new FilteredList<>(appointList , p-> true);
+        searchTextField.textProperty().addListener((observable, oldValue, newValue) ->{
+            filteredList.setPredicate(appoint -> {
+                if(newValue == null || newValue.isEmpty()){
+                    return true;
+                }
+                if(Integer.valueOf(String.valueOf(searchTextField)) == appoint.getPet_id()){
+                    return true;
+                }
+                return false;
+            });
+        });
+        SortedList<Appoint> sortedList = new SortedList<>(filteredList);
+        sortedList.comparatorProperty().bind(appointTableView.comparatorProperty());
+        appointTableView.setItems(sortedList);
+    }
 
 }

@@ -25,7 +25,9 @@ public class MedicalController {
                 int soluong = resultSet.getInt("soluong");
                 String nhasx = resultSet.getString("nhasx");
                 Date hsd = resultSet.getDate("hsd");
-                Medical a = new Medical(id, ten_thuoc, nhom_thuoc, soluong, nhasx, hsd);
+                int price = resultSet.getInt("price");
+
+                Medical a = new Medical(id, ten_thuoc, nhom_thuoc, soluong, nhasx, hsd, price);
                 medicalList.add(a);
             }
      }

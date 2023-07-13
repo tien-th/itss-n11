@@ -9,7 +9,17 @@ public class Medical {
     private int soLuong;
     private String nhaSx;
     private Date hsd;
+    private int price;
 
+    public Medical(int thuocId, String tenThuoc, String nhomThuoc, int soLuong, String nhaSx, Date hsd, int price) {
+        this.thuocId = thuocId;
+        this.tenThuoc = tenThuoc;
+        this.nhomThuoc = nhomThuoc;
+        this.soLuong = soLuong;
+        this.nhaSx = nhaSx;
+        this.hsd = hsd;
+        this.price = price;
+    }
     public Medical(int thuocId, String tenThuoc, String nhomThuoc, int soLuong, String nhaSx, Date hsd) {
         this.thuocId = thuocId;
         this.tenThuoc = tenThuoc;
@@ -17,7 +27,9 @@ public class Medical {
         this.soLuong = soLuong;
         this.nhaSx = nhaSx;
         this.hsd = hsd;
+
     }
+
 
 //    public Medical(String tenThuoc, String nhomThuoc, int soLuong, String nhaSx, Date hsd) {
 //        this.tenThuoc = tenThuoc;
@@ -73,5 +85,13 @@ public class Medical {
 
     public void setHsd(Date hsd) {
         this.hsd = hsd;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+    //setter
+    public void setPrice(int price) {
+        this.price = price;
     }
 }
