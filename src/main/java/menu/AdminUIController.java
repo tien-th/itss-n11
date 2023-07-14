@@ -143,6 +143,10 @@ public class AdminUIController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         displayTotal();
+        // add file style to scene
+
+
+
     }
 
     public int userTotatUsed() throws SQLException, ClassNotFoundException {

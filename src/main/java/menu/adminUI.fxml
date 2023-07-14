@@ -6,13 +6,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane id="admin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../resources/com/Styles/temp.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="menu.AdminUIController">
+<StackPane id="admin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../resources/com/styles/temp.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="menu.AdminUIController">
     <children>
         <AnchorPane prefHeight="200.0" prefWidth="200.0">
             <children>
                 <BorderPane layoutX="245.0" layoutY="100.0" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <left>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="gradient" stylesheets="@../../resources/com/Styles/temp.css" BorderPane.alignment="CENTER">
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="gradient" stylesheets="@../../resources/com/styles/temp.css" BorderPane.alignment="CENTER">
                             <children>
                                 <AnchorPane layoutY="170.0" minHeight="0.0" minWidth="0.0" prefHeight="322.0" prefWidth="200.0" styleClass="gradient" AnchorPane.bottomAnchor="108.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="170.0">
                                     <children>
@@ -27,7 +27,7 @@
                                         <Button layoutY="210.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Phan hoi" />
                                     </children>
                                 </AnchorPane>
-                                <AnchorPane id="adminUI" prefHeight="170.0" prefWidth="200.0" stylesheets="@../../resources/com/Styles/temp.css" />
+                                <AnchorPane id="adminUI" prefHeight="170.0" prefWidth="200.0" stylesheets="@../../resources/com/styles/temp.css" />
                             </children>
                         </AnchorPane>
                     </left>

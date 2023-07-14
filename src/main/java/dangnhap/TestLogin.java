@@ -24,8 +24,11 @@ public class TestLogin extends Application {
             Parent root = FXMLLoader.load(url);
 
             Scene scene = new Scene(root);
-           // theem file sytle.css
-//            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("com/Styles/login.css")).toExternalForm());
+           // add stylessheet to the scene
+//            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/com/style.css")).toExternalForm());
+
+
+
             primaryStage.setScene(scene);
             primaryStage.show();
 
