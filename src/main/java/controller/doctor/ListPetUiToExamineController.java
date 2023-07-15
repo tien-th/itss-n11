@@ -1,6 +1,7 @@
 package controller.doctor;
 
 import controller.login.DangnhapUiController;
+import controller.user.ActorUi;
 import entity.Appoint;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -23,7 +24,7 @@ import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class ListPetUiToExamineController implements Initializable {
+public class ListPetUiToExamineController extends ActorUi implements Initializable {
 
     @FXML
     private TableView<Appoint> appointTableView ;

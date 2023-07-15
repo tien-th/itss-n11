@@ -43,15 +43,6 @@ public class CageMUIController extends ScreenHandler implements Initializable {
     }
 
     public void deleteCage(ActionEvent event) throws SQLException, ClassNotFoundException {
-        if (user.getRole() != 1) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Error");
-            alert.setContentText("You are not allowed to delete cage");
-            alert.showAndWait();
-            return;
-        }
-
         Cage cage = cageTableView.getSelectionModel().getSelectedItem();
         if (cage == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -132,16 +123,9 @@ public class CageMUIController extends ScreenHandler implements Initializable {
 
     }
     public void addCage(ActionEvent event) throws SQLException, ClassNotFoundException{
-        //newid = cageList.get(cageList.size() - 1).getId_cage() + 1;  if (cageList.size() == 0) newid = 1;
-        int newid = 0;
-        if(cageList.size() == 0) newid = 1;
-        else newid = cageList.get(cageList.size() - 1).getId_cage() + 1;
 
-        int newStatus = 0;
-        Cage cage = new Cage(newid, newStatus);
-
-        cageController.addCage(cage);
-        cageList.add(cage);
+        Cage c = cageController.addCage();
+        cageList.add(c);
         cageTableView.setItems(cageList);
         cageTableView.refresh();
     }
@@ -178,9 +162,6 @@ public class CageMUIController extends ScreenHandler implements Initializable {
              cageController.detailInfo(id_pet_selected);
          }
      }
-
-
-
  }
 
  public void showCage(){
@@ -201,8 +182,6 @@ public class CageMUIController extends ScreenHandler implements Initializable {
          String petId = cellData.getValue().getPet_id() ==0 ? "null" : Integer.toString(cellData.getValue().getPet_id());
          return new SimpleStringProperty(petId);
      });
-
-
      cageTableView.setItems(cageList);
 
  }
@@ -218,7 +197,6 @@ private TextField filterField;
              if (newValue == null || newValue.isEmpty()) {
                  return true;
              }
-
              // Compare cage id of every cage with filter text.
              String lowerCaseFilter = newValue.toLowerCase();
              if(String.valueOf(cage.getId_cage()).indexOf(lowerCaseFilter) != -1){
@@ -241,9 +219,3 @@ private TextField filterField;
  }
 
 }
-
-
-
-
-
-

@@ -38,6 +38,4 @@ public class DangKyVSScreenController extends UserFuncBase {
         String dkvsInfor = RegisterController.dangKyVs(pet.getId(), ngayKham, startHour, dichVu.getText());
         Utils.showAlert(dkvsInfor);
     }
-
-
 }

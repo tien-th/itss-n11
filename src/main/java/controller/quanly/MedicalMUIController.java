@@ -60,39 +60,6 @@ public class MedicalMUIController extends ScreenHandler implements Initializable
     }
     @FXML
     private TextField searchTextField;
-//    private void searchMedical(ActionEvent event) {
-//        String searchQuery = searchTextField.getText();
-//        if (searchQuery.isEmpty()) {
-//            // No search query provided
-//            Alert alert = new Alert(Alert.AlertType.ERROR);
-//            alert.setTitle("Lỗi");
-//            alert.setHeaderText("Không có từ khóa tìm kiếm");
-//            alert.setContentText("Vui lòng nhập từ khóa tìm kiếm");
-//            alert.showAndWait();
-//            return;
-//        }
-//
-//        medicalList.clear();
-//
-//        for (Medical medical : medicalController.medicalList) {
-//            if (medical.getTenThuoc().contains(searchQuery)) {
-//                medicalList.add(medical);
-//            }
-//            medicalTableView.refresh();
-//        }
-//
-//
-//        if (medicalList.isEmpty()) {
-//            // No users found
-//            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//            alert.setTitle("Thông báo");
-//            alert.setHeaderText("Không tìm thấy thuốc");
-//            alert.setContentText("Vui lòng nhập lại từ khóa tìm kiếm");
-//            alert.showAndWait();
-//        }
-//        medicalTableView.setItems(medicalList);
-//        medicalTableView.refresh();
-//    }
 
     public void searchMedical() throws SQLException, ClassNotFoundException {
         FilteredList<Medical> filteredData = new FilteredList<>(medicalList, p -> true);
@@ -148,7 +115,6 @@ public class MedicalMUIController extends ScreenHandler implements Initializable
         dialog.getDialogPane().setContent(gridPane);
         dialog.showAndWait();
         if (dialog.getResult() == ButtonType.APPLY) {
-
             int thuocId = medicalController.medicalList.get(medicalController.medicalList.size() - 1).getThuocId() + 1;
 
             Medical medical = new Medical(thuocId,tenThuoc.getText(), nhomThuoc.getText(), Integer.parseInt(soLuong.getText()), nhaSx.getText(), Date.valueOf(hsd.getValue()), Integer.parseInt(price.getText()));
