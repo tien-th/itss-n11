@@ -14,7 +14,6 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import repository.quanly.AdminController;
 import controller.user.UserUIController;
-import repository.quanly.AppointUIController;
 import utils.connection.DbConnection;
 
 import java.io.IOException;

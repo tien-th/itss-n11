@@ -38,4 +38,6 @@ public class ActorUi {
         Scene scene = new Scene(userViewParent);
         stage.setScene(scene);
     }
+
+
 }

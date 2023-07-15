@@ -1,9 +1,10 @@
 package controller.user;
+import controller.user.RegisterController;
 import entity.Pet;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import utils.Utils;
+import repository.user.RegisterServiceSaver;
 
 import java.sql.SQLException;
 public class DangKyTrongGiuScreenController extends UserFuncBase {
@@ -18,9 +19,24 @@ public class DangKyTrongGiuScreenController extends UserFuncBase {
         String thoiGian = comboBoxThoiGian.getValue();
         String[] parts = thoiGian.split(":");
         int startHour = Integer.parseInt(parts[0]);
+        RegisterServiceSaver registerServiceSaver = new RegisterServiceSaver();
+        int lod = registerServiceSaver.dangKyTrongGiu(pet.getId(), ngayKham, startHour);
 
-        String dkGiuPetInfor =  RegisterController.dangKyTrongGiu(pet.getId(), ngayKham, startHour);
-        Utils.showAlert(dkGiuPetInfor);
+        if (lod != 0 ) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("");
+            alert.setHeaderText("Đăng ký dịch vụ thành công");
+            alert.setContentText("Đăng ký cho " + pet.getName() + " thành công vào ngày " + ngayKham + " lúc " + startHour + " giờ");
+            alert.showAndWait();
+        }
+        else {
+//            System.out.println("full slot");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("");
+            alert.setHeaderText("Đăng ký dịch vụ thất bại");
+            alert.setContentText("Hiện tại chuồng đã hết chỗ. Vui lòng chọn ngày khác");
+            alert.showAndWait();
+        }
     }
 
 }

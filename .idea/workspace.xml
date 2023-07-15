@@ -5,21 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="cage">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/login/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/login/UserQuerier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/pet/ViewPetController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/user/ActorUi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/Feedback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/screen/feedback.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_06_2023_8_50_CH__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_06_2023_8_50_CH__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/login/DangKyUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/login/DangKyUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/login/DangnhapUiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/login/DangnhapUiController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/pet/ViewPetUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/pet/ViewPetUIController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/quanly/AdminUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/quanly/AdminUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/user/UserFuncBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/user/UserFuncBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/user/UserUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/user/UserUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/ViewPetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/pet/PetDbQuerier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/user/ActorUi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/user/ActorUi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/user/DangKyTrongGiuScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/user/DangKyTrongGiuScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Pet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/quanly/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/quanly/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/quanly/AppointController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/quanly/AppointController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/quanly/AppointUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/quanly/AppointUIController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/screen/adminUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/adminUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/screen/appointUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/appointUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/screen/cageMUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/cageMUI.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +45,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -62,6 +64,16 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.java" root0="SKIP_HIGHLIGHTING" />
     <setting file="das://24d1ae63-0bbc-46fd-a970-a2c8668965a0/database/pet_management/schema/public/sequence/benhan_record_id_seq.sql" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/consoles/db/24d1ae63-0bbc-46fd-a970-a2c8668965a0/console_3.sql" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -137,11 +149,6 @@
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="controller.pet" />
-      <recent name="controller.user" />
-      <recent name="controller.login" />
     </key>
   </component>
   <component name="RunManager">
@@ -269,7 +276,7 @@
       <workItem from="1689385430595" duration="13706000" />
       <workItem from="1689405453388" duration="358000" />
       <workItem from="1689408221844" duration="2689000" />
-      <workItem from="1689412500067" duration="4472000" />
+      <workItem from="1689438001340" duration="1399000" />
     </task>
     <task id="LOCAL-00001" summary="add readme">
       <created>1686663107815</created>

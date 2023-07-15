@@ -36,4 +36,11 @@ public class Utils {
     }
 
 
+    public static void showError(String content) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(null);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
 }

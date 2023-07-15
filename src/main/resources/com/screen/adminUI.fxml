@@ -6,15 +6,15 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="button" stylesheets="@temp.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.quanly.AdminUIController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="button" stylesheets="temp.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.quanly.AdminUIController">
     <children>
         <AnchorPane prefHeight="200.0" prefWidth="200.0">
             <children>
                 <BorderPane layoutX="245.0" layoutY="100.0" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <left>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="gradient" BorderPane.alignment="CENTER">
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                             <children>
-                                <AnchorPane layoutY="170.0" minHeight="0.0" minWidth="0.0" prefHeight="322.0" prefWidth="200.0" styleClass="gradient" AnchorPane.bottomAnchor="108.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="170.0">
+                                <AnchorPane layoutY="170.0" minHeight="0.0" minWidth="0.0" prefHeight="322.0" prefWidth="200.0" AnchorPane.bottomAnchor="108.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="170.0">
                                     <children>
                                         <Button fx:id="dashboard" mnemonicParsing="false" onAction="#viewStatisticalUI" prefHeight="30.0" prefWidth="200.0" text="Dashboard" />
                                         <Button fx:id="users" layoutY="30.0" mnemonicParsing="false" onAction="#viewUserUI" prefHeight="30.0" prefWidth="200.0" text="Quản lý người dùng" />

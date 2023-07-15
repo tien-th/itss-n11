@@ -70,6 +70,7 @@ public class ViewPetUIController extends ScreenHandler implements Initializable 
         ageColumn.setCellValueFactory(new PropertyValueFactory<Pet, Integer>("age"));
         genderColumn.setCellValueFactory(new PropertyValueFactory<Pet, String>("gender"));
         petTableView.setItems(petList);
+        System.out.printf("color of pet %s", petList.get(0).getColor());
         filtered();
     }
 

@@ -6,4 +6,5 @@ import java.sql.SQLException;
 import java.util.Date;
 
 public class AdminController {
+
 }

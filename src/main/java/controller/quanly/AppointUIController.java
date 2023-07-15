@@ -1,5 +1,6 @@
-package repository.quanly;
+package controller.quanly;
 import controller.user.ScreenHandler;
+import utils.Utils;
 
 import entity.Appoint;
 import javafx.collections.FXCollections;
@@ -12,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
+import repository.quanly.AppointController;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -51,14 +53,7 @@ public class AppointUIController extends ScreenHandler implements Initializable 
     }
 
     public void deleteAppoint( ActionEvent event) throws SQLException, ClassNotFoundException {
-        if (user.getRole() != 1 ){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Error");
-            alert.setContentText("You are not allowed to delete pet");
-            alert.showAndWait();
-            return ;
-        }
+
         Appoint selectedAppoint = appointTableView.getSelectionModel().getSelectedItem();
         if (selectedAppoint == null) {
             return;
@@ -72,11 +67,6 @@ public class AppointUIController extends ScreenHandler implements Initializable 
 
     public void updateAppoint(ActionEvent event) throws SQLException, ClassNotFoundException {
         if (user.getRole() != 1) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Error");
-            alert.setContentText("You are not allowed to update appointments");
-            alert.showAndWait();
             return;
         }
 
@@ -125,27 +115,14 @@ public class AppointUIController extends ScreenHandler implements Initializable 
         result.ifPresent(updatedAppoint -> {
             int notification = appointController.updateAppoint(updatedAppoint, selectedAppoint); // Update the appointment using the controller
             if (notification == 0) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText("Error");
-                alert.setContentText("The appointment is not changed");
-                alert.showAndWait();
+                Utils.showError("The appointment is not updated");
                 return;
             }
             else if (notification == -1) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText("Error");
-                alert.setContentText("The appointment is not available at this time");
-                alert.showAndWait();
+            Utils.showError("The appointment is not found");
                 return;
             }
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Update Appointment");
-            alert.setHeaderText("Success");
-            System.out.println(notification);
-            alert.setContentText("The appointment is updated successfully");
-            alert.showAndWait();
+            Utils.showAlert("The appointment is updated successfully");
             appointList.set(appointList.indexOf(selectedAppoint), updatedAppoint); // Update the list
             appointTableView.refresh(); // Refresh the table view
         });
