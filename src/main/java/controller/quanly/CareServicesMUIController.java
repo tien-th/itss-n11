@@ -49,13 +49,12 @@ public class CareServicesMUIController extends ScreenHandler implements Initiali
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     @FXML
     public void showListCareServices()throws SQLException, ClassNotFoundException{
-        careList = FXCollections.observableArrayList(careController.getListCareServices());
 
+        careList = FXCollections.observableArrayList(careController.getListCareServices());
         petIdColumn.setCellValueFactory(new PropertyValueFactory<Care, Integer>("pet_id"));
         dichvuColumn.setCellValueFactory(new PropertyValueFactory<Care, String>("services"));
         datetimeColumn.setCellValueFactory(new PropertyValueFactory<Care, String>("day"));
@@ -80,8 +79,10 @@ public class CareServicesMUIController extends ScreenHandler implements Initiali
         careList.remove(selectedCare);
         careTableView.refresh();
     }
+
     @FXML
     private TextField search;
+
 
     @FXML
     public void filter() throws SQLException, ClassNotFoundException{
@@ -106,11 +107,9 @@ public class CareServicesMUIController extends ScreenHandler implements Initiali
         SortedList<Care> sortedList = new SortedList<>(filteredList);
         sortedList.comparatorProperty().bind(careTableView.comparatorProperty());
         careTableView.setItems(sortedList);
-
-        
     }
     public  void update(ActionEvent event) throws SQLException, ClassNotFoundException{
-
+        // TODO : xong quay lại làm :v
     }
 
 }

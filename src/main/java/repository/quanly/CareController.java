@@ -17,7 +17,6 @@ public class CareController {
         return careList;
     }
 
-
     public void deleteCareServices(Care selectedCare) throws SQLException, ClassNotFoundException {
         int selectedCareId = selectedCare.getPet_id();
         String day = selectedCare.getDay();

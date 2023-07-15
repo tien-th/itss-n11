@@ -47,17 +47,14 @@ public class MedicalMUIController extends ScreenHandler implements Initializable
 
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
-           showdata();
         try {
+            showdata();
             searchMedical();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-
-
     }
+
     @FXML
     private TextField searchTextField;
 
@@ -88,7 +85,7 @@ public class MedicalMUIController extends ScreenHandler implements Initializable
         medicalTableView.setItems(sortedData);
     }
 
-    public void addMedical(ActionEvent event) throws SQLException, ClassNotFoundException {
+    public void addMedical(ActionEvent event) throws SQLException {
         Dialog<ButtonType> dialog = new Dialog<>();
         dialog.setTitle("Thêm thuốc");
         dialog.getDialogPane().getButtonTypes().addAll(ButtonType.APPLY, ButtonType.CANCEL);
@@ -115,11 +112,10 @@ public class MedicalMUIController extends ScreenHandler implements Initializable
         dialog.getDialogPane().setContent(gridPane);
         dialog.showAndWait();
         if (dialog.getResult() == ButtonType.APPLY) {
-            int thuocId = medicalController.medicalList.get(medicalController.medicalList.size() - 1).getThuocId() + 1;
-
-            Medical medical = new Medical(thuocId,tenThuoc.getText(), nhomThuoc.getText(), Integer.parseInt(soLuong.getText()), nhaSx.getText(), Date.valueOf(hsd.getValue()), Integer.parseInt(price.getText()));
-            medicalController.add(medical);
-            medicalList.add(medical);
+//            int thuocId = medicalController.medicalList.get(medicalController.medicalList.size() - 1).getThuocId() + 1;
+//            Medical medical = new Medical(thuocId,tenThuoc.getText(), nhomThuoc.getText(), Integer.parseInt(soLuong.getText()), nhaSx.getText(), Date.valueOf(hsd.getValue()), Integer.parseInt(price.getText()));
+            Medical m = medicalController.add(tenThuoc.getText(), nhomThuoc.getText(), Integer.parseInt(soLuong.getText()), nhaSx.getText(), Date.valueOf(hsd.getValue()), Integer.parseInt(price.getText()));
+            medicalList.add(m);
             medicalTableView.setItems(medicalList);
             medicalTableView.refresh();
         }
@@ -210,13 +206,9 @@ if (dialog.getResult() == ButtonType.APPLY) {
 
     }
    @FXML
-    public void showdata(){
-        try {
-       medicalController.getMedicalList();
-   } catch (Exception e) {
-       e.printStackTrace();
-   }
-       medicalList = FXCollections.observableArrayList(medicalController.medicalList);
+    public void showdata() throws SQLException, ClassNotFoundException {
+
+       medicalList = FXCollections.observableArrayList(medicalController.getMedicalList());
        thuocID.setCellValueFactory(new PropertyValueFactory<Medical, Integer>("thuocId"));
        tenThuoc.setCellValueFactory(new PropertyValueFactory<Medical, String>("tenThuoc"));
        nhomThuoc.setCellValueFactory(new PropertyValueFactory<Medical, String>("nhomThuoc"));
@@ -227,9 +219,5 @@ if (dialog.getResult() == ButtonType.APPLY) {
        medicalTableView.setItems(medicalList);
 
    }
-
-
-
-
 
 }

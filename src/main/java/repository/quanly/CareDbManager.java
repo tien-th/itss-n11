@@ -30,6 +30,7 @@ public class CareDbManager {
         return careList;
     }
 
+
     public static void deleteCareServices(int petId, String day, int timeSlot) throws SQLException, ClassNotFoundException {
         String sql = "delete from dichvuvs where pet_id = ? and day = ? and time_slot = ?";
         PreparedStatement ps = utils.connection.DbConnection.openConnection().prepareStatement(sql);
@@ -38,4 +39,6 @@ public class CareDbManager {
         ps.setInt(3, timeSlot);
         ps.executeUpdate();
     }
+
+
 }

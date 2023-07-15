@@ -13,45 +13,21 @@ public class MedicalController {
     }
 
     public ArrayList<Medical> medicalList = new ArrayList<Medical>();
-     public void getMedicalList() throws SQLException, ClassNotFoundException {
-         PreparedStatement preparedStatement = null;
-         String sql = "SELECT * FROM thuoc" ;
-            preparedStatement = DbConnection.openConnection().prepareStatement(sql);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                int id = resultSet.getInt("thuoc_id");
-                String ten_thuoc = resultSet.getString("ten_thuoc");
-                String nhom_thuoc = resultSet.getString("nhom_thuoc");
-                int soluong = resultSet.getInt("soluong");
-                String nhasx = resultSet.getString("nhasx");
-                Date hsd = resultSet.getDate("hsd");
-                int price = resultSet.getInt("price");
-
-                Medical a = new Medical(id, ten_thuoc, nhom_thuoc, soluong, nhasx, hsd, price);
-                medicalList.add(a);
-            }
+     public ArrayList<Medical> getMedicalList() throws SQLException, ClassNotFoundException {
+         if (medicalList == null) {
+             medicalList = MedicalDbManager.getMedicalList();
+         }
+         return medicalList;
      }
 
-
-
     public int add(Medical Medical) throws SQLException {
-        String sql  = "select max(thuoc_id) from thuoc";
-        try{
-            PreparedStatement ps = DbConnection.openConnection().prepareStatement(sql);
-            ResultSet rs = ps.executeQuery();
-            if (rs.next()){
-                int id = rs.getInt(1);
-                sql = "insert into thuoc values ("+ (id+1) + ",'" + Medical.getTenThuoc() + "','" + Medical.getNhomThuoc() + "'," + Medical.getSoLuong() + ",'" + Medical.getNhaSx() + "','" + Medical.getHsd() +"')";
-                ps = DbConnection.openConnection().prepareStatement(sql);
-                ps.executeUpdate();
-                return id+1;
-            }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+
         return  -1;
+    }
+    public Medical add(String tenThuoc, String loaiThuoc, int soLuong, String nhaSx, Date hsd, int gia) {
+        int medicalId = MedicalDbManager.addMedical(tenThuoc, loaiThuoc, soLuong, nhaSx, hsd, gia);
+
+        return null;
     }
 
     public boolean update(Medical Medical) throws SQLException, ClassNotFoundException {
@@ -102,4 +78,6 @@ public class MedicalController {
         }
         return Medical;
     }
+
+
 }

@@ -17,8 +17,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Paths;
 import java.sql.SQLException;
-
-
 public class DangKyUIController {
     @FXML
     private TextField usernameTextField;
@@ -46,8 +44,6 @@ public class DangKyUIController {
     private DatePicker birthdayPicker ;
     @FXML
     private Label birthdayLabel = new Label();
-
-
     public void getBirthday(ActionEvent e) {
         // nếu ngày lớn hơn ngày hiện tại thì báo lỗi
         if (birthdayPicker.getValue().isAfter(java.time.LocalDate.now())) {
@@ -61,7 +57,6 @@ public class DangKyUIController {
         }
         birthdayLabel.setText(birthdayPicker.getValue().toString());
     }
-
 
     @FXML
     private Label gender = new Label();
