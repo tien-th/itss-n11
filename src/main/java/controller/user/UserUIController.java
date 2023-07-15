@@ -15,17 +15,7 @@ import controller.pet.ViewPetUIController;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Paths;
-public class UserUIController {
-    // Xử lý sự kiện
-    @FXML
-    Label nameLabel = new Label();
-    User user = null;
-
-    public void setUser(User user) {
-        this.user = user;
-        nameLabel.setText(user.getName());
-    }
-
+public class UserUIController extends ActorUi {
 
     public void viewPet(ActionEvent e) throws IOException {
         //  : move to view pet scene
@@ -41,7 +31,6 @@ public class UserUIController {
         viewPetUIController.initialize(url, null);
         stage.setScene(scene);
     }
-
     public void dangKyTrongGiu(ActionEvent e) throws IOException {
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         System.out.println("asdasdas");
@@ -98,18 +87,6 @@ public class UserUIController {
         Scene scene = new Scene(userViewParent);
         stage.setScene(scene);
     }
-//    public <UpdateInfoController> void updateInfo(ActionEvent event) throws IOException {
-//
-//        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//        URL url = Paths.get("./src/main/java/dangnhap/updateInfo.fxml").toUri().toURL();
-//        FXMLLoader loader = new FXMLLoader();
-//        loader.setLocation(url);
-//        Parent userViewParent = loader.load(url.openStream());
-//        UpdateInfoController updateInfoController = loader.getController();
-//        updateInfoController.setUser(user);
-//        Scene scene = new Scene(userViewParent);
-//        stage.setScene(scene);
-//    }
-//}
 
 }
+

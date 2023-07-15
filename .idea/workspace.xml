@@ -5,65 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="cage">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/login/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/login/UserQuerier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/pet/ViewPetController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/user/ActorUi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_06_2023_8_50_CH__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_06_2023_8_50_CH__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/connection/AutoIncrementCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/connection/AutoIncrementCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/connection/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/connection/DbConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangkydichvu/DangKyDvController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/user/DangKyDvController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangkydichvu/DangKyKhamScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/user/DangKyKhamScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangkydichvu/DangKyTrongGiuScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/user/DangKyTrongGiuScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangkydichvu/DangKyVSScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/user/DangKyVSScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangkydichvu/UserFuncBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/user/UserFuncBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangkydichvu/dangKyKhamScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/dangKyKhamScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangkydichvu/dangKyTrongGiuScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/dangKyTrongGiuScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangkydichvu/dangKyVSScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/dangKyVSScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangnhap/DangKyUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/login/DangKyUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangnhap/DangnhapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/DangnhapController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangnhap/DangnhapUiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/login/DangnhapUiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangnhap/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangnhap/TestLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangnhap/dangky.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/dangky.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangnhap/dangnhap.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/dangnhap.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dangnhap/profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/profile.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Care.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Care.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kham/ExaminePetUiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/doctor/ExaminePetUiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kham/KhamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/doctor/KhamController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kham/ListPetUiToExamineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/doctor/ListPetUiToExamineController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kham/khamPet.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/khamPet.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kham/listAppoint.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/listAppoint.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menu/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/quanly/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menu/AdminUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/quanly/AdminUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menu/UserUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/user/UserUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menu/adminUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/adminUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/menu/user.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/user.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/AdminUIController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/AppointController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/quanly/AppointController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/AppointUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/quanly/AppointUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/CageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/quanly/CageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/CageMUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/quanly/CageMUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/CareController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/quanly/CareController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/CareServicesMUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/quanly/CareServicesMUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/DoctorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/quanly/DoctorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/DoctorMUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/quanly/DoctorMUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/MedicalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/quanly/MedicalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/MedicalMUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/quanly/MedicalMUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/PetMUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/quanly/PetMUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/UpdatedInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/quanly/UpdatedInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/UserMUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/quanly/UserMUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/UserManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/quanly/UserManageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/appointUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/appointUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/cageMUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/cageMUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/careServicesMUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/careServicesMUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/medicalMUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/medicalMUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/petMUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/petMUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/quanly/userMUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/userMUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/login/DangKyUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/login/DangKyUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/login/DangnhapUiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/login/DangnhapUiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/pet/ViewPetUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/pet/ViewPetUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/quanly/AdminUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/quanly/AdminUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/user/UserFuncBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/user/UserFuncBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/user/UserUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/user/UserUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/ViewPetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/pet/PetDbQuerier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view_pet/UpdatedPetInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/UpdatedPetInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view_pet/ViewPetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/ViewPetController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view_pet/ViewPetUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/pet/ViewPetUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view_pet/viewPetScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/viewPetScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/styles/temp.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/styles/temp.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,6 +137,11 @@
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="controller.pet" />
+      <recent name="controller.user" />
+      <recent name="controller.login" />
     </key>
   </component>
   <component name="RunManager">
@@ -308,6 +269,7 @@
       <workItem from="1689385430595" duration="13706000" />
       <workItem from="1689405453388" duration="358000" />
       <workItem from="1689408221844" duration="2689000" />
+      <workItem from="1689412500067" duration="4472000" />
     </task>
     <task id="LOCAL-00001" summary="add readme">
       <created>1686663107815</created>

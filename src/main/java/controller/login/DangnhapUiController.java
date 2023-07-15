@@ -1,6 +1,7 @@
 package controller.login;
 
 
+import controller.user.ActorUi;
 import entity.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,7 +21,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Paths;
 import java.sql.SQLException;
-
 public class DangnhapUiController {
 
 
@@ -34,8 +34,9 @@ public class DangnhapUiController {
 
         String username = usernameTextField.getText();
         String password = passwordField.getText();
-        DangnhapController login = new DangnhapController();
-        User u = login.checkLogin(username, password);
+
+        LoginController login = new LoginController();
+        User u = login.getUser(username, password);
 
         if (u == null) {
             System.out.println("Invalid username or password");
@@ -48,55 +49,18 @@ public class DangnhapUiController {
             return ;
         }
 
-        // TODO -- Tien : move to another scene if login success base on role (admin or user)
-
-        // copilot write this
-        if (u.getRole() == 1 ) {
-            System.out.println("Move to admin screen");
-            // TODO -- Tien   : move to another scene if login success base on role (admin or user)
-            // open a new screen in adminUI.fxml
-             Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-            URL url = Paths.get("./src/main/resources/com/screen/adminUI.fxml").toUri().toURL();
-            FXMLLoader loader = new FXMLLoader();
-            Parent adminViewParent = loader.load(url.openStream());
-            //get file css to add to scene
-//            adminViewParent.getStylesheets().add(getClass().getResource("/styles/temp.css").toExternalForm() );
-            AdminUIController adminUIController= loader.getController();
-            adminUIController.setUser(u);
-            Scene scene = new Scene(adminViewParent);
-            stage.setScene(scene);
-        }
-        else if (u.getRole() == 0) {
-            System.out.println("Move to user screen");
-            // open a new screen in user.fxml
-            Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-            URL url = Paths.get("src/main/resources/com/screen/user.fxml").toUri().toURL();
-            FXMLLoader loader = new FXMLLoader();
-            Parent userViewParent = loader.load(url.openStream());
-
-            Scene scene = new Scene(userViewParent);
-            UserUIController userUIController =  loader.getController();
-            userUIController.setUser(u);
-            stage.setScene(scene);
-        } else if (u.getRole() == 2) {
-            System.out.println("Move to manager screen");
-            // open a new screen in manager.fxml
-            Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-            URL url = Paths.get("./src/main/resources/com/screen/listAppoint.fxml").toUri().toURL();
-            FXMLLoader loader = new FXMLLoader();
-            Parent managerViewParent = loader.load(url.openStream());
-
-            Scene scene = new Scene(managerViewParent);
-            stage.setScene(scene);
-
-        } else {
-            System.out.println("Login failed");
-        }
+        String urlStr = LoginController.getUrlScreenActor(u);
+        System.out.println(urlStr);
+        URL url = Paths.get(urlStr).toUri().toURL();
+        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader();
+        Parent userViewParent = loader.load(url.openStream());
+        ActorUi actorUiController =  loader.getController();
+        actorUiController.setUser(u);
+        Scene scene = new Scene(userViewParent);
+        stage.setScene(scene);
     }
 
-    // catch event for register button
-    // if user click register button, it will open a new window for user to register
-    // open a new screen in dangky.fxml
     public void registerButtonClicked(ActionEvent e) throws IOException {
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         URL url = Paths.get("./src/main/resources/com/screen/dangky.fxml").toUri().toURL();

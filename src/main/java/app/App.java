@@ -21,10 +21,7 @@ public class App extends Application {
         try {
             URL url = Paths.get("src/main/resources/com/screen/dangnhap.fxml").toUri().toURL();
             Parent root = FXMLLoader.load(url);
-
             Scene scene = new Scene(root);
-//            String css = this.getClass().getResource("/temp.css").toExternalForm();
-//            scene.getStylesheets().add(css);
             primaryStage.setScene(scene);
             primaryStage.show();
 

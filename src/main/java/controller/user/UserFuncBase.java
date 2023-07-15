@@ -1,5 +1,6 @@
 package controller.user;
 
+import controller.pet.ViewPetController;
 import entity.Pet;
 import entity.User;
 import javafx.event.ActionEvent;
@@ -13,7 +14,6 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.stage.Stage;
 import controller.quanly.AdminUIController;
-import repository.ViewPetController;
 
 
 import java.io.IOException;
@@ -66,10 +66,10 @@ public class UserFuncBase implements Initializable {
         else {
             System.out.println("user is not null in initializeDangKyKhamScreen");
         }
-        ViewPetController viewPetController = new ViewPetController();
         try {
-            viewPetController.getPetList(user);
-            petList = viewPetController.petList;
+            ViewPetController controller = new ViewPetController();
+            controller.setUser(user);
+            petList = controller.getPetList();
             ArrayList<String> petNames = extractPetNames(petList);
             choiceBoxTenThuCung.getItems().addAll(petNames);
 //            choiceBoxTenThuCung.setOnAction(this::getPetNameLabel);

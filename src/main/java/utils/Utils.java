@@ -3,6 +3,7 @@ package utils;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 
 import java.io.IOException;
 import java.net.URL;
@@ -16,6 +17,14 @@ public class Utils {
         Scene scene = new Scene(userViewParent);
         return scene;
     }
+    public static void showAlert(String content) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(null);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
+
 
 
 

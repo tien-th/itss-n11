@@ -1,6 +1,7 @@
 package controller.quanly;
 
-import controller.login.DangnhapUiController;
+
+import controller.user.ActorUi;
 import entity.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,6 +15,7 @@ import javafx.stage.Stage;
 import repository.quanly.AdminController;
 import controller.user.UserUIController;
 import repository.quanly.AppointUIController;
+import utils.connection.DbConnection;
 
 import java.io.IOException;
 import java.net.URL;
@@ -23,31 +25,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class AdminUIController implements Initializable {
-    @FXML
-    Label nameLabel = new Label();
-    @FXML
-    User user = null;
-    // add styles sheet
+public class AdminUIController extends ActorUi implements Initializable {
 
+    User user = null;
 
     public void setUser(User user) {
         this.user = user;
         nameLabel.setText(user.getName()); // TODO : refactor
     }
-
-    public void signOut(ActionEvent event) throws IOException {
-
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        URL url = Paths.get("./src/main/resources/com/screen/dangnhap.fxml").toUri().toURL();
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(url);
-        Parent userViewParent = loader.load(url.openStream());
-        DangnhapUiController dangnhapUiController = loader.getController();
-        Scene scene = new Scene(userViewParent);
-        stage.setScene(scene);
-    }
-
 
     public void viewPetUI(ActionEvent actionEvent) throws IOException {
         UserUIController userUIController = new UserUIController();
@@ -63,12 +48,12 @@ public class AdminUIController implements Initializable {
         Scene scene = new Scene(userViewParent);
         UserMUIController userMUIController = loader.getController();
         userMUIController.setUser(user);
-//        Scene scene = Utils.showScreen("./src/main/java/controller.quanly/userMUI.fxml");
+//        Scene scene = Utils.showScreen("./src/main/java/quanly/userMUI.fxml");
         stage.setScene(scene);
     }
 
     public void viewManageAppointmentsUI(ActionEvent actionEvent) throws IOException {
-        // TODO
+        // TODO refactor
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         URL url = Paths.get("./src/main/resources/com/screen/appointUI.fxml").toUri().toURL();
         FXMLLoader loader = new FXMLLoader();
@@ -102,7 +87,7 @@ public class AdminUIController implements Initializable {
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         URL url = Paths.get("./src/main/resources/com/screen/medicalMUI.fxml").toUri().toURL();
         FXMLLoader loader = new FXMLLoader();
-        Parent userViewParent = userViewParent = loader.load(url.openStream());
+        Parent userViewParent = loader.load(url.openStream());
 
         Scene scene = new Scene(userViewParent);
         MedicalMUIController medicalMUIController = loader.getController();
@@ -128,8 +113,6 @@ public class AdminUIController implements Initializable {
         cageMUIController.setUser(user);
 
         stage.setScene(scene);
-
-
     }
 
     AdminController adminController = new AdminController();
@@ -153,7 +136,7 @@ public class AdminUIController implements Initializable {
         int total = 0;
         PreparedStatement ps = null;
         String Sql = "SELECT COUNT(*) FROM public.user";
-        ps = utils.connection.DbConnection.openConnection().prepareStatement(Sql);
+        ps = DbConnection.openConnection().prepareStatement(Sql);
         ResultSet rs = ps.executeQuery();
         while (rs.next()) {
             total = rs.getInt("COUNT");
@@ -167,7 +150,7 @@ public class AdminUIController implements Initializable {
         int total = 0;
         PreparedStatement ps = null;
         String Sql = "SELECT COUNT(*) FROM pet";
-        ps = utils.connection.DbConnection.openConnection().prepareStatement(Sql);
+        ps = DbConnection.openConnection().prepareStatement(Sql);
         ResultSet rs = ps.executeQuery();
         while (rs.next()) {
             total = rs.getInt("COUNT");
@@ -179,7 +162,7 @@ public class AdminUIController implements Initializable {
         int total = 0;
         PreparedStatement ps = null;
         String Sql = "SELECT COUNT(*) FROM lodging";
-        ps = utils.connection.DbConnection.openConnection().prepareStatement(Sql);
+        ps = DbConnection.openConnection().prepareStatement(Sql);
         ResultSet rs = ps.executeQuery();
         while (rs.next()) {
             total = rs.getInt("COUNT");
@@ -190,23 +173,14 @@ public class AdminUIController implements Initializable {
         int total = 0;
         PreparedStatement ps = null;
         String Sql = "SELECT COUNT(*) From thuoc";
-        ps = utils.connection.DbConnection.openConnection().prepareStatement(Sql);
+        ps = DbConnection.openConnection().prepareStatement(Sql);
         ResultSet rs = ps.executeQuery();
         while (rs.next()) {
             total = rs.getInt("COUNT");
         }
         return total;
     }
-//    public void incomeTotal() throws SQLException, ClassNotFoundException {
-//        PreparedStatement ps = null;
-//        String Sql = "SELECT SUM(giatien) FROM dichvuvs";
-//        ps = utils.connection.DbConnection.openConnection().prepareStatement(Sql);
-//        ResultSet rs = ps.executeQuery();
-//        while (rs.next()) {
-//            int total = rs.getInt("SUM(giatien)");
-//        }
-//
-//    }
+
     public void displayTotal(){
         try {
             totalUser.setText(String.valueOf(userTotatUsed()));
@@ -221,3 +195,4 @@ public class AdminUIController implements Initializable {
             e.printStackTrace();}
     }
 }
+
