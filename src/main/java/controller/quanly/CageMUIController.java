@@ -1,7 +1,6 @@
 package controller.quanly;
 
 import controller.user.ScreenHandler;
-import controller.user.UserFuncBase;
 import entity.Cage;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -33,13 +32,14 @@ public class CageMUIController extends ScreenHandler implements Initializable {
     private TableColumn<Cage, String> petIdcolumn;
 
     private ObservableList<Cage> cageList;
-    CageController cageController = new CageController();
+    CageController cageController = new CageController(); // TODO
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        showCage();
        filterCage();
-
     }
 
     public void deleteCage(ActionEvent event) throws SQLException, ClassNotFoundException {
@@ -51,6 +51,7 @@ public class CageMUIController extends ScreenHandler implements Initializable {
             alert.showAndWait();
             return;
         }
+
         Cage cage = cageTableView.getSelectionModel().getSelectedItem();
         if (cage == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);

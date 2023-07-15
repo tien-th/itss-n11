@@ -2,7 +2,7 @@ package controller.quanly;
 
 
 import controller.user.ActorUi;
-import entity.User;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,13 +26,6 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class AdminUIController extends ActorUi implements Initializable {
-
-    User user = null;
-
-    public void setUser(User user) {
-        this.user = user;
-        nameLabel.setText(user.getName()); // TODO : refactor
-    }
 
     public void viewPetUI(ActionEvent actionEvent) throws IOException {
         UserUIController userUIController = new UserUIController();

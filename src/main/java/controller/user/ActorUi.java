@@ -21,7 +21,7 @@ public class ActorUi {
 
     @FXML
     public Label nameLabel = new Label();
-    User user = null;
+    public User user = null;
 
     public void setUser(User user) {
         this.user = user;

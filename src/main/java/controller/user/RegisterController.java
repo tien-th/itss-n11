@@ -5,8 +5,6 @@ import repository.user.RegisterServiceSaver;
 import java.sql.SQLException;
 
 public class RegisterController {
-
-
     public static String dangKyKham(int id, String ngayKham, int startHour) throws SQLException, ClassNotFoundException {
         RegisterServiceSaver dkyKham = new RegisterServiceSaver();
         if (dkyKham.dangKyKham(id, ngayKham, startHour)) {
