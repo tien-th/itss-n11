@@ -1,9 +1,9 @@
 package controller.user;
-import repository.user.RegisterServiceSaver;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-
+import utils.Utils;
 import java.sql.SQLException;
 
 import entity.*;
@@ -35,8 +35,8 @@ public class DangKyVSScreenController extends UserFuncBase {
         String thoiGian = comboBoxThoiGian.getValue();
         String[] parts = thoiGian.split(":");
         int startHour = Integer.parseInt(parts[0]);
-        RegisterServiceSaver dangKyVsController = new RegisterServiceSaver();
-        dangKyVsController.dangKyVs(pet.getId(), ngayKham, startHour, dichVu.getText());
+        String dkvsInfor = RegisterController.dangKyVs(pet.getId(), ngayKham, startHour, dichVu.getText());
+        Utils.showAlert(dkvsInfor);
     }
 
 

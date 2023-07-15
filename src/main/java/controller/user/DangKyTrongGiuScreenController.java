@@ -1,5 +1,4 @@
 package controller.user;
-import repository.user.RegisterServiceSaver;
 import entity.Pet;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,7 +19,7 @@ public class DangKyTrongGiuScreenController extends UserFuncBase {
         String[] parts = thoiGian.split(":");
         int startHour = Integer.parseInt(parts[0]);
 
-        String dkGiuPetInfor =  Controller.dangKyTrongGiu(pet.getId(), ngayKham, startHour);
+        String dkGiuPetInfor =  RegisterController.dangKyTrongGiu(pet.getId(), ngayKham, startHour);
         Utils.showAlert(dkGiuPetInfor);
     }
 

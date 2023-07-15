@@ -1,6 +1,5 @@
 package controller.user;
 import javafx.event.ActionEvent;
-import javafx.scene.control.*;
 
 import java.sql.SQLException;
 
@@ -19,7 +18,7 @@ public class DangKyKhamScreenController extends UserFuncBase {
         int startHour = Integer.parseInt(parts[0]);
 
         System.out.println("day :" + ngayKham + "time: " + startHour);
-        String dkyKhamInfor = Controller.dangKyKham(pet.getId(), ngayKham, startHour);
+        String dkyKhamInfor = RegisterController.dangKyKham(pet.getId(), ngayKham, startHour);
         Utils.showAlert(dkyKhamInfor);
     }
 }
