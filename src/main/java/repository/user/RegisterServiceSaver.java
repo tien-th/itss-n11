@@ -7,8 +7,8 @@ import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class DangKyDvController {
-    public boolean dangKyVs(Pet pet, String day, int startHour, String dichVu) throws SQLException, ClassNotFoundException {
+public class RegisterServiceSaver {
+    public boolean dangKyVs(int pet_id, String day, int startHour, String dichVu) throws SQLException, ClassNotFoundException {
         // Connect to the database
         try (Connection connection = DbConnection.openConnection()) {
             // Check if there is an available lodging for the pet
@@ -20,7 +20,7 @@ public class DangKyDvController {
                 return false;
             } else {
                 String state = "ok" ;
-                String sql = "insert into dichvuvs (loai_dv ,state ,pet_id, day, time_slot) values ('"+ dichVu +"', '" + state + "', " + pet.getId() + ", '" + day + "', " + startHour + ")";
+                String sql = "insert into dichvuvs (loai_dv ,state ,pet_id, day, time_slot) values ('"+ dichVu +"', '" + state + "', " + pet_id + ", '" + day + "', " + startHour + ")";
                 PreparedStatement ps = connection.prepareStatement(sql);
                 ps.executeUpdate();
                 System.out.println("Time slot is available");
@@ -29,10 +29,8 @@ public class DangKyDvController {
         }
     }
 
-    public boolean dangKyKham(Pet pet, String ngayKham, int startHour) throws SQLException, ClassNotFoundException {
-        // connect to database, check if there is a time slot available for the pet
-        // if yes, insert into database
-        // if no, show alert
+    public boolean dangKyKham(int pet_id, String ngayKham, int startHour) throws SQLException, ClassNotFoundException {
+
         String sql = "select * from lichkham where day = '" + ngayKham + "' and time_slot = " + startHour;
         PreparedStatement ps = DbConnection.openConnection().prepareStatement(sql);
         if (ps.executeQuery().next()) {
@@ -43,7 +41,7 @@ public class DangKyDvController {
 
             String state = "lịch khám" ;
 //            sql = "insert into lichkham (state ,idpet, ngaykham, starthour) values ('" + state + "' ," + pet.getId() + ", '" + ngayKham + "', " + startHour + ")";
-            sql = "insert into lichkham (state ,pet_id, day, time_slot) values ('" + state + "' ," + pet.getId() + ", '" + ngayKham + "', " + startHour + ")";
+            sql = "insert into lichkham (state ,pet_id, day, time_slot) values ('" + state + "' ," + pet_id + ", '" + ngayKham + "', " + startHour + ")";
             ps = DbConnection.openConnection().prepareStatement(sql);
             ps.executeUpdate();
             System.out.println("Time slot is available");
@@ -51,7 +49,7 @@ public class DangKyDvController {
         }
     }
 
-    public int dangKyTrongGiu(Pet pet, String day, int startHour) throws SQLException, ClassNotFoundException {
+    public int dangKyTrongGiu(int pet_id, String day, int startHour) throws SQLException, ClassNotFoundException {
         // Connect to the database
         try (Connection connection = DbConnection.openConnection()) {
             // Check if there is an available lodging for the pet
@@ -77,7 +75,7 @@ public class DangKyDvController {
                     String insertLodgingPetQuery = "INSERT INTO set_lodging (lodging_id, pet_id, start_time) VALUES (?, ?, ?)";
                     try (PreparedStatement insertLodgingPetStatement = connection.prepareStatement(insertLodgingPetQuery)) {
                         insertLodgingPetStatement.setInt(1, lodgingId);
-                        insertLodgingPetStatement.setInt(2, pet.getId());
+                        insertLodgingPetStatement.setInt(2, pet_id);
                         insertLodgingPetStatement.setTimestamp(3, timestamp);
                         insertLodgingPetStatement.executeUpdate();
                     }

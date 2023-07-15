@@ -1,5 +1,5 @@
 package controller.user;
-import repository.user.DangKyDvController;
+import repository.user.RegisterServiceSaver;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -35,8 +35,8 @@ public class DangKyVSScreenController extends UserFuncBase {
         String thoiGian = comboBoxThoiGian.getValue();
         String[] parts = thoiGian.split(":");
         int startHour = Integer.parseInt(parts[0]);
-        DangKyDvController dangKyVsController = new DangKyDvController();
-        dangKyVsController.dangKyVs(pet, ngayKham, startHour, dichVu.getText());
+        RegisterServiceSaver dangKyVsController = new RegisterServiceSaver();
+        dangKyVsController.dangKyVs(pet.getId(), ngayKham, startHour, dichVu.getText());
     }
 
 

@@ -1,11 +1,11 @@
 package controller.user;
-import repository.user.DangKyDvController;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
 import java.sql.SQLException;
 
 import entity.*;
+import utils.Utils;
 
 public class DangKyKhamScreenController extends UserFuncBase {
 
@@ -19,21 +19,7 @@ public class DangKyKhamScreenController extends UserFuncBase {
         int startHour = Integer.parseInt(parts[0]);
 
         System.out.println("day :" + ngayKham + "time: " + startHour);
-        DangKyDvController dangKyKhamController = new DangKyDvController();
-        if (dangKyKhamController.dangKyKham(pet, ngayKham, startHour) ) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("");
-            alert.setHeaderText("Đăng ký khám thành công");
-            alert.setContentText("Đăng ký cho " + pet.getName() + " thành công vào ngày " + ngayKham + " lúc " + startHour + " giờ");
-            alert.showAndWait();
-        }
-        else {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("");
-            alert.setHeaderText("Đăng ký khám thất bại");
-            alert.setContentText("Khoảng thời gian đã hết chỗ");
-            alert.showAndWait();
-        }
-
+        String dkyKhamInfor = Controller.dangKyKham(pet.getId(), ngayKham, startHour);
+        Utils.showAlert(dkyKhamInfor);
     }
 }

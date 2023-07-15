@@ -193,7 +193,7 @@ public class CageMUIController extends ScreenHandler implements Initializable {
      cageIdColumn.setCellValueFactory(new PropertyValueFactory<Cage, Integer>("id_cage"));
 
      cageStatusColumn.setCellValueFactory(cellData -> {
-         String status = cellData.getValue().isStatus() == 1 ? "đã sử dụng" : "trống";
+         String status = cellData.getValue().isStatus() == 1 ? "đã đặt chỗ" : "trống";
          return new SimpleStringProperty(status);
      });
      petIdcolumn.setCellValueFactory(cellData -> {
