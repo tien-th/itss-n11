@@ -1,25 +1,21 @@
 package dangnhap;
 
 import connection.DbConnection;
-import dangkydichvu.UserFuncBase;
 import entity.User;
-import javafx.event.ActionEvent;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 
-import java.io.IOException;
 import java.sql.*;
 
-public class DangnhapController extends UserFuncBase {
+public class UserQuerier {
 
     // DB connection
-    public User getUser(String username, String password) throws SQLException, ClassNotFoundException{
+    public static User getUser(String username, String password) throws SQLException, ClassNotFoundException{
 
         String sql = "SELECT * FROM public.user u WHERE u.username = ?";
         PreparedStatement ps = DbConnection.openConnection().prepareStatement(sql);
         ps.setString(1, username);
         ResultSet rs = ps.executeQuery();
         User u = null ;
+
         if(rs.next()){
             if (password.equals(rs.getString("pass"))){
                 System.out.println("Login successfully");
@@ -32,11 +28,12 @@ public class DangnhapController extends UserFuncBase {
                 return u  ;
             }
         }
-        System.out.println("Login failed");
+
+        System.out.println("From DB: Login failed");
         return null ;
     }
 
-    public boolean checkUserName(String username) throws SQLException, ClassNotFoundException {
+    public static boolean checkUserName(String username) throws SQLException, ClassNotFoundException {
       // username valid: length(username)> 0 and not exits in database
         String sql = "SELECT * FROM public.user u WHERE u.username = ?";
         PreparedStatement ps = DbConnection.openConnection().prepareStatement(sql);
@@ -49,45 +46,7 @@ public class DangnhapController extends UserFuncBase {
 
     }
 
-
-
-
-    public User checkLogin(String username, String password) throws SQLException, ClassNotFoundException {
-        if (checkUserName(username)) {
-             User u = getUser(username, password);
-            if (u != null ) {
-                return u;
-            }
-        }
-        return null;
-    }
-
-    public boolean saveUserToDb(User u) throws SQLException, ClassNotFoundException {
-        String username = u.getUsername();
-        boolean usernameExist = this.checkUserName(username);
-        if (usernameExist) {
-            System.out.println("Username đã tồn tại");
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Username already exist");
-            alert.setContentText("Please try again");
-            alert.showAndWait();
-            return false;
-        }
-
-
-        // check username valid with regex
-        String regex = "^[a-zA-Z0-9]{6,}$";
-        if (!username.matches(regex)) {
-            System.out.println("Username không hợp lệ");
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Username invalid");
-            alert.setContentText("Please try again");
-            alert.showAndWait();
-            return false;
-        }
-        // Insert user to db
+    public static boolean saveUserToDb(User u) throws SQLException, ClassNotFoundException {
         String sql = "INSERT INTO public.user values (?, ?, ?, ?, ?, ?,?)";
         try (
                 Connection con = DbConnection.openConnection();
@@ -103,22 +62,18 @@ public class DangnhapController extends UserFuncBase {
             stmt.setInt(7, u.getRole());
 
             stmt.executeUpdate();
-            // TODO: Prompt user to login successfully
+            // TODO: alert user that register successfully
             System.out.println("Đăng ký thành công");
-            showAlert("Success.");
+//            showAlert("Success.");
         }catch (SQLException e){
             // TODO: Prompt user to login failed
             e.printStackTrace();
-            showAlert("Failed!");
+            return false ;
+//            showAlert("Failed!");
         }
         return true;
     }
-    public void showAlert(String content) {
-        Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setTitle(null);
-        alert.setHeaderText(null);
-        alert.setContentText(content);
-        alert.showAndWait();
-    }
+
+    // TODO: consider to move this method to a common class
 
 }

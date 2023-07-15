@@ -21,29 +21,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class AdminUIController implements Initializable {
-    @FXML
-    Label nameLabel = new Label();
-    @FXML
+public class AdminUIController extends ActorUi implements Initializable {
+
     User user = null;
 
     public void setUser(User user) {
         this.user = user;
         nameLabel.setText(user.getName()); // TODO : refactor
     }
-
-    public void signOut(ActionEvent event) throws IOException {
-
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        URL url = Paths.get("./src/main/java/dangnhap/dangnhap.fxml").toUri().toURL();
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(url);
-        Parent userViewParent = loader.load(url.openStream());
-        DangnhapUiController dangnhapUiController = loader.getController();
-        Scene scene = new Scene(userViewParent);
-        stage.setScene(scene);
-    }
-
 
     public void viewPetUI(ActionEvent actionEvent) throws IOException {
         UserUIController userUIController = new UserUIController();
@@ -64,7 +49,7 @@ public class AdminUIController implements Initializable {
     }
 
     public void viewManageAppointmentsUI(ActionEvent actionEvent) throws IOException {
-        // TODO
+        // TODO refactor
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         URL url = Paths.get("./src/main/java/quanly/appointUI.fxml").toUri().toURL();
         FXMLLoader loader = new FXMLLoader();

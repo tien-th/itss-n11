@@ -2,11 +2,6 @@ package quanly;
 
 import connection.DbConnection;
 import entity.*;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.VBox;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
 
 import javax.swing.*;
@@ -112,13 +107,8 @@ public class CageController {
 //            System.out.println(rs.getString("p.pet_id") + " " + rs.getString("p.name") + " " + rs.getString("p.category") + " " + rs.getString("u.hoten"));
             return p;
             // write dialog simple
-
-
             }else
                 return null;
    }
-
-
-
 
 }

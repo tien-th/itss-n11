@@ -15,6 +15,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import menu.ActorUi;
 
 import java.io.IOException;
 import java.net.URL;
@@ -22,7 +23,7 @@ import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class ListPetUiToExamineController implements Initializable {
+public class ListPetUiToExamineController extends ActorUi implements Initializable{
 
     @FXML
     private TableView<Appoint> appointTableView ;
@@ -33,7 +34,6 @@ public class ListPetUiToExamineController implements Initializable {
     @FXML
     private TableColumn<Appoint, String> time_slotColumn;
     private ObservableList<Appoint> appointList;
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -79,14 +79,5 @@ public class ListPetUiToExamineController implements Initializable {
         }
     }
 
-    public void signOut(ActionEvent event) throws IOException {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        URL url = Paths.get("./src/main/java/dangnhap/dangnhap.fxml").toUri().toURL();
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(url);
-        Parent userViewParent = loader.load(url.openStream());
-        DangnhapUiController dangnhapUiController = loader.getController();
-        Scene scene = new Scene(userViewParent);
-        stage.setScene(scene);
-    }
+
 }

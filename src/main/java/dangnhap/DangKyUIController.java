@@ -1,6 +1,6 @@
 package dangnhap;
 
-import dangkydichvu.UserFuncBase;
+
 import entity.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,7 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import menu.AdminUIController;
+import utils.Utils;
 
 import java.io.IOException;
 import java.net.URL;
@@ -18,7 +18,7 @@ import java.nio.file.Paths;
 import java.sql.SQLException;
 
 
-public class DangKyUIController extends UserFuncBase {
+public class DangKyUIController {
     @FXML
     private TextField usernameTextField;
     @FXML
@@ -37,16 +37,6 @@ public class DangKyUIController extends UserFuncBase {
     // để sau
     @FXML
     private TextField emailTextField;
-
-//    public void checkEmail(ActionEvent Cage) {
-//        String email = emailTextField.getText();
-//        if (email.contains("@")) {
-//            System.out.println("Email hợp lệ");
-//        }
-//        else {
-//            System.out.println("Email không hợp lệ");
-//        }
-//    }
 
     @FXML
     private TextField nameTextField;
@@ -87,8 +77,6 @@ public class DangKyUIController extends UserFuncBase {
     }
 
 
-
-
     public void registerButtonClicked(ActionEvent e) throws SQLException, ClassNotFoundException, IOException {
         String username = usernameTextField.getText();
         String password = passwordTextField.getText();
@@ -99,7 +87,6 @@ public class DangKyUIController extends UserFuncBase {
             rePasswordTextField.setTooltip(passwordTooltip);
             passwordTooltip.setAutoHide(false);
             return;
-
         }
 
         String email = emailTextField.getText();
@@ -107,34 +94,14 @@ public class DangKyUIController extends UserFuncBase {
         String birthday = birthdayLabel.getText();
         String genderStr = gender.getText();
 
-        DangnhapController register = new DangnhapController();
+        LoginController register = new LoginController();
         User u = new User(username, password, email, name, birthday, genderStr);
 
+        String noti = register.signUp(u);
 
-        if (register.saveUserToDb(u)) {
-            // alert to show success
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Success");
-            alert.setHeaderText("Register successfully");
-            alert.setContentText("Please login to continue");
-            alert.showAndWait();
-            back(e);
-
-        }
-        else {
-            // alert to show error
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Register failed");
-            alert.setContentText("Please try again");
-            alert.showAndWait();
-        }
-
-
-
+        Utils.showAlert(noti);
     }
-    @FXML
-    private Button back;
+
     public void back(ActionEvent e) throws IOException {
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         URL url = Paths.get("src/main/java/dangnhap/dangnhap.fxml").toUri().toURL();
@@ -142,6 +109,4 @@ public class DangKyUIController extends UserFuncBase {
         Scene scene = new Scene(signInViewParent);
         stage.setScene(scene);
     }
-
-
 }

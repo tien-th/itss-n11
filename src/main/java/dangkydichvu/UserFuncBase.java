@@ -1,6 +1,5 @@
 package dangkydichvu;
 
-import connection.DbConnection;
 import entity.Pet;
 import entity.User;
 import javafx.event.ActionEvent;
@@ -12,24 +11,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
-import javafx.scene.layout.VBox;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import menu.AdminUIController;
 import menu.UserUIController;
-import view_pet.ViewPetController;
-
-import java.sql.Array;
-import java.sql.ResultSet;
+import view_pet.Controller;
+import view_pet.PetDbQuerier;
 
 
-import javax.xml.transform.Result;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Paths;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -77,10 +68,11 @@ public class UserFuncBase implements Initializable {
         else {
             System.out.println("user is not null in initializeDangKyKhamScreen");
         }
-        ViewPetController viewPetController = new ViewPetController();
+        PetDbQuerier petDbQuerier = new PetDbQuerier();
         try {
-            viewPetController.getPetList(user);
-            petList = viewPetController.petList;
+            Controller controller = new Controller();
+            controller.setUser(user);
+            petList = controller.getPetList();
             ArrayList<String> petNames = extractPetNames(petList);
             choiceBoxTenThuCung.getItems().addAll(petNames);
 //            choiceBoxTenThuCung.setOnAction(this::getPetNameLabel);
@@ -113,9 +105,5 @@ public class UserFuncBase implements Initializable {
             stage.setScene(scene);
         }
     }
-
-
-
-
 
 }

@@ -9,14 +9,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class ViewPetController {
-    public ArrayList<Pet> petList = new ArrayList<Pet>();
+public class PetDbQuerier {
+//    public ArrayList<Pet>  petList = new ArrayList<Pet>();
 
-    public void getPetList(User user) throws SQLException, ClassNotFoundException {
+    public static ArrayList<Pet> getPetList(User user) throws SQLException, ClassNotFoundException {
+        ArrayList<Pet> petList = new ArrayList<>();
         PreparedStatement ps = null;
-        if (user == null) {
-            return;
-        }
         if (user.getRole() == 1) { // admin
             // get all pets
             String sql = "SELECT * FROM pet";
@@ -41,9 +39,10 @@ public class ViewPetController {
             Pet p = new Pet(id, username, name, color, category, age, gender );
             petList.add(p);
         }
+        return petList;
     }
 
-    public boolean updatePet(Pet pet) throws SQLException, ClassNotFoundException {
+    public static boolean updatePet(Pet pet) throws SQLException, ClassNotFoundException {
         String sql = "select * from pet where pet_id = " + pet.getId();
         PreparedStatement ps = DbConnection.openConnection().prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
@@ -62,7 +61,7 @@ public class ViewPetController {
         return false ;
     }
 
-    public void deletePet(Pet selectedPet) {
+    public static void deletePet(Pet selectedPet) {
         String sql = "delete from pet where pet_id = " + selectedPet.getId();
         try {
             PreparedStatement ps = DbConnection.openConnection().prepareStatement(sql);
@@ -72,7 +71,7 @@ public class ViewPetController {
         }
     }
 
-    public int addPet(Pet newPet) {
+    public static int addPet(Pet newPet) {
         // query database to get the last pet_id
         String sql = "select max(pet_id) from pet";
         try {
