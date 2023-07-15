@@ -20,11 +20,7 @@ public class Care {
         this.day = day;
         this.time_slot = time_slot;
         // if services is bath or shower, price is 100k
-        if (services.equals("Tia lông") || services.equals("Tắm")) {
-            this.price = 100000;
-        } else {
-            this.price = 200000;
-        }
+        this.price = price;
 //        this.state = state;
 
     }

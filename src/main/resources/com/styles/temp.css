@@ -58,3 +58,47 @@
 /* align text in table and column
     * https://stackoverflow.com/questions/30665608/how-to-align-text-in-javafx-tableview-column
  */
+
+.dashboard {
+    -fx-background-color: linear-gradient(#B0E0E6, #FFFFFF);
+}
+
+/* code styles sheet cho button sao cho phù hợp với .gradient {
+    -fx-background-color: linear-gradient(to bottom right, #0f6789, #286155);} và
+ */
+.button {
+
+    -fx-background-color: #0f6789;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #0f6789;
+    -fx-text-fill: #ffffff;
+
+}
+
+.chart-plot-background {
+    -fx-background-color: linear-gradient(#B0E0E6, #FFFFFF);
+}
+
+
+
+
+#petTableView {
+    -fx-background-color: linear-gradient(#B0E0E6, #FFFFFF);
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);*/
+    text-align: center;
+}
+#idColumn #nameColumn #usernameColumn #passwordColumn #genderColumn #categoryColumn #ageColumn #colorColumn {
+    background-color: #0f6789;
+    color: white;
+    text-align: center;
+}
+
+
+
+

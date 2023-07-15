@@ -8,23 +8,33 @@ module com.example.itssn11 {
     opens com.example.itssn11 to javafx.fxml;
     exports com.example.itssn11;
 
-    opens dangnhap to javafx.praphics, javafx.fxml;
-    exports dangnhap;
 
-    opens menu to javafx.praphics, javafx.fxml;
-    exports menu;
-
-    opens view_pet to javafx.praphics, javafx.fxml;
-    exports view_pet;
+    opens app to javafx.praphics, javafx.fxml;
+    exports app;
 
     opens entity to javafx.praphics, javafx.fxml, javafx.base;
     exports entity;
-    exports dangkydichvu;
-    opens dangkydichvu to javafx.fxml, javafx.praphics;
 
-    exports quanly;
-    opens quanly to javafx.fxml, javafx.praphics;
+    exports controller.quanly;
+    opens controller.quanly to javafx.fxml, javafx.praphics;
 
-    exports kham;
-    opens kham to javafx.fxml, javafx.praphics;
+    exports repository.quanly;
+    opens repository.quanly to javafx.fxml, javafx.praphics;
+    exports controller.user;
+    opens controller.user to javafx.fxml, javafx.praphics;
+    exports repository.user;
+    opens repository.user to javafx.fxml, javafx.praphics;
+    exports repository;
+    opens repository to javafx.fxml, javafx.praphics;
+    exports controller;
+    opens controller to javafx.fxml, javafx.praphics;
+    exports controller.doctor;
+    opens controller.doctor to javafx.fxml, javafx.praphics;
+    exports repository.doctor;
+    opens repository.doctor to javafx.fxml, javafx.praphics;
+    exports controller.login;
+    opens controller.login to javafx.fxml, javafx.praphics;
+    exports controller.pet;
+    opens controller.pet to javafx.fxml, javafx.praphics;
+
 }

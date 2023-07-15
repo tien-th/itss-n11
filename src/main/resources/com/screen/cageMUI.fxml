@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane fx:id="de" prefHeight="400.0" prefWidth="600.0" styleClass="rootsignup" stylesheets="temp.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.quanly.CageMUIController">
+    <children>
+        <Label layoutX="236.0" layoutY="14.0" style="-fx-font-size: 24px;" text="Quản lý chuồng" />
+        <Line endX="344.8" endY="0.0" layoutX="236.0" layoutY="42.0" startX="-211.2" startY="0.0" />
+        <Button fx:id="add" layoutX="424.0" layoutY="73.0" mnemonicParsing="false" onAction="#addCage" prefHeight="20.0" prefWidth="60.0" style="-fx-font-size: 14px;" text="Thêm" textAlignment="CENTER" />
+        <Button fx:id="change" layoutX="484.0" layoutY="73.0" mnemonicParsing="false" onAction="#updateCage" prefHeight="20.0" prefWidth="50.0" style="-fx-font-size: 14px;" text="Sửa" textAlignment="CENTER" />
+        <Button fx:id="delete" layoutX="535.0" layoutY="73.0" mnemonicParsing="false" onAction="#deleteCage" prefHeight="20.0" prefWidth="50.0" style="-fx-font-size: 14px;" text="Xóa" textAlignment="CENTER" />
+        <TableView fx:id="cageTableView" layoutX="23.0" layoutY="103.0" prefHeight="277.0" prefWidth="560.0">
+            <columns>
+                <TableColumn fx:id="cageIdColumn" prefWidth="213.60003662109375" style="-fx-alignment: CENTER;" text="ID chuồng" />
+                <TableColumn fx:id="cageStatusColumn" prefWidth="193.8000030517578" style="-fx-alignment: CENTER;" text="Trạng thái" />
+            <TableColumn fx:id="petIdcolumn" prefWidth="148.199951171875" text="Pet_id" />
+            </columns>
+        </TableView>
+        <Button layoutX="520.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBack" prefWidth="65.0" style="-fx-font-size: 14px;" text="Back" textAlignment="CENTER" />
+      <Button fx:id="detail" layoutX="364.0" layoutY="72.0" mnemonicParsing="false" onAction="#detailInfo" prefHeight="30.0" prefWidth="60.0" text="Chi tiet" />
+      <TextField fx:id="filterField" layoutX="23.0" layoutY="75.0" onAction="#filterCage" />
+    </children>
+</AnchorPane>

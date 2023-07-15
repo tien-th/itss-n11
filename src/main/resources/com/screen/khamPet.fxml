@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="793.0" prefWidth="905.0" stylesheets="temp.css" styleClass="rootsignup" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.doctor.ExaminePetUiController">
+    <children>
+        <VBox alignment="CENTER" layoutX="100.0" layoutY="68.0" prefHeight="672.0" prefWidth="450.0" spacing="20">
+            <children>
+                <GridPane hgap="10" vgap="10">
+                    <children>
+                        <Label text="Pet Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <TextField fx:id="petNameTextField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                        <Label text="Category:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <TextField fx:id="petCategoryTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                        <Label text="Age:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <TextField fx:id="petAgeTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    </children>
+                    <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
+                </GridPane>
+
+                <Label layoutX="8.0" layoutY="254.0" style="-fx-font-weight: bold;" text="Symptom:" />
+                <TextArea fx:id="symptomTextArea" prefHeight="100" prefWidth="400" />
+
+                <Label layoutX="5.0" layoutY="363.0" style="-fx-font-weight: bold;" text="Diagnostic:" />
+                <TextArea fx:id="diagnosticTextArea" prefHeight="100" prefWidth="400" />
+
+                <Label layoutX="8.0" layoutY="474.0" style="-fx-font-weight: bold;" text="Advice:" />
+                <TextArea fx:id="adviceTextArea" prefHeight="100" prefWidth="400" />
+
+                <Label text="Prescribe Medicine:" style="-fx-font-weight: bold;" />
+                <HBox spacing="10">
+                    <ComboBox fx:id="medicineComboBox" prefWidth="200" />
+                    <TextField fx:id="quantityTextField" prefWidth="100" />
+                    <Button onAction="#prescribeMedicine" text="Prescribe" />
+                </HBox>
+
+                <Label text="Prescribed Medicine:" style="-fx-font-weight: bold;" />
+                <HBox spacing="10">
+                    <ListView fx:id="prescribedMedicineListView" prefWidth="200" />
+                    <Button onAction="#deleteMedicine" text="Delete" />
+                </HBox>
+
+                <Button onAction="#saveExamination" text="Save" />
+            </children>
+        </VBox>
+        <Label layoutX="193.0" layoutY="13.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Examine Pet" />
+    </children>
+</AnchorPane>
