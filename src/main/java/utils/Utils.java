@@ -1,5 +1,6 @@
 package utils;
 
+import entity.Pet;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -8,6 +9,7 @@ import javafx.scene.control.Alert;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 
 public class Utils {
     static public Scene showScreen( String fxmlPath) throws IOException {
@@ -25,7 +27,13 @@ public class Utils {
         alert.showAndWait();
     }
 
-
+    public static ArrayList<String> extractPetNames(ArrayList<Pet> petList){
+        ArrayList<String> petNames = new ArrayList<>();
+        for(Pet pet: petList){
+            petNames.add(pet.getName());
+        }
+        return petNames;
+    }
 
 
 }

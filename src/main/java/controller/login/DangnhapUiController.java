@@ -13,9 +13,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import controller.quanly.AdminUIController;
-import controller.user.UserUIController;
-import repository.DangnhapController;
+
 
 import java.io.IOException;
 import java.net.URL;

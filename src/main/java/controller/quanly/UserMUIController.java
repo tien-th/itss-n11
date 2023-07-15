@@ -1,5 +1,6 @@
 package controller.quanly;
 
+import controller.user.ScreenHandler;
 import controller.user.UserFuncBase;
 import entity.User;
 import javafx.beans.property.SimpleStringProperty;
@@ -9,6 +10,7 @@ import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
@@ -17,7 +19,7 @@ import repository.quanly.UserManageController;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class UserMUIController extends UserFuncBase {
+public class UserMUIController extends ScreenHandler implements Initializable {
     @FXML
     private TableView<User> userTableView = new TableView<>();
     @FXML

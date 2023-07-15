@@ -1,5 +1,6 @@
 package controller.quanly;
 
+import controller.user.ScreenHandler;
 import controller.user.UserFuncBase;
 import entity.Cage;
 import javafx.beans.property.SimpleStringProperty;
@@ -21,7 +22,7 @@ import java.sql.SQLException;
 import java.util.*;
 
 
-public class CageMUIController extends UserFuncBase implements Initializable {
+public class CageMUIController extends ScreenHandler implements Initializable {
     @FXML
     private TableView<Cage> cageTableView;
     @FXML

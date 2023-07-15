@@ -26,8 +26,7 @@ module com.example.itssn11 {
     opens repository.user to javafx.fxml, javafx.praphics;
     exports repository;
     opens repository to javafx.fxml, javafx.praphics;
-    exports controller;
-    opens controller to javafx.fxml, javafx.praphics;
+
     exports controller.doctor;
     opens controller.doctor to javafx.fxml, javafx.praphics;
     exports repository.doctor;

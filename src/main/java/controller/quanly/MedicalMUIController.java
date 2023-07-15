@@ -1,5 +1,6 @@
 package controller.quanly;
-import controller.user.UserFuncBase;
+import controller.user.ScreenHandler;
+
 import entity.Medical;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,7 +22,7 @@ import java.sql.SQLException;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-public class MedicalMUIController extends UserFuncBase  implements Initializable {
+public class MedicalMUIController extends ScreenHandler implements Initializable {
     @FXML
     private TableView<Medical> medicalTableView;
     @FXML

@@ -1,6 +1,7 @@
 package controller.quanly;
 
-import controller.user.UserFuncBase;
+import controller.user.ScreenHandler;
+
 import entity.Care;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,7 +21,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class CareServicesMUIController extends  UserFuncBase implements Initializable {
+public class CareServicesMUIController extends ScreenHandler implements Initializable {
     @FXML
     private TableView<Care> careTableView;
     @FXML
@@ -40,16 +41,12 @@ public class CareServicesMUIController extends  UserFuncBase implements Initiali
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             showListCareServices();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
         try {
             filter();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
 

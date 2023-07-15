@@ -1,5 +1,6 @@
 package repository.quanly;
-import controller.user.UserFuncBase;
+import controller.user.ScreenHandler;
+
 import entity.Appoint;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,7 +17,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.Optional;
 import java.util.ResourceBundle;
-public class AppointUIController extends UserFuncBase implements Initializable {
+public class AppointUIController extends ScreenHandler implements Initializable {
     @FXML
     private TableView<Appoint> appointTableView ;
     @FXML

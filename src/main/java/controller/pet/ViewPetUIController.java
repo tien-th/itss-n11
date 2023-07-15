@@ -1,7 +1,9 @@
 package controller.pet;
 
+import controller.user.ScreenHandler;
 import controller.user.UserFuncBase;
 import entity.Pet;
+import entity.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -21,7 +23,7 @@ import entity.UpdatedPetInfo;
 
 import utils.Utils;
 
-public class ViewPetUIController extends UserFuncBase implements Initializable {
+public class ViewPetUIController extends ScreenHandler implements Initializable {
 
     @FXML
     private TableView<Pet> petTableView;
