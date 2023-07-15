@@ -8,34 +8,22 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class CareController {
-    public ArrayList<Care> careList = new ArrayList<Care>();
-    public void getListCareServices() throws SQLException, ClassNotFoundException {
-        PreparedStatement ps = null;
-        String sql = "SELECT * FROM dichvuvs";
-        ps = utils.connection.DbConnection.openConnection().prepareStatement(sql);
+    private ArrayList<Care> careList ;
 
-        ResultSet rs = ps.executeQuery();
-        while (rs.next()) {
-            int pet_id = rs.getInt("pet_id");
-            String name_services = rs.getString("loai_dv");
-            String day = String.valueOf(rs.getDate("day")); // name
-            int time_slot = rs.getInt("time_slot");
-            int price = rs.getInt("giatien");
-
-//            String state = rs.getString("state");
-            Care c = new Care(pet_id, name_services, day, time_slot, price);
-            System.out.println(c);
-            careList.add(c);
+    public ArrayList<Care>  getListCareServices() throws SQLException, ClassNotFoundException {
+        if (careList == null) {
+            careList = CareDbManager.getListCareServices();
         }
+        return careList;
     }
 
-    public static void deleteCareServices(int pet_id, String day, int time_slot) throws SQLException, ClassNotFoundException {
-        String sql = "delete from dichvuvs where pet_id = ? and day = ? and time_slot = ?";
-        PreparedStatement ps = utils.connection.DbConnection.openConnection().prepareStatement(sql);
-        ps.setInt(1, pet_id);
-        ps.setDate(2, java.sql.Date.valueOf(day));
-        ps.setInt(3, time_slot);
-        ps.executeUpdate();
+
+    public void deleteCareServices(Care selectedCare) throws SQLException, ClassNotFoundException {
+        int selectedCareId = selectedCare.getPet_id();
+        String day = selectedCare.getDay();
+        int time = selectedCare.getTime_slot();
+        CareDbManager.deleteCareServices(selectedCareId, day, time);
+        careList.remove(selectedCare);
     }
     public static int updateCareServices(Care updatedCare, Care oldCare) {
 //        if day and time_slot are not changed return (do nothing)

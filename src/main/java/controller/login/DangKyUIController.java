@@ -105,7 +105,7 @@ public class DangKyUIController {
 
     public void back(ActionEvent e) throws IOException {
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-        URL url = Paths.get("src/main/java/dangnhap/dangnhap.fxml").toUri().toURL();
+        URL url = Paths.get("src/main/resources/com/screen/dangnhap.fxml").toUri().toURL();
         Parent signInViewParent = FXMLLoader.load(url);
         Scene scene = new Scene(signInViewParent);
         stage.setScene(scene);

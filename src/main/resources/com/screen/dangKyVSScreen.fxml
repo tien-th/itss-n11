@@ -4,6 +4,7 @@
 <?import javafx.collections.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
@@ -67,7 +68,7 @@
             </FXCollections>
          </items>
         </ChoiceBox>
-      <Label layoutX="26.0" layoutY="244.0" text="Ngày khám" />
+      <Label layoutX="26.0" layoutY="244.0" text="Ngày" />
       <Button fx:id="buttonLuu" layoutX="26.0" layoutY="391.0" mnemonicParsing="false" onAction="#handleLuuButton" styleClass="save-button" text="Lưu">
          <font>
             <Font size="16.0" />

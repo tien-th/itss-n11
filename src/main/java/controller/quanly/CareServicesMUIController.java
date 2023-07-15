@@ -54,12 +54,8 @@ public class CareServicesMUIController extends ScreenHandler implements Initiali
 
     @FXML
     public void showListCareServices()throws SQLException, ClassNotFoundException{
-        try {
-            careController.getListCareServices();
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        careList = FXCollections.observableArrayList(careController.careList);
+        careList = FXCollections.observableArrayList(careController.getListCareServices());
+
         petIdColumn.setCellValueFactory(new PropertyValueFactory<Care, Integer>("pet_id"));
         dichvuColumn.setCellValueFactory(new PropertyValueFactory<Care, String>("services"));
         datetimeColumn.setCellValueFactory(new PropertyValueFactory<Care, String>("day"));
@@ -76,25 +72,13 @@ public class CareServicesMUIController extends ScreenHandler implements Initiali
         careTableView.setItems(careList);
     }
     public void deleteCareServices(ActionEvent event) throws SQLException, ClassNotFoundException{
-        if (user.getRole() != 1 ){
-            javafx.scene.control.Alert alert = new javafx.scene.control.Alert(javafx.scene.control.Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Error");
-            alert.setContentText("You are not allowed to delete pet");
-            alert.showAndWait();
-            return ;
-        }
         Care selectedCare = careTableView.getSelectionModel().getSelectedItem();
         if (selectedCare == null) {
             return;
         }
-        int selectedCareId = selectedCare.getPet_id();
-        String day = selectedCare.getDay();
-        int time = selectedCare.getTime_slot();
-        CareController.deleteCareServices(selectedCareId, day, time);
+        careController.deleteCareServices(selectedCare);
         careList.remove(selectedCare);
         careTableView.refresh();
-
     }
     @FXML
     private TextField search;
