@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="button" stylesheets="temp.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.user.AdminUIController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="button" stylesheets="temp.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.user.AdminUIController">
     <children>
         <AnchorPane prefHeight="200.0" prefWidth="200.0">
             <children>
@@ -19,7 +19,7 @@
                                     <children>
 
                                             <Button fx:id="dashboard" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#viewStatisticalUI" prefHeight="45.0" prefWidth="200.0" style="-fx-font-size:16;" text="         Dashboard" />
-                                            <Button fx:id="users" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#viewUserUI" prefHeight="45.0" prefWidth="200.0" style="-fx-font-size:15;" text="         Customer Management">
+                                            <Button fx:id="users" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#viewUserUI" prefHeight="45.0" prefWidth="200.0" style="-fx-font-size:15;" text="         User Management">
                                  <font>
                                     <Font size="14.0" />
                                  </font></Button>
