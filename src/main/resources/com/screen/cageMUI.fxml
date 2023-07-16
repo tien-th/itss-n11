@@ -6,20 +6,20 @@
 
 <AnchorPane fx:id="de" prefHeight="400.0" prefWidth="600.0" styleClass="rootsignup" stylesheets="temp.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.services.CageMUIController">
     <children>
-        <Label layoutX="236.0" layoutY="14.0" style="-fx-font-size: 24px;" text="Quản lý chuồng" />
+        <Label layoutX="202.0" layoutY="11.0" style="-fx-font-size: 24px;" text="Cage Management" />
         <Line endX="344.8" endY="0.0" layoutX="236.0" layoutY="42.0" startX="-211.2" startY="0.0" />
-        <Button fx:id="add" layoutX="424.0" layoutY="73.0" mnemonicParsing="false" onAction="#addCage" opacity="0.61" prefHeight="20.0" prefWidth="60.0" style="-fx-font-size: 14px;" text="Thêm" textAlignment="CENTER" />
-        <Button fx:id="change" layoutX="484.0" layoutY="73.0" mnemonicParsing="false" onAction="#updateCage" opacity="0.5" prefHeight="20.0" prefWidth="50.0" style="-fx-font-size: 14px;" text="Sửa" textAlignment="CENTER" />
-        <Button fx:id="delete" layoutX="535.0" layoutY="73.0" mnemonicParsing="false" onAction="#deleteCage" opacity="0.5" prefHeight="20.0" prefWidth="50.0" style="-fx-font-size: 14px;" text="Xóa" textAlignment="CENTER" />
+        <Button fx:id="add" layoutX="390.0" layoutY="73.0" mnemonicParsing="false" onAction="#addCage" opacity="0.61" prefHeight="20.0" prefWidth="60.0" style="-fx-font-size: 14px;" text="Add" textAlignment="CENTER" />
+        <Button fx:id="change" layoutX="450.0" layoutY="73.0" mnemonicParsing="false" onAction="#updateCage" opacity="0.5" prefHeight="30.0" prefWidth="66.0" style="-fx-font-size: 14px;" text="Update" textAlignment="CENTER" />
+        <Button fx:id="delete" layoutX="516.0" layoutY="73.0" mnemonicParsing="false" onAction="#deleteCage" opacity="0.5" prefHeight="30.0" prefWidth="66.0" style="-fx-font-size: 14px;" text="Delete" textAlignment="CENTER" />
         <TableView fx:id="cageTableView" layoutX="23.0" layoutY="103.0" prefHeight="277.0" prefWidth="560.0">
             <columns>
-                <TableColumn fx:id="cageIdColumn" prefWidth="213.60003662109375" style="-fx-alignment: CENTER;" text="ID chuồng" />
-                <TableColumn fx:id="cageStatusColumn" prefWidth="193.8000030517578" style="-fx-alignment: CENTER;" text="Trạng thái" />
-            <TableColumn fx:id="petIdcolumn" prefWidth="148.199951171875" text="Pet_id" />
+                <TableColumn fx:id="cageIdColumn" prefWidth="213.60003662109375" style="-fx-alignment: CENTER;" text="Cage ID" />
+                <TableColumn fx:id="cageStatusColumn" prefWidth="193.8000030517578" style="-fx-alignment: CENTER;" text="State" />
+            <TableColumn fx:id="petIdcolumn" prefWidth="148.199951171875" text="PET ID" />
             </columns>
         </TableView>
-        <Button layoutX="520.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBack" opacity="0.5" prefWidth="65.0" style="-fx-font-size: 14px;" text="Back" textAlignment="CENTER" />
-      <Button fx:id="detail" layoutX="364.0" layoutY="72.0" mnemonicParsing="false" onAction="#detailInfo" opacity="0.49" prefHeight="30.0" prefWidth="60.0" text="Chi tiet" />
+        <Button layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#goBack" opacity="0.5" prefWidth="65.0" style="-fx-font-size: 14px;" text="Back" textAlignment="CENTER" />
+      <Button fx:id="detail" layoutX="330.0" layoutY="72.0" mnemonicParsing="false" onAction="#detailInfo" opacity="0.49" prefHeight="30.0" prefWidth="60.0" text="Info" />
       <TextField fx:id="filterField" layoutX="23.0" layoutY="75.0" onAction="#filterCage" />
     </children>
 </AnchorPane>

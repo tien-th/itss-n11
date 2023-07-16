@@ -4,19 +4,18 @@
 <?import javafx.collections.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="507.0" prefWidth="764.0" styleClass="rootsignup" stylesheets="temp.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.services.DangKyVSScreenController">
+<AnchorPane prefHeight="507.0" prefWidth="764.0" styleClass="rootsignup" stylesheets="temp.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.services.DangKyVSScreenController">
    <children>
-      <Label layoutX="24.0" layoutY="79.0" text="Tên thú cưng">
+      <Label layoutX="24.0" layoutY="79.0" text="Pet name">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="140.0" layoutY="21.0" text="Dịch vụ vệ sinh">
+      <Label layoutX="140.0" layoutY="21.0" text="Care Services">
          <font>
             <Font size="26.0" />
          </font>
@@ -25,7 +24,7 @@
       <ChoiceBox fx:id="choiceBoxTenThuCung" layoutX="24.0" layoutY="99.0" prefHeight="26.0" prefWidth="200.0">
 
       </ChoiceBox>
-      <Label layoutX="25.0" layoutY="137.0" prefHeight="26.0" prefWidth="69.0" text="Dịch vụ">
+      <Label layoutX="25.0" layoutY="137.0" prefHeight="26.0" prefWidth="69.0" text="Services">
          <font>
             <Font size="16.0" />
          </font>
@@ -68,14 +67,14 @@
             </FXCollections>
          </items>
         </ChoiceBox>
-      <Label layoutX="26.0" layoutY="244.0" text="Ngày" />
-      <Button fx:id="buttonLuu" layoutX="26.0" layoutY="391.0" mnemonicParsing="false" onAction="#handleLuuButton" styleClass="save-button" text="Lưu">
+      <Label layoutX="26.0" layoutY="244.0" text="Date" />
+      <Button fx:id="buttonLuu" layoutX="26.0" layoutY="391.0" mnemonicParsing="false" onAction="#handleLuuButton" styleClass="save-button" text="Save">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Label layoutX="26.0" layoutY="298.0" text="Thời gian" />
-      <Button fx:id="buttonThoat" layoutY="3.0" mnemonicParsing="false" onAction="#goBack" styleClass="cancel-button" text="Thoát">
+      <Label layoutX="26.0" layoutY="298.0" text="Time slot" />
+      <Button fx:id="buttonThoat" layoutY="3.0" mnemonicParsing="false" onAction="#goBack" styleClass="cancel-button" text="Back">
          <font>
             <Font size="16.0" />
          </font>
@@ -84,7 +83,7 @@
          <children>
             <ImageView fitHeight="349.0" fitWidth="469.0" layoutX="-3.0" layoutY="-65.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="grooming.png" />
+                  <Image url="@grooming.png" />
                </image>
             </ImageView>
          </children>

@@ -19,17 +19,17 @@
                                     <children>
 
                                             <Button fx:id="dashboard" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#viewStatisticalUI" prefHeight="45.0" prefWidth="200.0" style="-fx-font-size:16;" text="         Dashboard" />
-                                            <Button fx:id="users" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#viewUserUI" prefHeight="45.0" prefWidth="200.0" style="-fx-font-size:15;" text="         Quản lý người dùng">
+                                            <Button fx:id="users" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#viewUserUI" prefHeight="45.0" prefWidth="200.0" style="-fx-font-size:15;" text="         Customer Management">
                                  <font>
                                     <Font size="14.0" />
                                  </font></Button>
-                                            <Button fx:id="pet" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#viewPetUI" prefHeight="45.0" prefWidth="200.0" style="-fx-font-size:16;" text="         Quản lý Thú cưng" />
-                                            <Button fx:id="medical" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#viewManageMedicineUI" prefHeight="45.0" prefWidth="200.0" style="-fx-font-size:16;" text="         Quản lý thuốc" />
-                                            <Button fx:id="services" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#viewManageCareUI" prefHeight="45.0" prefWidth="200.0" style="-fx-font-size:16;" text="         Quản lý dịch vụ" />
-                                            <Button fx:id="cage" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#viewManageCage" prefHeight="45.0" prefWidth="200.0" style="-fx-font-size:16;" text="         Quản lý chuồng" />
-                                            <Button fx:id="appointtments" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#viewManageAppointmentsUI" prefHeight="45.0" prefWidth="200.0" style="-fx-font-size:16;" text="         Quan ly lich kham" />
-                                            <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" style="-fx-font-size:16;" text="         Phan hoi" />
-                                            <Button fx:id="signout" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#signOut" prefHeight="45.0" prefWidth="200.0" style="-fx-font-size:16;" text="         Đăng xuất" />
+                                            <Button fx:id="pet" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#viewPetUI" prefHeight="45.0" prefWidth="200.0" style="-fx-font-size:16;" text="         Pet Management" />
+                                            <Button fx:id="medical" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#viewManageMedicineUI" prefHeight="45.0" prefWidth="200.0" style="-fx-font-size:16;" text="         Medical Management" />
+                                            <Button fx:id="services" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#viewManageCareUI" prefHeight="45.0" prefWidth="200.0" style="-fx-font-size:16;" text="         Services Management" />
+                                            <Button fx:id="cage" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#viewManageCage" prefHeight="45.0" prefWidth="200.0" style="-fx-font-size:16;" text="         Cage Management" />
+                                            <Button fx:id="appointtments" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#viewManageAppointmentsUI" prefHeight="45.0" prefWidth="200.0" style="-fx-font-size:16;" text="         Appointment" />
+                                            <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" style="-fx-font-size:16;" text="         Feedback" />
+                                            <Button fx:id="signout" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#signOut" prefHeight="45.0" prefWidth="200.0" style="-fx-font-size:16;" text="         SignOut" />
 
                                     </children>
                                 </VBox>

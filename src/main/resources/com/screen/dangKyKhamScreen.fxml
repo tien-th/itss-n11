@@ -7,26 +7,15 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
-<?import java.lang.String?>
-<?import javafx.collections.FXCollections?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="507.0" prefWidth="764.0" styleClass="rootsignup" stylesheets="temp.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.services.DangKyKhamScreenController">
+<AnchorPane prefHeight="507.0" prefWidth="764.0" styleClass="rootsignup" stylesheets="temp.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.services.DangKyKhamScreenController">
    <children>
-      <Label layoutX="26.0" layoutY="74.0" text="Tên thú cưng">
+      <Label layoutX="26.0" layoutY="74.0" text="Pet name">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label layoutX="283.0" layoutY="14.0" text="Đăng ký khám">
+      <Label layoutX="219.0" layoutY="14.0" text="Appointment Register">
          <font>
             <Font name="Comic Sans MS" size="26.0" />
          </font>
@@ -52,14 +41,14 @@
             </FXCollections>
          </items>
       </ChoiceBox>
-      <Label layoutX="27.0" layoutY="150.0" text="Ngày khám" />
-      <Label layoutX="26.0" layoutY="224.0" text="Thời gian" />
-      <Button fx:id="buttonLuu" layoutX="26.0" layoutY="314.0" mnemonicParsing="false" onAction="#handleLuuButton" styleClass="save-button" text="Lưu">
+      <Label layoutX="27.0" layoutY="150.0" text="Date" />
+      <Label layoutX="26.0" layoutY="224.0" text="Time slot" />
+      <Button fx:id="buttonLuu" layoutX="26.0" layoutY="314.0" mnemonicParsing="false" onAction="#handleLuuButton" styleClass="save-button" text="Save">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="buttonThoat" layoutX="2.0" layoutY="7.0" mnemonicParsing="false" onAction="#goBack" styleClass="cancel-button" text="Thoát">
+      <Button fx:id="buttonThoat" layoutX="2.0" layoutY="7.0" mnemonicParsing="false" onAction="#goBack" styleClass="cancel-button" text="Back">
          <font>
             <Font size="16.0" />
          </font>

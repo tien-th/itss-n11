@@ -3,19 +3,23 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="rootsignup" stylesheets="temp.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.user.AppointUIController">
     <children>
         <Line endX="344.79998779296875" endY="-1.1444091796875E-5" layoutX="236.0" layoutY="42.0" startX="-211.20001220703125" startY="-1.1444091796875E-5" />
-        <Label layoutX="249.0" layoutY="14.0" text="Quản lý lịch khám" />
+        <Label layoutX="240.0" layoutY="9.0" text="Appointment">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
 <!--        <Button layoutX="470.0" layoutY="77.0" mnemonicParsing="false" text="Thêm "  />-->
-        <Button layoutX="532.0" layoutY="77.0" mnemonicParsing="false" onAction="#updateAppoint" text="Sửa" />
-        <Button layoutX="563.0" layoutY="77.0" mnemonicParsing="false" onAction="#deleteAppoint" text="Xóa" />
+        <Button layoutX="496.0" layoutY="77.0" mnemonicParsing="false" onAction="#updateAppoint" text="Update" />
+        <Button layoutX="551.0" layoutY="77.0" mnemonicParsing="false" onAction="#deleteAppoint" text="Delete" />
         <TableView fx:id="appointTableView" layoutX="-1.0" layoutY="103.0" prefHeight="294.0" prefWidth="606.0" style="-fx-alignment: CENTER;" styleClass="table-column">
             <columns>
-                <TableColumn fx:id="petIdColumn" prefWidth="94.4000244140625" text="id pet" />
-                <TableColumn fx:id="datetimeColumn" prefWidth="166.2000274658203" text="Ngày" />
-                <TableColumn fx:id="time_slotColumn" prefWidth="186.5999755859375" text="Thời gian" />
+                <TableColumn fx:id="petIdColumn" prefWidth="141.20000302791595" text="PET ID" />
+                <TableColumn fx:id="datetimeColumn" prefWidth="189.20001220703125" text="DATE" />
+                <TableColumn fx:id="time_slotColumn" prefWidth="276.7999572753906" text="TIME SLOT" />
 <!--            <TableColumn fx:id="statusColumn" prefWidth="153.79998779296875" text="Trạng thái" />-->
             </columns>
         </TableView>
