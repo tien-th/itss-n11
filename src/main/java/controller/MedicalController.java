@@ -1,6 +1,6 @@
 package controller;
 
-import model.repository.dbmanager.MedicalDbManager;
+import model.repository.MedicalDbManager;
 import utils.connection.DbConnection;
 import model.entity.Medical;
 

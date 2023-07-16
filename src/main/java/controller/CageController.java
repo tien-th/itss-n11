@@ -1,6 +1,6 @@
 package controller;
 
-import model.repository.dbmanager.CageDbManager;
+import model.repository.CageDbManager;
 import utils.connection.DbConnection;
 import model.entity.*;
 

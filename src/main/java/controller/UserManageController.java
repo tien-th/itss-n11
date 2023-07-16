@@ -2,7 +2,7 @@ package controller;
 
 
 import model.entity.User;
-import model.repository.dbmanager.UserDbManager;
+import model.repository.UserDbManager;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

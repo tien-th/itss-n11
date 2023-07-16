@@ -34,8 +34,8 @@ module com.example.itssn11 {
 //    opens view.ui.login to javafx.fxml, javafx.praphics;
 //    exports view.ui.pet;
 //    opens view.ui.pet to javafx.fxml, javafx.praphics;
-    exports model.repository.dbmanager;
-    opens model.repository.dbmanager to javafx.fxml, javafx.praphics;
+    exports model.repository;
+    opens model.repository to javafx.fxml, javafx.praphics;
 
 //    opens service.appointment to javafx.fxml, javafx.praphics;
     exports controller;

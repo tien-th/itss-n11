@@ -3,7 +3,7 @@ import model.entity.Pet;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import model.repository.dbmanager.RegisterServiceSaver;
+import model.repository.RegisterServiceSaver;
 import view.user.UserFuncBase;
 
 import java.sql.SQLException;

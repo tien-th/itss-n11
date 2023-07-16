@@ -1,6 +1,6 @@
 package controller;
 
-import model.repository.dbmanager.RegisterServiceSaver;
+import model.repository.RegisterServiceSaver;
 
 import java.sql.SQLException;
 

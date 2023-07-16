@@ -1,7 +1,7 @@
 package controller;
 
 import model.entity.User;
-import model.repository.dbmanager.UserQuerier;
+import model.repository.UserQuerier;
 
 import java.sql.SQLException;
 

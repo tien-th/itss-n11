@@ -1,7 +1,7 @@
 package controller;
 
 import  model.entity.Care;
-import model.repository.dbmanager.CareDbManager;
+import model.repository.CareDbManager;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

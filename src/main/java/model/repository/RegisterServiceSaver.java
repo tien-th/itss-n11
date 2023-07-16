@@ -1,4 +1,4 @@
-package model.repository.dbmanager;
+package model.repository;
 
 import utils.connection.DbConnection;
 

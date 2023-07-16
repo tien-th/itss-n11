@@ -1,4 +1,4 @@
-package model.repository.dbmanager;
+package model.repository;
 
 import model.entity.Cage;
 import model.entity.Pet;

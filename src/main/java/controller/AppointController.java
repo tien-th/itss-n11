@@ -1,6 +1,6 @@
 package controller;
 import model.entity.Appoint;
-import model.repository.dbmanager.AppointDbManager;
+import model.repository.AppointDbManager;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
