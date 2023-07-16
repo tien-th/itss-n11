@@ -9,10 +9,9 @@ import java.util.ArrayList;
 public class MedicalController {
     private Connection connection;
     public MedicalController() {
-        this.connection = connection;
     }
 
-    public ArrayList<Medical> medicalList = new ArrayList<Medical>();
+    public ArrayList<Medical> medicalList ;
      public ArrayList<Medical> getMedicalList() throws SQLException, ClassNotFoundException {
          if (medicalList == null) {
              medicalList = MedicalDbManager.getMedicalList();
@@ -20,34 +19,33 @@ public class MedicalController {
          return medicalList;
      }
 
-    public int add(Medical Medical) throws SQLException {
-
-        return  -1;
-    }
     public Medical add(String tenThuoc, String loaiThuoc, int soLuong, String nhaSx, Date hsd, int gia) {
-        int medicalId = MedicalDbManager.addMedical(tenThuoc, loaiThuoc, soLuong, nhaSx, hsd, gia);
+        int medicalId = MedicalDbManager.addMedical(tenThuoc, loaiThuoc, soLuong, nhaSx, String.valueOf(hsd), gia);
 
-        return null;
+        if (medicalId == -1) {
+            return null;
+        }
+        Medical m = new Medical(medicalId, tenThuoc, loaiThuoc, soLuong, nhaSx, hsd, gia);
+        medicalList.add(m);
+        return m;
     }
 
-    public boolean update(Medical Medical) throws SQLException, ClassNotFoundException {
-        String sql = "select * from thuoc where thuoc_id = " + Medical.getThuocId();
-        PreparedStatement ps = DbConnection.openConnection().prepareStatement(sql);
-        ResultSet rs = ps.executeQuery();
-        if (rs.next() ) {
-            // update pet in database
-            sql = "update thuoc set ten_thuoc = ?, nhom_thuoc = ?, soluong = ?, nhasx = ?, hsd = ? where thuoc_id = ?" ;
-            ps = DbConnection.openConnection().prepareStatement(sql);
-            ps.setString(1, Medical.getTenThuoc());
-            ps.setString(2, Medical.getNhomThuoc());
-            ps.setInt(3, Medical.getSoLuong());
-            ps.setString(4, Medical.getNhaSx());
-            ps.setDate(5, Medical.getHsd());
-            ps.setInt(6, Medical.getThuocId());
-            ps.executeUpdate();
-            return true;
+    public boolean update(Medical medical) throws SQLException, ClassNotFoundException {
+        boolean result = MedicalDbManager.updateMedical(medical);
+        if (result) {
+            for (Medical m : medicalList) {
+                if (m.getThuocId() == medical.getThuocId()) {
+                    m.setTenThuoc(medical.getTenThuoc());
+                    m.setNhomThuoc(medical.getNhomThuoc());
+                    m.setSoLuong(medical.getSoLuong());
+                    m.setNhaSx(medical.getNhaSx());
+                    m.setHsd(medical.getHsd());
+                    m.setPrice(medical.getPrice());
+                    break;
+                }
+            }
         }
-        return false;
+        return result;
     }
 
     public void delete(Medical medical) throws SQLException {
@@ -61,23 +59,5 @@ public class MedicalController {
         }
 
      }
-    public Medical getMedical(int MedicalId) throws SQLException {
-        Medical Medical = null;
-        String query = "SELECT * FROM thuoc WHERE thuoc_id=?";
-        try (PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setInt(1, MedicalId);
-            ResultSet resultSet = statement.executeQuery();
-            if (resultSet.next()) {
-                String ten_thuoc = resultSet.getString("ten_thuoc");
-                String nhom_thuoc = resultSet.getString("nhom_thuoc");
-                int soluong = resultSet.getInt("soluong");
-                String nhasx = resultSet.getString("nhasx");
-                Date hsd = resultSet.getDate("hsd");
-                Medical = new Medical(MedicalId, ten_thuoc, nhom_thuoc, soluong, nhasx, hsd);
-            }
-        }
-        return Medical;
-    }
-
 
 }

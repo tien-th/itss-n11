@@ -39,6 +39,4 @@ public class CareDbManager {
         ps.setInt(3, timeSlot);
         ps.executeUpdate();
     }
-
-
 }

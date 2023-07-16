@@ -12,7 +12,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-import repository.quanly.AdminController;
 import controller.user.UserUIController;
 import utils.connection.DbConnection;
 
@@ -107,7 +106,6 @@ public class AdminUIController extends ActorUi implements Initializable {
         stage.setScene(scene);
     }
 
-    AdminController adminController = new AdminController();
     @FXML
     Label totalUser = new Label();
     @FXML

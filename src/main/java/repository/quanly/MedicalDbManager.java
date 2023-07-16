@@ -31,8 +31,28 @@ public class MedicalDbManager {
         return medicalList;
     }
 
+    public static boolean updateMedical(Medical medical) throws SQLException, ClassNotFoundException {
+        String sql = "select * from thuoc where thuoc_id = " + medical.getThuocId();
+        PreparedStatement ps = DbConnection.openConnection().prepareStatement(sql);
+        ResultSet rs = ps.executeQuery();
+        if (rs.next() ) {
+            // update pet in database
+            sql = "update thuoc set ten_thuoc = ?, nhom_thuoc = ?, soluong = ?, nhasx = ?, hsd = ?, price = ? where thuoc_id = ?" ;
+            ps = DbConnection.openConnection().prepareStatement(sql);
+            ps.setString(1, medical.getTenThuoc());
+            ps.setString(2, medical.getNhomThuoc());
+            ps.setInt(3, medical.getSoLuong());
+            ps.setString(4, medical.getNhaSx());
+            ps.setDate(5, medical.getHsd());
+            ps.setInt(6, medical.getThuocId());
+            ps.setInt(7, medical.getPrice());
+            ps.executeUpdate();
+            return true;
+        }
+        return false;
+    }
 
-    public static int addMedical(String tenThuoc, String nhomThuoc, int soLuong, String nhaSx, Date hsd, int gia) {
+    public static int addMedical(String tenThuoc, String nhomThuoc, int soLuong, String nhaSx, String hsd, int gia) {
         String sql  = "select max(thuoc_id) from thuoc";
         try{
             PreparedStatement ps = DbConnection.openConnection().prepareStatement(sql);
@@ -44,10 +64,8 @@ public class MedicalDbManager {
                 ps.executeUpdate();
                 return id+1;
             }
-        } catch (SQLException throwables) {
+        } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         }
 
         return -1 ;

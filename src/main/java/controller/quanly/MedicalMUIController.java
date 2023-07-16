@@ -164,6 +164,8 @@ public class MedicalMUIController extends ScreenHandler implements Initializable
         TextField nhaSx = new TextField(selectedMedical.getNhaSx());
         // chon ngay han su dung javafx
         DatePicker hsd = new DatePicker();
+        TextField price = new TextField(String.valueOf(selectedMedical.getPrice()));
+
         hsd.setValue(selectedMedical.getHsd().toLocalDate());
 
         GridPane grid = new GridPane();
@@ -177,16 +179,22 @@ public class MedicalMUIController extends ScreenHandler implements Initializable
         grid.add(nhaSx, 2, 4);
         grid.add(new Label("Hạn sử dụng:"), 1, 5);
         grid.add(hsd, 2, 5);
+
+        grid.add(new Label("Giá:"), 1, 6);
+        grid.add(price, 2, 6);
+
         dialog.getDialogPane().setContent(grid);
         dialog.showAndWait();
-if (dialog.getResult() == ButtonType.APPLY) {
+        if (dialog.getResult() == ButtonType.APPLY) {
             selectedMedical.setTenThuoc(tenThuoc.getText());
             selectedMedical.setNhomThuoc(nhomThuoc.getText());
             selectedMedical.setSoLuong(Integer.parseInt(soLuong.getText()));
             selectedMedical.setNhaSx(nhaSx.getText());
             selectedMedical.setHsd(java.sql.Date.valueOf(hsd.getValue()));
+            selectedMedical.setPrice(Integer.parseInt(price.getText()));
+
             medicalController.update(selectedMedical);
-            MedicalController medicalController = new MedicalController();
+
             boolean result = medicalController.update(selectedMedical);
             if (result) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -217,7 +225,7 @@ if (dialog.getResult() == ButtonType.APPLY) {
        hsd.setCellValueFactory(new PropertyValueFactory<Medical, String>("hsd"));
        price.setCellValueFactory(new PropertyValueFactory<Medical, Integer>("price"));
        medicalTableView.setItems(medicalList);
-
+       System.out.println("size" +  medicalList.size());
    }
 
 }

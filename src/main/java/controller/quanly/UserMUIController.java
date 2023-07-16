@@ -39,57 +39,16 @@ public class UserMUIController extends ScreenHandler implements Initializable {
     private TextField searchTextField; // Add this field to your UI
 
 
-    @FXML
-    private void searchUser(ActionEvent event) {
-        String searchQuery = searchTextField.getText();
-        if (searchQuery.isEmpty()) {
-            // No search query provided
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Lỗi");
-            alert.setHeaderText("Không có từ khóa tìm kiếm");
-            alert.setContentText("Vui lòng nhập từ khóa tìm kiếm");
-            alert.showAndWait();
-            return;
-        }
-
-        // Clear previous search results
-        userList.clear();
-
-        for (User user : userManageController.userList) {
-            if (user.getUsername().contains(searchQuery)) {
-                userList.add(user);
-            }
-        }
-
-        if (userList.isEmpty()) {
-            // No users found
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Thông báo");
-            alert.setHeaderText("Không tìm thấy người dùng");
-            alert.setContentText("Không có người dùng phù hợp với từ khóa tìm kiếm");
-            alert.showAndWait();
-        }
-    }
-
     UserManageController userManageController = new UserManageController();
 
     @Override
     public void initialize(java.net.URL location, java.util.ResourceBundle resources) {
-//        super.initialize(location, resources);
-//        if (user == null) {
-//            System.out.println("user is null");
-//            return ; // fix bug
-//        }
-//        System.out.println("init user " + user.getName() + " " + user.getRole());// fix bug
-//        UserManageController userManageController = new UserManageController();
-          showdata();
         try {
-            searchPet();
+            showdata();
+            searchUser();
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-
-
     }
 
     @FXML
@@ -103,8 +62,6 @@ public class UserMUIController extends ScreenHandler implements Initializable {
             alert.showAndWait();
             return;
         }
-
-//        UserManageController userManageController = new UserManageController();
         userManageController.deleteUser(selectedUser);
         userList.remove(selectedUser);
     }
@@ -148,21 +105,12 @@ public class UserMUIController extends ScreenHandler implements Initializable {
             userList.add(user);
             userTableView.setItems(userList);
             userTableView.refresh();
-
         }
-
     }
     @FXML
-    public void showdata(){
-        try {
-            userManageController.getUserList();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println("user list size " + userManageController.userList.size());
-        userList = FXCollections.observableArrayList(userManageController.userList);
+    public void showdata() throws SQLException, ClassNotFoundException {
+
+        userList = FXCollections.observableArrayList(userManageController.getUserList());
         usernameColumn.setCellValueFactory(new PropertyValueFactory<User, String>("username"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<User, String>("name"));
         emailColumn.setCellValueFactory(new PropertyValueFactory<User, String>("email"));
@@ -179,13 +127,11 @@ public class UserMUIController extends ScreenHandler implements Initializable {
             return new SimpleStringProperty(roleString);
         });
 
-
-
         userTableView.setItems(userList);
         System.out.println(userTableView.getItems().size());
     }
-@FXML
-    public void searchPet() throws SQLException, ClassNotFoundException{
+    @FXML
+    public void searchUser() throws SQLException, ClassNotFoundException{
     FilteredList<User> filteredData = new FilteredList<>(userList, b -> true);
     searchTextField.textProperty().addListener((observable, oldValue, newValue) -> {
         filteredData.setPredicate(user -> {
@@ -216,10 +162,9 @@ public class UserMUIController extends ScreenHandler implements Initializable {
                 return false; // Does not match.
         });
     });
-    SortedList<User> sortedData = new SortedList<>(filteredData);
-    sortedData.comparatorProperty().bind(userTableView.comparatorProperty());
-    userTableView.setItems(sortedData);
-
-}
+        SortedList<User> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(userTableView.comparatorProperty());
+        userTableView.setItems(sortedData);
+    }
 
 }
