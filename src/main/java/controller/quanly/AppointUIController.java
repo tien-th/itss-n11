@@ -34,21 +34,21 @@ public class AppointUIController extends ScreenHandler implements Initializable 
     AppointController appointController = new AppointController();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        try {
-            appointController.getAppointList();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
+
         // data in all column align center
         petIdColumn.setStyle("-fx-alignment: CENTER;");
         datetimeColumn.setStyle("-fx-alignment: CENTER;");
         time_slotColumn.setStyle("-fx-alignment: CENTER;");
 //        statusColumn.setStyle("-fx-alignment: CENTER;");
-        appointList = FXCollections.observableArrayList(appointController.appointList);
+        try {
+            appointList = FXCollections.observableArrayList(appointController.getAppointList());
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         petIdColumn.setCellValueFactory(new PropertyValueFactory<Appoint, Integer>("pet_id"));
         datetimeColumn.setCellValueFactory(new PropertyValueFactory<Appoint, String>("day"));
         time_slotColumn.setCellValueFactory(new PropertyValueFactory<Appoint, Integer>("time"));
-
         appointTableView.setItems(appointList);
     }
 
@@ -58,17 +58,11 @@ public class AppointUIController extends ScreenHandler implements Initializable 
         if (selectedAppoint == null) {
             return;
         }
-        int selectedAppointId = selectedAppoint.getPet_id();
-        String day = selectedAppoint.getDay();
-        int time = selectedAppoint.getTime_slot();
-        AppointController.deleteAppoint(selectedAppointId, day, time);
+        appointController.deleteAppoint(selectedAppoint);
         appointList.remove(selectedAppoint);
     }
 
     public void updateAppoint(ActionEvent event) throws SQLException, ClassNotFoundException {
-        if (user.getRole() != 1) {
-            return;
-        }
 
         Appoint selectedAppoint = appointTableView.getSelectionModel().getSelectedItem();
         if (selectedAppoint == null) {
@@ -113,16 +107,8 @@ public class AppointUIController extends ScreenHandler implements Initializable 
         // Show the dialog and wait for the user's input
         Optional<Appoint> result = dialog.showAndWait();
         result.ifPresent(updatedAppoint -> {
-            int notification = appointController.updateAppoint(updatedAppoint, selectedAppoint); // Update the appointment using the controller
-            if (notification == 0) {
-                Utils.showError("The appointment is not updated");
-                return;
-            }
-            else if (notification == -1) {
-            Utils.showError("The appointment is not found");
-                return;
-            }
-            Utils.showAlert("The appointment is updated successfully");
+            String notification = appointController.updateAppoint(updatedAppoint, selectedAppoint); // Update the appointment using the controller
+            Utils.showAlert(notification);
             appointList.set(appointList.indexOf(selectedAppoint), updatedAppoint); // Update the list
             appointTableView.refresh(); // Refresh the table view
         });

@@ -15,46 +15,18 @@ import java.util.Date;
 
 public class KhamController {
 
-    public static ArrayList<Appoint> appointList = new ArrayList<Appoint>();
+    public static ArrayList<Appoint> appointList;
     public static void getLichKham() throws SQLException, ClassNotFoundException {
         // connect to database and get lich kham that day is today in postgresql
         // and add to appointList
-        String sql = "select * from lichkham where day = current_date";
-        Connection con = DbConnection.openConnection();
-        PreparedStatement stmt = con.prepareStatement(sql);
-        ResultSet rs = stmt.executeQuery();
-        while (rs.next()) {
-            int id = rs.getInt("pet_id");
-            Date day = rs.getDate("day");
-            String daystr = String.valueOf(day);
-            int time_slot = rs.getInt("time_slot");
-            String state = rs.getString("state");
-            Appoint a = new Appoint(id, daystr, time_slot, state);
-            appointList.add(a);
+        if (appointList == null) {
+            appointList = ExamineInforDbManager.getLichKhamToday();
         }
-        return ;
     }
-
-    public static Pet pet ;
-
+    public static Pet pet;
     public static Pet getPet(int id) throws SQLException, ClassNotFoundException {
-        String sql = "select * from pet where pet_id = " + id;
-        Connection con = DbConnection.openConnection();
-        PreparedStatement stmt = con.prepareStatement(sql);
-        ResultSet rs = stmt.executeQuery();
-        if (rs.next()) {
-            String username = rs.getString("username");
-            String name = rs.getString("name");
-            String color = rs.getString("color");
-            String category = rs.getString("category");
-            int age = rs.getInt("age");
-            String gender = rs.getString("gender");
-            pet = new Pet(id,username, name, color, category, age, gender);
-            System.out.println(pet);
-            return pet;
-        }
-        System.out.println("query fail");
-        return null ;
+        pet = ExamineInforDbManager.getPet(id);
+        return pet;
     }
 
     public static ArrayList <Medicine> medicineList = new ArrayList<>();
@@ -184,8 +156,5 @@ public class KhamController {
                 throwables.printStackTrace();
             }
         }
-    }
-
-    public void setAppoint(int selectedAppointId, String day, int time) {
     }
 }

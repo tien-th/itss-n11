@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class UserDbManager {
     public static ArrayList<User> getUserList() throws SQLException, ClassNotFoundException {
         ArrayList<User> userList = new ArrayList<>();
-        String sql = "SELECT * FROM public.user Where role = 0";
+        String sql = "SELECT * FROM public.user Where role = 0 or role = 2";
         PreparedStatement ps = DbConnection.openConnection().prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
         while (rs.next()) {
