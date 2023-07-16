@@ -32,6 +32,8 @@ module com.example.itssn11 {
     exports model.repository;
     opens model.repository to javafx.fxml, javafx.praphics;
 
+    exports utils.connection ;
+
 //    opens service.appointment to javafx.fxml, javafx.praphics;
     exports controller;
     opens controller to javafx.fxml, javafx.praphics;
