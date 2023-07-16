@@ -24,7 +24,6 @@ public class Medical {
 
 
 
-
     public int getThuocId() {
         return thuocId;
     }

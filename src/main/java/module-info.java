@@ -43,5 +43,7 @@ module com.example.itssn11 {
     opens view.pet to javafx.fxml, javafx.praphics;
     exports view;
     opens view to javafx.fxml, javafx.praphics;
+    exports utils;
+    opens utils to javafx.fxml, javafx.praphics;
 
 }
