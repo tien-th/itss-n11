@@ -30,6 +30,10 @@ public class Medical {
 
     }
 
+    public Medical() {
+
+    }
+
 
 //    public Medical(String tenThuoc, String nhomThuoc, int soLuong, String nhaSx, Date hsd) {
 //        this.tenThuoc = tenThuoc;

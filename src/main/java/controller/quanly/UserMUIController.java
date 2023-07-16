@@ -55,12 +55,7 @@ public class UserMUIController extends ScreenHandler implements Initializable {
     private void deleteUser(ActionEvent event) throws SQLException, ClassNotFoundException {
         User selectedUser = userTableView.getSelectionModel().getSelectedItem();
         if (selectedUser == null) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Lỗi");
-            alert.setHeaderText("Chưa chọn người dùng");
-            alert.setContentText("Vui lòng chọn người dùng");
-            alert.showAndWait();
-            return;
+
         }
         userManageController.deleteUser(selectedUser);
         userList.remove(selectedUser);
@@ -76,11 +71,15 @@ public class UserMUIController extends ScreenHandler implements Initializable {
         TextField nameTextField = new TextField();
         TextField emailTextField = new TextField();
         DatePicker birthdayPicker  = new DatePicker();
-        TextField genderTextField = new TextField();
 
+        // Gender ComboBox
+        ComboBox<String> genderComboBox = new ComboBox<>();
+        genderComboBox.getItems().addAll("Nam", "Nữ");
 
-        TextField roleTextField = new TextField();
-        roleTextField.setPromptText("0 for customer, 2 for doctor");
+        // Role ComboBox
+        ComboBox<String> roleComboBox = new ComboBox<>();
+        roleComboBox.getItems().addAll("Customer", "Admin", "Doctor");
+        roleComboBox.setPromptText("Chọn vai trò");
 
         GridPane gridPane = new GridPane();
         gridPane.add(new Label("Tên đăng nhập"), 0, 0);
@@ -94,13 +93,25 @@ public class UserMUIController extends ScreenHandler implements Initializable {
         gridPane.add(new Label("Ngày sinh"), 0, 4);
         gridPane.add(birthdayPicker, 1, 4);
         gridPane.add(new Label("Giới tính"), 0, 5);
-        gridPane.add(genderTextField, 1, 5);
+        gridPane.add(genderComboBox, 1, 5);
         gridPane.add(new Label("Vai trò"), 0, 6);
-        gridPane.add(roleTextField, 1, 6);
+        gridPane.add(roleComboBox, 1, 6);
         dialog.getDialogPane().setContent(gridPane);
         dialog.showAndWait();
+
         if(dialog.getResult() == ButtonType.OK){
-            User user = new User(usernameTextField.getText(), passwordTextField.getText(), emailTextField.getText(), nameTextField.getText(), birthdayPicker.getValue().toString(), genderTextField.getText(), Integer.parseInt(roleTextField.getText()));
+            String role = roleComboBox.getValue();
+            int roleValue = 0; // Default to customer
+            switch (role) {
+                case "Admin":
+                    roleValue = 1;
+                    break;
+                case "Doctor":
+                    roleValue = 2;
+                    break;
+            }
+
+            User user = new User(usernameTextField.getText(), passwordTextField.getText(), emailTextField.getText(), nameTextField.getText(), birthdayPicker.getValue().toString(), genderComboBox.getValue(), roleValue);
             userManageController.addUser(user);
             userList.add(user);
             userTableView.setItems(userList);
