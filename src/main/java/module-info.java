@@ -4,11 +4,6 @@ module com.example.itssn11 {
     requires java.sql;
     requires java.desktop;
 
-
-    opens com.example.itssn11 to javafx.fxml;
-    exports com.example.itssn11;
-
-
     opens app to javafx.praphics, javafx.fxml;
     exports app;
 

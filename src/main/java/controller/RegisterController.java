@@ -19,7 +19,7 @@ public class RegisterController {
         RegisterServiceSaver dkyDV = new RegisterServiceSaver();
         int lod_id = dkyDV.dangKyTrongGiu(id, ngayKham, startHour);
         if ( lod_id != 0) {
-            return "Đăng ký dịch vụ chuồng " +  lod_id + " thành công";
+            return "Đăng ký dịch vụ chuồng " +  lod_id + " thành công vào ngày " + ngayKham + " lúc " + startHour + " giờ" ;
         }
         else {
             return "Đăng ký dịch vụ thất bại - Khoảng thời gian này đã hết chỗ";

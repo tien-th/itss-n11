@@ -1,7 +1,8 @@
 package controller;
 
 import model.entity.User;
-import model.repository.UserQuerier;
+import model.repository.dbmanager.UserQuerier;
+import utils.Check;
 
 import java.sql.SQLException;
 
@@ -30,9 +31,14 @@ public class LoginController {
         // TODO
         String username = u.getUsername();
 
-        String regex = "^[a-zA-Z0-9]{6,}$";
-        if (!username.matches(regex)) {
+        if (!Check.checkUsername(username)) {
             return "Tên đăng nhập không hợp lệ" ;
+        }
+        if (!Check.checkPassword(u.getPassword())) {
+            return "Mật khẩu không hợp lệ" ;
+        }
+        if(!Check.checkEmail(u.getEmail())) {
+            return "Email không hợp lệ" ;
         }
 
         boolean usernameExist = UserQuerier.checkUserName(username);
