@@ -98,7 +98,37 @@
     color: white;
     text-align: center;
 }
+/* Tập tin styles.css */
+
+/* Thiết kế cho VBox */
+.VBox {
+    -fx-padding: 10px;  /* Khoảng cách xung quanh các nút */
+    -fx-spacing: 10px;  /* Khoảng cách giữa các nút */
+    -fx-alignment: CENTER_LEFT; /* Căn chữ đầu dòng thẳng hàng */
+}
+
+/* Thiết kế cho Button */
+.Button {
+    -fx-background-color: #3498db; /* Màu nền của nút */
+    -fx-text-fill: #ffffff; /* Màu chữ */
+    -fx-font-size: 16; /* Kích thước chữ */
+    -fx-padding: 10px; /* Khoảng cách giữa chữ và biên nút */
+    -fx-border-radius: 5px; /* Bán kính của biên nút */
+    -fx-background-radius: 5px; /* Bán kính của nền nút */
+}
+
+/* Thiết kế cho Button khi hover */
+.Button:hover {
+    -fx-background-color: #2980b9; /* Màu nền của nút khi hover */
+}
+
+/* Thiết kế cho Button khi nhấn */
+.Button:pressed {
+    -fx-background-color: #2c3e50; /* Màu nền của nút khi nhấn */
+}
 
 
-
+.gradient1 {
+    -fx-background-color: linear-gradient(to bottom right, #0f6789, #286155);
+}
 

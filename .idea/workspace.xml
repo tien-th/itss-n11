@@ -4,23 +4,77 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="cage">
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/Feedback.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/screen/feedback.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_06_2023_8_50_CH__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_06_2023_8_50_CH__Changes_.xml" afterDir="false" />
+    <list default="true" id="a12e0c56-12f5-408e-a647-d4884b56c5f4" name="Changes" comment="umi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/pet/ViewPetUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/pet/ViewPetUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/quanly/AdminUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/quanly/AdminUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/user/ActorUi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/user/ActorUi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/user/DangKyTrongGiuScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/user/DangKyTrongGiuScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Pet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/quanly/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/quanly/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/quanly/AppointController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/quanly/AppointController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/quanly/AppointUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/quanly/AppointUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/doctor/ExaminePetUiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/services/ExaminePetUiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/doctor/ListPetUiToExamineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/services/ListPetUiToExamineController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/login/DangKyUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/user/DangKyUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/login/DangnhapUiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/user/DangnhapUiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/login/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/login/UserQuerier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/repository/dbmanager/UserQuerier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/pet/PetDbQuerier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/repository/dbmanager/PetDbQuerier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/pet/ViewPetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ViewPetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/pet/ViewPetUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/pet/ViewPetUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/quanly/AdminUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/user/AdminUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/quanly/AppointUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/user/AppointUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/quanly/CageMUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/services/CageMUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/quanly/CareServicesMUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/services/CareServicesMUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/quanly/MedicalMUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/services/MedicalMUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/quanly/UpdatedInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/user/UpdatedInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/quanly/UserMUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/user/UserMUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/user/ActorUi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/user/ActorUi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/user/DangKyKhamScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/services/DangKyKhamScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/user/DangKyTrongGiuScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/services/DangKyTrongGiuScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/user/DangKyVSScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/services/DangKyVSScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/user/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/user/ScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ScreenHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/user/UserFuncBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/user/UserFuncBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/user/UserUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/user/UserUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Appoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/entity/Appoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Cage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/entity/Cage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Care.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/entity/Care.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/entity/Feedback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Medical.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/entity/Medical.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Medicine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/entity/Medicine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Notice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/entity/Notice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/entity/Pet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Prescription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/entity/Prescription.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/UpdatedPetInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/entity/UpdatedPetInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/doctor/ExamineInforDbManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/repository/dbmanager/ExamineInforDbManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/doctor/KhamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/KhamController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/quanly/AppointController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AppointController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/quanly/AppointDbManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/repository/dbmanager/AppointDbManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/quanly/CageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/quanly/CageDbManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/repository/dbmanager/CageDbManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/quanly/CareController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CareController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/quanly/CareDbManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/repository/dbmanager/CareDbManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/quanly/DoctorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/DoctorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/quanly/MedicalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MedicalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/quanly/MedicalDbManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/repository/dbmanager/MedicalDbManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/quanly/UserDbManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/repository/dbmanager/UserDbManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/quanly/UserManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/UserManageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/user/RegisterServiceSaver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/repository/dbmanager/RegisterServiceSaver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/connection/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/connection/DbConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/screen/adminUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/adminUI.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/screen/appointUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/appointUI.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/screen/cageMUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/cageMUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/screen/careServicesMUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/careServicesMUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/screen/dangKyKhamScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/dangKyKhamScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/screen/dangKyTrongGiuScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/dangKyTrongGiuScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/screen/dangKyVSScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/dangKyVSScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/screen/dangky.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/dangky.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/screen/dangnhap.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/dangnhap.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/screen/feedback.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/feedback.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/screen/khamPet.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/khamPet.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/screen/listAppoint.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/listAppoint.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/screen/medicalMUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/medicalMUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/screen/user.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/user.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/screen/userMUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/userMUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/screen/viewPetScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/screen/viewPetScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/styles/temp.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/styles/temp.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +87,7 @@
         <option value="FxmlFile" />
         <option value="CSS File" />
         <option value="AnnotationType" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -157,7 +212,7 @@
       <module name="itss-n11" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="repository.*" />
+          <option name="PATTERN" value="model.repository.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -277,6 +332,9 @@
       <workItem from="1689405453388" duration="358000" />
       <workItem from="1689408221844" duration="2689000" />
       <workItem from="1689438001340" duration="1399000" />
+      <workItem from="1689475851525" duration="11275000" />
+      <workItem from="1689493839877" duration="627000" />
+      <workItem from="1689514777077" duration="2200000" />
     </task>
     <task id="LOCAL-00001" summary="add readme">
       <created>1686663107815</created>
@@ -488,7 +546,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689331068064</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="umi">
+      <created>1689478111828</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1689478111828</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -534,7 +599,8 @@
     <MESSAGE value="appoint" />
     <MESSAGE value="care,medical" />
     <MESSAGE value="cage" />
-    <option name="LAST_COMMIT_MESSAGE" value="cage" />
+    <MESSAGE value="umi" />
+    <option name="LAST_COMMIT_MESSAGE" value="umi" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -543,6 +609,15 @@
           <properties class="java.lang.IllegalArgumentException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/view/services/CageMUIController.java</url>
+          <line>39</line>
+          <properties class="view.user.CageMUIController">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

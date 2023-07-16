@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="300.0" prefWidth="400.0" styleClass="rootsignup"  stylesheets="temp.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.login.DangKyUIController">
+<AnchorPane prefHeight="300.0" prefWidth="400.0" styleClass="rootsignup"  stylesheets="temp.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.user.DangKyUIController">
     <children>
         <Label layoutX="6.0" layoutY="7.0" text="Đăng ký">
          <font>

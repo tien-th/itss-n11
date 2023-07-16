@@ -8,7 +8,7 @@
 
 <!--<AnchorPane xmlns="http://javafx.com/javafx"-->
 <!--            xmlns:fx="http://javafx.com/fxml"-->
-<!--&lt;!&ndash;            fx:controller="Feedback"&ndash;&gt;-->
+<!--&lt;!&ndash;            fx:view.controller="Feedback"&ndash;&gt;-->
 <!--&lt;!&ndash;            prefHeight="400.0" prefWidth="600.0">&ndash;&gt;-->
 
 <!--</AnchorPane>-->

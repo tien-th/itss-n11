@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="507.0" prefWidth="764.0" styleClass="rootsignup" stylesheets="@temp.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.user.DangKyVSScreenController">
+<AnchorPane prefHeight="507.0" prefWidth="764.0" styleClass="rootsignup" stylesheets="temp.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.services.DangKyVSScreenController">
    <children>
       <Label layoutX="24.0" layoutY="79.0" text="Tên thú cưng">
          <font>
@@ -84,7 +84,7 @@
          <children>
             <ImageView fitHeight="349.0" fitWidth="469.0" layoutX="-3.0" layoutY="-65.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@grooming.png" />
+                  <Image url="grooming.png" />
                </image>
             </ImageView>
          </children>

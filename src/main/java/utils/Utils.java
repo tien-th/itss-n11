@@ -1,6 +1,6 @@
 package utils;
 
-import entity.Pet;
+import model.entity.Pet;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;

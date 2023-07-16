@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="793.0" prefWidth="905.0" stylesheets="temp.css" styleClass="rootsignup" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.doctor.ExaminePetUiController">
+<AnchorPane prefHeight="793.0" prefWidth="905.0" stylesheets="temp.css" styleClass="rootsignup" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.services.ExaminePetUiController">
     <children>
         <VBox alignment="CENTER" layoutX="100.0" layoutY="68.0" prefHeight="672.0" prefWidth="450.0" spacing="20">
             <children>
