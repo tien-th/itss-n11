@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.String?>
 <?import javafx.collections.FXCollections?>
 <?import javafx.scene.control.Button?>
@@ -12,7 +19,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="507.0" prefWidth="764.0" styleClass="rootsignup" stylesheets="temp.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.services.DangKyTrongGiuScreenController">
+<AnchorPane prefHeight="507.0" prefWidth="764.0" styleClass="rootsignup" stylesheets="temp.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.services.DangKyTrongGiuScreenController">
     <children>
         <Label layoutX="26.0" layoutY="74.0" text="Tên thú cưng">
             <font>
@@ -50,7 +57,7 @@
                 <Font size="16.0" />
             </font>
         </Button>
-        <Button fx:id="buttonThoat" layoutX="137.0" layoutY="313.0" mnemonicParsing="false" onAction="#goBack" styleClass="cancel-button" text="Thoát">
+        <Button fx:id="buttonThoat" layoutX="2.0" layoutY="3.0" mnemonicParsing="false" onAction="#goBack" styleClass="cancel-button" text="Thoát">
             <font>
                 <Font size="16.0" />
             </font>

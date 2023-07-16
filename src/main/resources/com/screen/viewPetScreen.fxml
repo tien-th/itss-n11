@@ -4,17 +4,17 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="827.0" prefWidth="1026.0"  stylesheets="temp.css" styleClass="rootsignup"  xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.pet.ViewPetUIController">
+<AnchorPane prefHeight="827.0" prefWidth="1026.0" styleClass="rootsignup" stylesheets="temp.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.pet.ViewPetUIController">
    <children>
       <TableView fx:id="petTableView" layoutX="82.0" layoutY="167.0" prefHeight="496.0" prefWidth="821.0">
         <columns>
           <TableColumn fx:id="idColumn" prefWidth="62.0" text="ID" />
-          <TableColumn fx:id="nameColumn" prefWidth="172.0" text="name" />
-            <TableColumn fx:id="usernameColumn" prefWidth="147.19998168945312" text="username" />
-            <TableColumn fx:id="categoryColumn" prefWidth="136.0" text="category" />
-            <TableColumn fx:id="ageColumn" prefWidth="96.800048828125" text="age" />
-            <TableColumn fx:id="colorColumn" prefWidth="77.0" text="color" />
-            <TableColumn fx:id="genderColumn" prefWidth="126.2000732421875" text="gender" />
+          <TableColumn fx:id="nameColumn" prefWidth="172.0" text="Name" />
+            <TableColumn fx:id="usernameColumn" prefWidth="147.19998168945312" text="Owner" />
+            <TableColumn fx:id="categoryColumn" prefWidth="136.0" text="Categori" />
+            <TableColumn fx:id="ageColumn" prefWidth="96.800048828125" text="Age" />
+            <TableColumn fx:id="colorColumn" prefWidth="77.0" text="Color" />
+            <TableColumn fx:id="genderColumn" prefWidth="126.2000732421875" text="Gender" />
         </columns>
       </TableView>
 <!--       button to go back -->

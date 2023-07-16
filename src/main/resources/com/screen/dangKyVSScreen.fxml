@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="507.0" prefWidth="764.0" styleClass="rootsignup" stylesheets="temp.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.services.DangKyVSScreenController">
+<AnchorPane prefHeight="507.0" prefWidth="764.0" styleClass="rootsignup" stylesheets="temp.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.services.DangKyVSScreenController">
    <children>
       <Label layoutX="24.0" layoutY="79.0" text="Tên thú cưng">
          <font>
@@ -75,7 +75,7 @@
          </font>
       </Button>
       <Label layoutX="26.0" layoutY="298.0" text="Thời gian" />
-      <Button fx:id="buttonThoat" layoutX="162.0" layoutY="391.0" mnemonicParsing="false" onAction="#goBack" styleClass="cancel-button" text="Thoát">
+      <Button fx:id="buttonThoat" layoutY="3.0" mnemonicParsing="false" onAction="#goBack" styleClass="cancel-button" text="Thoát">
          <font>
             <Font size="16.0" />
          </font>
