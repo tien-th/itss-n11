@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import utils.connection.DbConnection;
+import view.UserUIController;
 import view.services.CageMUIController;
 import view.services.CareServicesMUIController;
 import view.services.MedicalMUIController;

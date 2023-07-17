@@ -8,10 +8,10 @@ public class RegisterController {
     public static String dangKyKham(int id, String ngayKham, int startHour) throws SQLException, ClassNotFoundException {
         RegisterServiceSaver dkyKham = new RegisterServiceSaver();
         if (dkyKham.dangKyKham(id, ngayKham, startHour)) {
-            return "Đăng ký khám thành công";
+            return "Successful registration";
         }
         else {
-            return "Đăng ký khám thất bại - Khoảng thời gian đã hết chỗ";
+            return "Registration failed - Time has been booked";
         }
     }
 
@@ -19,10 +19,10 @@ public class RegisterController {
         RegisterServiceSaver dkyDV = new RegisterServiceSaver();
         int lod_id = dkyDV.dangKyTrongGiu(id, ngayKham, startHour);
         if ( lod_id != 0) {
-            return "Đăng ký dịch vụ chuồng " +  lod_id + " thành công vào ngày " + ngayKham + " lúc " + startHour + " giờ" ;
+            return "Registration for cage service number " +  lod_id + " was successful at " + startHour + ":00 on "  + ngayKham;
         }
         else {
-            return "Đăng ký dịch vụ thất bại - Khoảng thời gian này đã hết chỗ";
+            return "Service registration failed - This time period is full";
         }
     }
 
@@ -31,10 +31,10 @@ public class RegisterController {
         RegisterServiceSaver dkyDV = new RegisterServiceSaver();
         boolean check = dkyDV.dangKyVs(id, ngayKham, startHour, dichVu);
         if (check) {
-            return "Đăng ký dịch vụ " + dichVu + " thành công vào ngày " + ngayKham + " lúc " + startHour + " giờ";
+            return "Register for " + dichVu + " service successfully at " + startHour + ":00 on "  + ngayKham;
         }
         else {
-            return "Đăng ký dịch vụ thất bại - Khoảng thời gian này đã hết chỗ";
+            return "Service registration failed - This time period is full";
         }
     }
 }

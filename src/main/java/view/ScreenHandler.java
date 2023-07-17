@@ -1,5 +1,6 @@
 package view;
 
+
 import model.entity.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -7,8 +8,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import view.user.AdminUIController;
-import view.user.UserUIController;
+import view.user.ActorUi;
+
 
 import java.io.IOException;
 import java.net.URL;
@@ -21,7 +22,6 @@ public class ScreenHandler {
         this.user = user;
     }
     public void goBack(ActionEvent e ) throws IOException {
-
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         URL url = null ;
         FXMLLoader loader = new FXMLLoader();
@@ -30,15 +30,24 @@ public class ScreenHandler {
             url = Paths.get("./src/main/resources/com/screen/adminUI.fxml").toUri().toURL();
             Parent userViewParent = loader.load(url.openStream());
             Scene scene = new Scene(userViewParent);
-            AdminUIController userUIController =  loader.getController();
+            ActorUi userUIController =  loader.getController();
             userUIController.setUser(user);
             stage.setScene(scene);
         }
+        else if (user.getRole() == 2) {
+            url = Paths.get("./src/main/resources/com/screen/listAppoint.fxml").toUri().toURL();
+            Parent userViewParent = loader.load(url.openStream());
+            Scene scene = new Scene(userViewParent);
+            ActorUi userUIController =  loader.getController();
+            userUIController.setUser(user);
+            stage.setScene(scene);
+        }
+
         else {
             url = Paths.get("./src/main/resources/com/screen/user.fxml").toUri().toURL();
             Parent userViewParent = loader.load(url.openStream());
             Scene scene = new Scene(userViewParent);
-            UserUIController userUIController =  loader.getController();
+            ActorUi userUIController =  loader.getController();
             userUIController.setUser(user);
             stage.setScene(scene);
         }

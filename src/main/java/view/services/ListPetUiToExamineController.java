@@ -15,6 +15,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import controller.KhamController;
+import view.ScreenHandler;
 import view.user.ActorUi;
 import view.user.DangnhapUiController;
 
@@ -36,11 +37,12 @@ public class ListPetUiToExamineController extends ActorUi implements Initializab
     private TableColumn<Appoint, String> time_slotColumn;
     private ObservableList<Appoint> appointList;
 
+    KhamController khamController = new KhamController();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            KhamController.getLichKham();
+            khamController.getLichKham();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -66,17 +68,15 @@ public class ListPetUiToExamineController extends ActorUi implements Initializab
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             URL url = Paths.get("./src/main/resources/com/screen/khamPet.fxml").toUri().toURL();
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(url);
             Parent userViewParent = loader.load(url.openStream());
-
             Scene scene = new Scene(userViewParent);
+            ScreenHandler screenHandler = loader.getController();
+            screenHandler.setUser(user);
             stage.setScene(scene);
 
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }

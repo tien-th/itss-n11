@@ -43,6 +43,13 @@ public class CageDbManager {
         ps.setInt(1, cage.isStatus());
         ps.setInt(2, cage.getId_cage());
         ps.executeUpdate();
+
+        if(cage.getStatus() == 0) {
+            sql = "delete from set_lodging where lodging_id = ?";
+            ps = DbConnection.openConnection().prepareStatement(sql);
+            ps.setInt(1, cage.getId_cage());
+            ps.executeUpdate();
+        }
     }
 
     public static void addCage(Cage cage) throws SQLException, ClassNotFoundException {

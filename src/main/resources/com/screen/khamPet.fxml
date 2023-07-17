@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="793.0" prefWidth="905.0" styleClass="rootsignup" stylesheets="temp.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.services.ExaminePetUiController">
+<AnchorPane prefHeight="786.0" prefWidth="721.0" styleClass="rootsignup" stylesheets="temp.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.services.ExaminePetUiController">
     <children>
         <VBox alignment="CENTER" layoutX="100.0" layoutY="68.0" prefHeight="672.0" prefWidth="450.0" spacing="20">
             <children>
@@ -61,5 +61,6 @@
             </children>
         </VBox>
         <Label layoutX="193.0" layoutY="13.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Examine Pet" />
+      <Button layoutX="8.0" layoutY="6.0" onAction="#goBack" text="Back" />
     </children>
 </AnchorPane>

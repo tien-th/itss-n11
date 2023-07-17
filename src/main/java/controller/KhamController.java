@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class KhamController {
 
     public static ArrayList<Appoint> appointList;
-    public static void getLichKham() throws SQLException, ClassNotFoundException {
+    public void getLichKham() throws SQLException, ClassNotFoundException {
         // connect to database and get lich kham that day is today in postgresql
         // and add to appointList
         if (appointList == null) {

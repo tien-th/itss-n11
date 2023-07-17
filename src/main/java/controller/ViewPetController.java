@@ -11,10 +11,6 @@ public class ViewPetController {
     private ArrayList<Pet> petArrayList;
     private User user;
 
-    public ArrayList<Pet> getPetArrayList() {
-        return petArrayList;
-    }
-
     public ArrayList<Pet> getPetList() throws SQLException, ClassNotFoundException {
         if (user == null) {
             return null ;
@@ -28,11 +24,11 @@ public class ViewPetController {
 
     public String deletePet(Pet pet) throws SQLException, ClassNotFoundException {
         if (user.getRole() == 1 ) {
-            return "Bạn không có quyền xóa thú cưng này" ;
+            return "You do not have permission to delete this pet" ;
         }
         PetDbQuerier.deletePet(pet);
         petArrayList.remove(pet);
-        return "Xóa thú cưng thành công" ;
+        return "Delete pet successfully" ;
     }
 
     public void setPetArrayList(ArrayList<Pet> petArrayList) {
@@ -67,20 +63,24 @@ public class ViewPetController {
     }
 
     public String addPet(Pet newPet) {
+        if (user.getRole() == 1) {
+            return "You do not have permission to add pet" ;
+        }
+
         int id = PetDbQuerier.addPet(newPet);
 
         if (id == -1) {
-            return "Thêm thú cưng thất bại" ;
+            return "Pet registration failed" ;
         } else {
             newPet.setId(id);
             petArrayList.add(newPet);
-            return "Thêm thú cưng " + newPet.getName() + " có id: " +  id + " thành công" ;
+            return "Successfully registered pet " + newPet.getName() + " with id: " +  id;
         }
     }
 
     public String update(Pet selectedPet) {
         if(user.getRole() == 1) {
-            return "Bạn không có quyền cập nhật thú cưng này" ;
+            return "You do not have permission to update this pet" ;
         }
 
         try {
@@ -91,14 +91,12 @@ public class ViewPetController {
                 pet.setCategory(selectedPet.getCategory());
                 pet.setColor(selectedPet.getColor());
                 pet.setName(selectedPet.getName());
-                return "Cập nhật thành công" ;
+                return "Update was successful" ;
             }
             else {
-                return "Cập nhật thất bại" ;
+                return "Update failed. Please try again" ;
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }

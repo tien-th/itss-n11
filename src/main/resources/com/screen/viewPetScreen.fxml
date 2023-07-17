@@ -18,11 +18,14 @@
         </columns>
       </TableView>
 <!--       button to go back -->
-        <Button fx:id="" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBack" prefHeight="31.0" prefWidth="74.0" text="Back" />
+<!--       Add Label "Search" near searchTextField -->
+       <Label layoutX="82.0" layoutY="105.0" text="Search"> Search </Label> 
+
+        <Button fx:id="" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBack" prefHeight="31.0" prefWidth="74.0" text="Back"  />
        <Button fx:id="updateButton" layoutX="539.0" layoutY="100.0" mnemonicParsing="false" onAction="#updatePet" prefHeight="31.0" prefWidth="74.0" text="Update" />
          <Button fx:id="deleteButton" layoutX="672.0" layoutY="100.0" mnemonicParsing="false" onAction="#deletePet" prefHeight="31.0" prefWidth="74.0" text="Delete" />
        <Button fx:id="addButton" layoutX="806.0" layoutY="100.0" mnemonicParsing="false" onAction="#addPet" prefHeight="31.0" prefWidth="74.0" text="Add" />
-        <TextField fx:id="searchTextField" layoutX="82.0" layoutY="100.0" onAction="#filtered" prefHeight="31.0" prefWidth="315.0" />
+        <TextField fx:id="searchTextField" layoutX="144.0" layoutY="100.0" onAction="#filtered" prefHeight="31.0" prefWidth="315.0" />
 
    </children>
    <styleClass>

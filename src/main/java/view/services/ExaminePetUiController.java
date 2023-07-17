@@ -8,13 +8,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import controller.KhamController;
+import view.ScreenHandler;
 
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class ExaminePetUiController implements Initializable {
+public class ExaminePetUiController extends ScreenHandler implements Initializable {
 
     @FXML
     private TextField petNameTextField;
@@ -52,9 +53,7 @@ public class ExaminePetUiController implements Initializable {
         recordId = KhamController.getRecordId();
         try {
             KhamController.saveRecord(recordId, pet.getId() ,"", "", "");
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
         // Set the pet information in the text fields
@@ -105,7 +104,7 @@ public class ExaminePetUiController implements Initializable {
         int quantityInt = Integer.valueOf(quantity);
 //        query db
         boolean check = KhamController.prescript(medicineId, quantityInt);
-        if (check == false) {
+        if (!check) {
         	return;
         }
         KhamController.savePrescription(recordId, medicineId, quantityInt);
@@ -134,12 +133,6 @@ public class ExaminePetUiController implements Initializable {
         }
 
         deleteMedicineButton.setDisable(true);
-    }
-
-    @FXML
-    public void handlePrescribedMedicineSelection() {
-        int selectedIndex = prescribedMedicineListView.getSelectionModel().getSelectedIndex();
-        deleteMedicineButton.setDisable(selectedIndex < 0);
     }
 
     ArrayList <String> listMedicineName = new ArrayList<String>();

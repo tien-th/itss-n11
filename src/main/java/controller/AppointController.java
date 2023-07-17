@@ -26,14 +26,14 @@ public class AppointController {
 //        if day and time_slot are not changed return (do nothing)
         int check = AppointDbManager.updateAppoint(updatedAppoint, oldAppoint);
         if (check == 0) {
-            return "Không có gì thay đổi";
+            return "Nothing changes";
         }
         if (check == -1) {
-            return "Thời gian đã có người đặt";
+            return "Can't update to this time. It has been booked";
         }
         appointList.remove(oldAppoint);
         appointList.add(updatedAppoint);
-        return "Cập nhật thành công";
+        return "Update successful";
 
     }
 }

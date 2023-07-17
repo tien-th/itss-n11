@@ -1,4 +1,4 @@
-package view.user;
+package view;
 
 import javafx.event.ActionEvent;
 
@@ -12,6 +12,8 @@ import view.pet.ViewPetUIController;
 import view.services.DangKyKhamScreenController;
 import view.services.DangKyTrongGiuScreenController;
 import view.services.DangKyVSScreenController;
+import view.user.ActorUi;
+import view.user.DangnhapUiController;
 
 import java.io.IOException;
 import java.net.URL;

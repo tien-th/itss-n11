@@ -186,7 +186,6 @@ if (dialog.getResult() == ButtonType.APPLY) {
             selectedMedical.setNhaSx(nhaSx.getText());
             selectedMedical.setHsd(java.sql.Date.valueOf(hsd.getValue()));
             medicalController.update(selectedMedical);
-            MedicalController medicalController = new MedicalController();
             boolean result = medicalController.update(selectedMedical);
             if (result) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);

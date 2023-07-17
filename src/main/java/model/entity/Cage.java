@@ -50,5 +50,9 @@ public class Cage {
     public void setPet_id(int pet_id) {
         this.pet_id = pet_id;
     }
+
+    public int getStatus() {
+        return status;
+    }
 }
 

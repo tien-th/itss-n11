@@ -29,26 +29,25 @@ public class LoginController {
     }
 
     public String signUp(User u) throws SQLException, ClassNotFoundException {
-        // TODO
         String username = u.getUsername();
 
         if (!Check.checkUsername(username)) {
-            return "Tên đăng nhập không hợp lệ" ;
+            return "Invalid username" ;
         }
         if (!Check.checkPassword(u.getPassword())) {
-            return "Mật khẩu không hợp lệ" ;
+            return "Invalid password" ;
         }
         if(!Check.checkEmail(u.getEmail())) {
-            return "Email không hợp lệ" ;
+            return "Invalid email" ;
         }
 
         boolean usernameExist = UserQuerier.checkUserName(username);
         if (usernameExist) {
-            return "Tên đăng nhập đã tồn tại" ;
+            return "Can't use this username, it already exist" ;
         }
         if (UserQuerier.saveUserToDb(u)) {
-            return "Đăng ký thành công" ;
+            return "Sign up successfully" ;
         }
-        return "Đăng ký không thành công" ;
+        return "Sign up failed" ;
     }
 }

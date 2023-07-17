@@ -17,16 +17,13 @@ public class DangKyVSScreenController extends UserFuncBase {
     private Label dichVu = new Label();
     public void getDichVu(ActionEvent event) {
         if (buttonTiaLong.isSelected()) {
-//            dichVu.setText("Hair Trimming");
-            dichVu.setText("Tia lông");
+            dichVu.setText("Hair Trimming");
         }
         else if (buttonLamMong.isSelected()) {
-//            dichVu.setText("Nail");
-            dichVu.setText("Làm móng");
+            dichVu.setText("Nail");
         }
         else if (buttonTam.isSelected()) {
-//            dichVu.setText("Hygiene");
-            dichVu.setText("Tắm");
+            dichVu.setText("Ablutions");
         }
     }
 

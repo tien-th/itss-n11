@@ -85,10 +85,8 @@ public class CageMUIController extends ScreenHandler implements Initializable {
 
        // hiện ra màn hình để nhập thông tin
         GridPane grid = new GridPane();
-        grid.add(new Label("Cage ID:"), 1, 1);
-        grid.add(cageIdTextField, 2, 1);
-        grid.add(new Label("Cage Status:"), 1, 2);
-        grid.add(cageStatusTextField, 2, 2);
+        grid.add(new Label("Cage Status:"), 1, 1);
+        grid.add(cageStatusTextField, 2, 1);
 
         dialog.getDialogPane().setContent(grid);
 
@@ -175,7 +173,7 @@ public class CageMUIController extends ScreenHandler implements Initializable {
      cageIdColumn.setCellValueFactory(new PropertyValueFactory<Cage, Integer>("id_cage"));
 
      cageStatusColumn.setCellValueFactory(cellData -> {
-         String status = cellData.getValue().isStatus() == 1 ? "đã đặt chỗ" : "trống";
+         String status = cellData.getValue().isStatus() == 1 ? "booked" : "available";
          return new SimpleStringProperty(status);
      });
      petIdcolumn.setCellValueFactory(cellData -> {

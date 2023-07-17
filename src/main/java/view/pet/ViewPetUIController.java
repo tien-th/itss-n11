@@ -69,7 +69,7 @@ public class ViewPetUIController extends ScreenHandler implements Initializable 
         ageColumn.setCellValueFactory(new PropertyValueFactory<Pet, Integer>("age"));
         genderColumn.setCellValueFactory(new PropertyValueFactory<Pet, String>("gender"));
         petTableView.setItems(petList);
-        System.out.printf("color of pet %s", petList.get(0).getColor());
+//        System.out.printf("color of pet %s", petList.get(0).getColor());
         filtered();
     }
 
@@ -304,6 +304,7 @@ public class ViewPetUIController extends ScreenHandler implements Initializable 
                 petList.clear();
                 // Update the table view with the modified pet list
                 try {
+                    controller = new ViewPetController();controller.setUser(user);
                     petList = FXCollections.observableArrayList(controller.getPetList());
                 } catch (SQLException | ClassNotFoundException e) {
                     throw new RuntimeException(e);
