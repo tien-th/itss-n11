@@ -149,7 +149,7 @@ public class MedicalMUIController extends ScreenHandler implements Initializable
         Medical selectedMedical = medicalTableView.getSelectionModel().getSelectedItem();
         if (selectedMedical == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Lỗi");
+            alert.setTitle("Error");
             alert.setHeaderText("Không có thuốc được chọn");
             alert.setContentText("Vui lòng chọn thuốc");
             alert.showAndWait();
@@ -185,6 +185,7 @@ if (dialog.getResult() == ButtonType.APPLY) {
             selectedMedical.setSoLuong(Integer.parseInt(soLuong.getText()));
             selectedMedical.setNhaSx(nhaSx.getText());
             selectedMedical.setHsd(java.sql.Date.valueOf(hsd.getValue()));
+
             medicalController.update(selectedMedical);
             boolean result = medicalController.update(selectedMedical);
             if (result) {

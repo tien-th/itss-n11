@@ -73,27 +73,27 @@ public class UserMUIController extends ScreenHandler implements Initializable {
 
         // Gender ComboBox
         ComboBox<String> genderComboBox = new ComboBox<>();
-        genderComboBox.getItems().addAll("Nam", "Nữ");
+        genderComboBox.getItems().addAll("male", "female");
 
         // Role ComboBox
         ComboBox<String> roleComboBox = new ComboBox<>();
         roleComboBox.getItems().addAll("Customer", "Admin", "Doctor");
-        roleComboBox.setPromptText("Chọn vai trò");
+        roleComboBox.setPromptText("Role");
 
         GridPane gridPane = new GridPane();
-        gridPane.add(new Label("Tên đăng nhập"), 0, 0);
+        gridPane.add(new Label("Username"), 0, 0);
         gridPane.add(usernameTextField, 1, 0);
-        gridPane.add(new Label("Mật khẩu"), 0, 1);
+        gridPane.add(new Label("Password"), 0, 1);
         gridPane.add(passwordTextField, 1, 1);
-        gridPane.add(new Label("Họ và tên"), 0, 2);
+        gridPane.add(new Label("Name"), 0, 2);
         gridPane.add(nameTextField, 1, 2);
         gridPane.add(new Label("Email"), 0, 3);
         gridPane.add(emailTextField, 1, 3);
-        gridPane.add(new Label("Ngày sinh"), 0, 4);
+        gridPane.add(new Label("Birthday"), 0, 4);
         gridPane.add(birthdayPicker, 1, 4);
-        gridPane.add(new Label("Giới tính"), 0, 5);
+        gridPane.add(new Label("Gender"), 0, 5);
         gridPane.add(genderComboBox, 1, 5);
-        gridPane.add(new Label("Vai trò"), 0, 6);
+        gridPane.add(new Label("Role"), 0, 6);
         gridPane.add(roleComboBox, 1, 6);
         dialog.getDialogPane().setContent(gridPane);
         dialog.showAndWait();

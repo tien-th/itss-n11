@@ -33,19 +33,24 @@ public class MedicalDbManager {
 
     public static boolean updateMedical(Medical medical) throws SQLException, ClassNotFoundException {
         String sql = "select * from thuoc where thuoc_id = " + medical.getThuocId();
+        System.out.println(sql);
         PreparedStatement ps = DbConnection.openConnection().prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
+
+
         if (rs.next() ) {
             // update pet in database
             sql = "update thuoc set ten_thuoc = ?, nhom_thuoc = ?, soluong = ?, nhasx = ?, hsd = ?, price = ? where thuoc_id = ?" ;
+
+            System.out.println("---------------- " + medical.getSoLuong());
             ps = DbConnection.openConnection().prepareStatement(sql);
             ps.setString(1, medical.getTenThuoc());
             ps.setString(2, medical.getNhomThuoc());
             ps.setInt(3, medical.getSoLuong());
             ps.setString(4, medical.getNhaSx());
             ps.setDate(5, medical.getHsd());
-            ps.setInt(6, medical.getThuocId());
-            ps.setInt(7, medical.getPrice());
+            ps.setInt(7, medical.getThuocId());
+            ps.setInt(6, medical.getPrice());
             ps.executeUpdate();
             return true;
         }

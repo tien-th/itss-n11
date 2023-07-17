@@ -19,9 +19,7 @@ public class KhamController {
     public void getLichKham() throws SQLException, ClassNotFoundException {
         // connect to database and get lich kham that day is today in postgresql
         // and add to appointList
-        if (appointList == null) {
-            appointList = ExamineInforDbManager.getLichKhamToday();
-        }
+        appointList = ExamineInforDbManager.getLichKhamToday();
     }
     public static Pet pet;
     public static Pet getPet(int id) throws SQLException, ClassNotFoundException {
